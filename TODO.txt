@@ -1,0 +1,22 @@
+TODO list (work in progress)
+
+1) Generate models
+  User
+  Privileges
+  Playlist
+  Songs
+  ?
+
+2) Work with views
+  *All searching done from homepage*
+  Start with
+    Home
+    Admin Panel
+    Search Modal
+    ?
+
+3) Setup APIs
+  Musicbrainz
+  Spotify
+  LastFM
+  ?
