@@ -20,3 +20,49 @@ TODO list (work in progress)
   Spotify
   LastFM
   ?
+  
+
+  SCAFFOLDS TO GENERATE
+  
+  User
+    name:string
+    email:string
+    password:string
+    admin:boolean
+    has_one: :privilege //Instead of an array of privileges, as was initially proposed
+
+
+  Song
+    title:string
+    artist:string
+    album:string
+    duration:time
+    quality:integer
+    fccClean:boolean
+    qDrive:boolean
+    location:string
+    format:string
+    review:text?
+
+
+  Playlist
+    title:string
+    creator/owner:string? OR belongs_to: :user
+    songs --> has_many: :songs
+    qDrive:boolean
+    notes:text
+
+  Privilege
+   belongs_to: :user
+   qDrive:boolean
+   add:boolean?
+   edit:boolean
+   delete:boolean?
+   grantPermission:boolean?
+   addUser:boolean?
+   editUser:boolean?
+   deleteUser:boolean?
+   isMaster:boolean? 
+
+
+   //Anything else?
