@@ -24,12 +24,14 @@ TODO list (work in progress)
 
   SCAFFOLDS TO GENERATE
   
+  A  question mark after means that we have not agreed the attr.
+
   User
     name:string
     email:string
     password:string
     admin:boolean
-    has_one: :privilege //Instead of an array of privileges, as was initially proposed
+    has_one :privilege //Instead of an array of privileges, as was initially proposed
 
 
   Song
@@ -47,13 +49,13 @@ TODO list (work in progress)
 
   Playlist
     title:string
-    creator/owner:string? OR belongs_to: :user
-    songs --> has_many: :songs
+    creator/owner:string? OR belongs_to :user
+    songs --> has_many :songs
     qDrive:boolean
     notes:text
 
   Privilege
-   belongs_to: :user
+   belongs_to :user
    qDrive:boolean
    add:boolean?
    edit:boolean
