@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.0'
 
 gem 'rails', '4.0.4'
+gem 'thin', '1.6.2'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
