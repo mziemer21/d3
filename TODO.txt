@@ -30,8 +30,9 @@ TODO list (work in progress)
     name:string
     email:string
     password:string
-    admin:boolean
-    has_one :privilege //Instead of an array of privileges, as was initially proposed
+    //admin:boolean
+    is_master:boolean
+    has_one :privilege
 
 
   Song
@@ -40,31 +41,33 @@ TODO list (work in progress)
     album:string
     duration:time
     quality:integer
-    fccClean:boolean
-    qDrive:boolean
+    fcc_clean:boolean
+    is_qDrive:boolean
     location:string
     format:string
-    review:text?
+    review:text
+    belongs_to many playlists through User???
 
 
   Playlist
     title:string
-    creator/owner:string? OR belongs_to :user
-    songs --> has_many :songs
-    qDrive:boolean
+    belongs_to :user
+    has_many :songs
+    is_qDrive:boolean
     notes:text
 
   Privilege
    belongs_to :user
    qDrive:boolean
-   add:boolean?
-   edit:boolean
-   delete:boolean?
-   grantPermission:boolean?
-   addUser:boolean?
-   editUser:boolean?
-   deleteUser:boolean?
-   isMaster:boolean? 
+   addSong:boolean
+   editSong:boolean
+   deleteSong:boolean
+   grantPermission:boolean
+   addUser:boolean
+   editUser:boolean
+   deleteUser:boolean 
+
+  Log
 
 
    //Anything else?
