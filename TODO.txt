@@ -3,7 +3,7 @@ TODO list (work in progress)
 1) Generate models
   User
   Privileges
-  Playlist
+  /*Playlist*/
   Songs
   ?
 
@@ -29,7 +29,7 @@ TODO list (work in progress)
   User
     name:string
     email:string
-    password:string
+    //password:string
     //admin:boolean
     is_master:boolean
     has_one :privilege
@@ -49,12 +49,14 @@ TODO list (work in progress)
     belongs_to many playlists through User???
 
 
-  Playlist
+  /*Playlist
     title:string
     belongs_to :user
     has_many :songs
     is_qDrive:boolean
-    notes:text
+    notes:text*/
+    
+    Hold off Playlist for later iterations
 
   Privilege
    belongs_to :user
