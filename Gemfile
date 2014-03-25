@@ -3,6 +3,9 @@ ruby '2.1.0'
 
 gem 'rails', '4.0.4'
 gem 'thin', '1.6.2'
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'sprockets', '2.12.0'
+gem 'colorbox-rails', '~> 0.1.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
