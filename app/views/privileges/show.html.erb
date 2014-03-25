@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Qdrive:</strong>
+  <%= @privilege.qDrive %>
+</p>
+
+<p>
+  <strong>Addsong:</strong>
+  <%= @privilege.addSong %>
+</p>
+
+<p>
+  <strong>Editsong:</strong>
+  <%= @privilege.editSong %>
+</p>
+
+<p>
+  <strong>Deletesong:</strong>
+  <%= @privilege.deleteSong %>
+</p>
+
+<p>
+  <strong>Grantpermission:</strong>
+  <%= @privilege.grantPermission %>
+</p>
+
+<p>
+  <strong>Adduser:</strong>
+  <%= @privilege.addUser %>
+</p>
+
+<p>
+  <strong>Edituser:</strong>
+  <%= @privilege.editUser %>
+</p>
+
+<p>
+  <strong>Deleteuser:</strong>
+  <%= @privilege.deleteUser %>
+</p>
+
+<%= link_to 'Edit', edit_privilege_path(@privilege) %> |
+<%= link_to 'Back', privileges_path %>
