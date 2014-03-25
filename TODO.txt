@@ -7,7 +7,7 @@ TODO list (work in progress)
   Songs
   ?
 
-2) Work with views - SIMON AND SAULT
+2) Work with views - SIMON AND SAUL
   *All searching done from homepage*
   Start with
     Home
