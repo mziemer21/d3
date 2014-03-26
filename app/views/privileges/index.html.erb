@@ -1,0 +1,41 @@
+<h1>Listing privileges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Qdrive</th>
+      <th>Addsong</th>
+      <th>Editsong</th>
+      <th>Deletesong</th>
+      <th>Grantpermission</th>
+      <th>Adduser</th>
+      <th>Edituser</th>
+      <th>Deleteuser</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @privileges.each do |privilege| %>
+      <tr>
+        <td><%= privilege.qDrive %></td>
+        <td><%= privilege.addSong %></td>
+        <td><%= privilege.editSong %></td>
+        <td><%= privilege.deleteSong %></td>
+        <td><%= privilege.grantPermission %></td>
+        <td><%= privilege.addUser %></td>
+        <td><%= privilege.editUser %></td>
+        <td><%= privilege.deleteUser %></td>
+        <td><%= link_to 'Show', privilege %></td>
+        <td><%= link_to 'Edit', edit_privilege_path(privilege) %></td>
+        <td><%= link_to 'Destroy', privilege, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Privilege', new_privilege_path %>

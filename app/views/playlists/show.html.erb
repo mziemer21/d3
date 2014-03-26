@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Users:</strong>
+  <%= @playlist.users %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @playlist.title %>
+</p>
+
+<p>
+  <strong>Songs:</strong>
+  <%= @playlist.songs %>
+</p>
+
+<p>
+  <strong>Qdrive:</strong>
+  <%= @playlist.qDrive %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @playlist.notes %>
+</p>
+
+<%= link_to 'Edit', edit_playlist_path(@playlist) %> |
+<%= link_to 'Back', playlists_path %>

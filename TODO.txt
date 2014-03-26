@@ -1,0 +1,79 @@
+TODO list (work in progress)
+
+2) Work with views - SIMON AND SAUL
+  *All searching done from homepage*
+  Start with
+    Home
+    Admin Panel
+    Search Modal
+    ?
+    
+    ***EDIT DOCS***
+
+3) Setup APIs - XIN AND LEO
+  Musicbrainz
+  //Spotify
+  LastFM
+  Discog
+  ?
+
+  Log
+
+
+   //Anything else?
+
+
+/*************************DONE***************************/
+1) Generate models - MATT
+  User
+  Privileges
+  /*Playlist*/
+  Songs
+  ?
+
+  SCAFFOLDS TO GENERATE
+  
+  A  question mark after means that we have not agreed the attr.
+
+  User
+    name:string
+    email:string
+    //password:string
+    //admin:boolean
+    is_master:boolean
+    has_one :privilege
+
+
+  Song
+    title:string
+    artist:string
+    album:string
+    duration:time
+    quality:integer
+    fcc_clean:boolean
+    is_qDrive:boolean
+    location:string
+    format:string
+    review:text
+    belongs_to many playlists through User???
+
+
+  /*Playlist
+    title:string
+    belongs_to :user
+    has_many :songs
+    is_qDrive:boolean
+    notes:text*/
+    
+    Hold off Playlist for later iterations
+
+  Privilege
+   belongs_to :user
+   qDrive:boolean
+   addSong:boolean
+   editSong:boolean
+   deleteSong:boolean
+   grantPermission:boolean
+   addUser:boolean
+   editUser:boolean
+   deleteUser:boolean 
