@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140327221504) do
+ActiveRecord::Schema.define(version: 20140327224922) do
 
   create_table "playlists", force: true do |t|
     t.integer  "users"
-    t.text     "title"
+    t.string   "title"
     t.integer  "songs"
     t.boolean  "qDrive"
     t.text     "notes"
