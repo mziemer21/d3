@@ -2,7 +2,7 @@
 
 Ruby version: 2.1.0;
 Rails: 4.0.4;
-Server: thin 1.6.2;
+Server: Thin 1.6.2;
 
 How to initialize the project:
 
