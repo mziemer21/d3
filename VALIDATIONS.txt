@@ -1,0 +1,27 @@
+User
+  - has non-empty name string
+  - has non-empty, unique email string (see sec 6.2.5 in Hartl's book)
+  - has one associated non-empty privilege (index into privilege table)
+Privilege (all default to false)
+  - belongs to one user
+  - has qDrive boolean 
+  - has addSong boolean
+  - has editSong boolean
+  - has deleteSong boolean
+  - has grantPermission boolean
+  - has addUser boolean
+  - has editUser boolean
+  - has deleteUser boolean
+Song
+  - has non-empty title string
+  - has non-empty artist string
+  - has non-empty album string
+  - has non-empty duration time
+  - has quality int
+  - has non-empty fccFlag/fccClean boolean, defaults to true
+  - has is_qDrive boolean, defaults to false
+  - has location string
+  - has format string
+  - has review text
+  * although we are not testing for uniqueness with songs,
+    we should warn when adding songs with already present (Song.title, Song.artist) pair
