@@ -1,16 +1,27 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version: 2.1.0;
+Rails: 4.0.4;
+Server: thin 1.6.2;
 
-Things you may want to cover:
+How to initialize the project:
 
-* Ruby version
+1. clone this project in your local repository
+
+2. change directory to that the root, run <tt>bundle install</tt>
+
+3. run <tt>rake db:migrate RAILS_ENV=development</tt>
+
+4. run <tt>rails s</tt> to start the sever
+
+5. open a brwoser, index of URL: https://localhost:3000
+
+
 
 * System dependencies
 
 * Configuration
-
+  
 * Database creation
 
 * Database initialization
@@ -21,7 +32,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run
