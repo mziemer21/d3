@@ -1,8 +1,8 @@
 == README
 
-Ruby version: 2.1.0
-Rails: 4.0.4
-Server: thin 1.6.2
+Ruby version: 2.1.0;
+Rails: 4.0.4;
+Server: thin 1.6.2;
 
 How to initialize the project:
 
@@ -14,7 +14,7 @@ How to initialize the project:
 
 4. run <tt>rails s</tt> to start the sever
 
-5. open a brwoser, index of URL: localhost:3000
+5. open a brwoser, index of URL: https://localhost:3000
 
 
 
