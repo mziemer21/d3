@@ -6,15 +6,26 @@ Server: Thin 1.6.2;
 
 How to initialize the project:
 
-1. clone this project in your local repository
+1. Navigate to  https://github.com/DeweyDecibelDatabase/d3
 
-2. change directory to that the root, run <tt>bundle install</tt>
+2. clone this project in your local repository
 
-3. run <tt>rake db:migrate RAILS_ENV=development</tt>
+3. change directory to the root, run <tt>bundle install</tt>
 
-4. run <tt>rails s</tt> to start the sever
+4. run <tt>rake db:migrate RAILS_ENV=development</tt>
 
-5. open a brwoser, index of URL: https://localhost:3000
+5. run <tt>rails s</tt> to start the sever
+
+6. open a brwoser, index of URL: https://localhost:3000
+
+
+
+Instruction to run RSpec Test:
+
+1. In terminal, navigate to folder “D3-Master”
+
+2. Run command <tt>bundle exec rspec spec/models</tt>
+
 
 
 
