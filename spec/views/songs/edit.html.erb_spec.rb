@@ -7,7 +7,7 @@ describe "songs/edit" do
       :artist => "MyString",
       :album => "MyString",
       :quality => 1,
-      :fccFlag => false,
+      :fccClean => false,
       :is_qDrive => false,
       :location => "MyString",
       :format => "MyString",
@@ -24,7 +24,7 @@ describe "songs/edit" do
       assert_select "input#song_artist[name=?]", "song[artist]"
       assert_select "input#song_album[name=?]", "song[album]"
       assert_select "input#song_quality[name=?]", "song[quality]"
-      assert_select "input#song_fccFlag[name=?]", "song[fccFlag]"
+      assert_select "input#song_fccClean[name=?]", "song[fccClean]"
       assert_select "input#song_is_qDrive[name=?]", "song[is_qDrive]"
       assert_select "input#song_location[name=?]", "song[location]"
       assert_select "input#song_format[name=?]", "song[format]"

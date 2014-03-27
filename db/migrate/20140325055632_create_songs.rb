@@ -6,7 +6,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :album
       t.time :duration
       t.integer :quality
-      t.boolean :fccFlag
+      t.boolean :fccClean
       t.boolean :is_qDrive
       t.string :location
       t.string :format
