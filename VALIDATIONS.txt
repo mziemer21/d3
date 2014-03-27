@@ -1,8 +1,9 @@
-User
+:User
   - has non-empty name string
   - has non-empty, unique email string (see sec 6.2.5 in Hartl's book)
   - has one associated non-empty privilege (index into privilege table)
 Privilege (all default to false)
+  - belongs to one user
   - has qDrive boolean 
   - has addSong boolean
   - has editSong boolean
