@@ -7,7 +7,7 @@ describe "songs/show" do
       :artist => "Artist",
       :album => "Album",
       :quality => 1,
-      :fccFlag => false,
+      :fccClean => false,
       :is_qDrive => false,
       :location => "Location",
       :format => "Format",

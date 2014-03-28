@@ -1,0 +1,37 @@
+class Privilege < ActiveRecord::Base
+<<<<<<< HEAD
+  
+=======
+
+>>>>>>> e75bb51cdf4210dcd905466a02ebd759a5025557
+  belongs_to :user
+
+  # a false value will validate to false -> see below
+  #validates :qDrive, :addSong, :editSong, :deleteSong, presence: true
+  #validates :grantPermission, :addUser, :editUser, :deleteUser, presence: true
+
+  validates :qDrive, inclusion: { in: [true,false] }
+  validates :addSong, inclusion: { in: [true,false] }
+  validates :editSong, inclusion: { in: [true,false] }
+  validates :deleteSong, inclusion: { in: [true, false] }
+<<<<<<< HEAD
+  validates :grantPermission, inclusion: { in: [true, false] }
+  validates :addUser, inclusion: { in: [true,false] }
+  validates :editUser, inclusion: { in: [true,false] }
+  validates :deleteUser, inclusion: { in: [true,false] }
+  
+  def privilege
+    @privilege
+  end
+  
+  def privilege=(val)
+    @privilege=val
+  end
+=======
+  validates :grantPermission, inclusion: { in: [true, false }
+  validates :addUser, inclusion: { in: [true,false] }
+  validates :editUser, inclusion: { in: [true,false] }
+  validates :deleteUser, inclusion: { in: [true,false] }
+
+>>>>>>> e75bb51cdf4210dcd905466a02ebd759a5025557
+end

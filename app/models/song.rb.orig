@@ -1,0 +1,11 @@
+class Song < ActiveRecord::Base
+<<<<<<< HEAD
+  #fccFlag will become fccClean, so it will default to true, or clean
+  validates :title, :artist, :album, :duration, :fccFlag, :is_qDrive, presence: true
+=======
+
+  #fccFlag will become fccClean, so it will default to true, or clean
+  validates :title, :artist, :album, :duration, :fccFlag, :is_qDrive, presence: true
+  
+>>>>>>> e75bb51cdf4210dcd905466a02ebd759a5025557
+end

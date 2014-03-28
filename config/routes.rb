@@ -1,5 +1,6 @@
 DeweyDecibelDatabase::Application.routes.draw do
   root 'home_page#home'
+  
   resources :playlists
 
   resources :songs

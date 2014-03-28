@@ -1,14 +1,14 @@
 class CreatePrivileges < ActiveRecord::Migration
   def change
     create_table :privileges do |t|
-      t.boolean :qDrive
-      t.boolean :addSong
-      t.boolean :editSong
-      t.boolean :deleteSong
-      t.boolean :grantPermission
-      t.boolean :addUser
-      t.boolean :editUser
-      t.boolean :deleteUser
+      t.boolean :qDrive, default: false
+      t.boolean :addSong, default: false
+      t.boolean :editSong, default: false
+      t.boolean :deleteSong, default: false
+      t.boolean :grantPermission, default: false
+      t.boolean :addUser, default: false
+      t.boolean :editUser, default: false
+      t.boolean :deleteUser, default: false
 
       t.timestamps
     end

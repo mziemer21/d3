@@ -1,28 +1,33 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version: 2.1.0;
+Rails: 4.0.4;
+Server: Thin 1.6.2;
 
-Things you may want to cover:
+How to initialize the project:
 
-* Ruby version
+1. Navigate to  https://github.com/DeweyDecibelDatabase/d3
 
-* System dependencies
+2. Download the zip on the right navigation
 
-* Configuration
+3. In terminal, navigate to “D3-Master” folder
 
-* Database creation
+4. run <tt>bundle install</tt>
 
-* Database initialization
+5. run <tt>rake db:migrate RAILS_ENV=development</tt>
 
-* How to run the test suite
+6. run <tt>rails s</tt> to start the sever
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+7. open a brwoser, index of URL: https://localhost:3000
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+Instruction to run RSpec Test:
+
+1. In terminal, navigate to folder “D3-Master”
+
+2. Run command <tt>bundle exec rspec spec/models</tt>
+
+
+
+
