@@ -4,17 +4,19 @@ Ruby version: 2.1.0;
 Rails: 4.0.4;
 Server: Thin 1.6.2;
 
+NOTE: You must first have the proper version of Ruby and Rails installed.
+
 How to initialize the project:
 
 1. Navigate to  https://github.com/DeweyDecibelDatabase/d3
 
-2. Download the zip on the right navigation
+2. Download the zip on the right navigation, unzip.
 
-3. In terminal, navigate to “D3-Master” folder
+3. In terminal, navigate to “d3-Master” folder
 
 4. run <tt>bundle install</tt>
 
-5. run <tt>rake db:migrate RAILS_ENV=development</tt>
+5. run <tt>rake db:migrate RAILS_ENV=development</tt> if needed
 
 6. run <tt>rails s</tt> to start the sever
 
