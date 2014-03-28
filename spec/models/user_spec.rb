@@ -3,8 +3,8 @@ require 'spec_helper'
 describe User do
 
   before do
-    @privilege = Privilege.new
-    @user = User.new(name: "Example User", email: "user@example.com", privilege)
+    #@privilege = Privilege.new
+    @user = User.new(name: "Example User", email: "user@example.com")#, privilege)
   end
 
   subject { @user }
