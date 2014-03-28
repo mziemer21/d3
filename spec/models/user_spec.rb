@@ -3,24 +3,25 @@ require 'spec_helper'
 describe User do
 
   before do
-    @privilege = Privilege.new
-    @user = User.new(name: "Example User", email: "user@example.com", privilege)
+    @privilege = Privilege.new(qDrive: false, addSong: false, editSong: false, deleteSong: false, grantPermission: false, addUser: false, editUser: false, deleteUser: false)
+    @user = User.new(name: "Example User", email: "user@example.com", privilege: @privilege)
   end
 
   subject { @user }
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
+  it { should respond_to(:privilege)}
 
   it { should be_valid }
 
   describe "when name is not present" do
-    before { @user.name = " " }
+    before { @user.name = "" }
     it { should_not be_valid }
   end
   
   describe "when email is not present" do
-    before { @user.email = " " }
+    before { @user.email = "" }
     it { should_not be_valid }
   end
   
@@ -44,4 +45,5 @@ describe User do
       end
     end
   end
+
 end

@@ -6,14 +6,14 @@ class Privilege < ActiveRecord::Base
   #validates :qDrive, :addSong, :editSong, :deleteSong, presence: true
   #validates :grantPermission, :addUser, :editUser, :deleteUser, presence: true
 
-  validates :qDrive, inclusion: { in: [true,false] }
-  validates :addSong, inclusion: { in: [true,false] }
-  validates :editSong, inclusion: { in: [true,false] }
-  validates :deleteSong, inclusion: { in: [true, false] }
-  validates :grantPermission, inclusion: { in: [true, false] }
-  validates :addUser, inclusion: { in: [true,false] }
-  validates :editUser, inclusion: { in: [true,false] }
-  validates :deleteUser, inclusion: { in: [true,false] }
+  validates_inclusion_of :qDrive, in: [true, false]
+  validates_inclusion_of :addSong, in: [true, false]
+  validates_inclusion_of :editSong, in: [true, false]
+  validates_inclusion_of :deleteSong, in: [true, false]
+  validates_inclusion_of :grantPermission, in: [true, false]
+  validates_inclusion_of :addUser, in: [true, false]
+  validates_inclusion_of :editUser, in: [true, false]
+  validates_inclusion_of :deleteUser, in: [true ,false]
   
   def privilege
     @privilege
