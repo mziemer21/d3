@@ -3,8 +3,13 @@ require 'spec_helper'
 describe User do
 
   before do
+<<<<<<< HEAD
     @privilege = Privilege.new(qDrive: false, addSong: false, editSong: false, deleteSong: false, grantPermission: false, addUser: false, editUser: false, deleteUser: false)
     @user = User.new(name: "Example User", email: "user@example.com", privilege: @privilege)
+=======
+    #@privilege = Privilege.new
+    @user = User.new(name: "Example User", email: "user@example.com")#, privilege)
+>>>>>>> 26a814ef2bb918055d3c093eedd1c86d39c93662
   end
 
   subject { @user }
@@ -45,5 +50,9 @@ describe User do
       end
     end
   end
+<<<<<<< HEAD
 
 end
+=======
+end
+>>>>>>> 26a814ef2bb918055d3c093eedd1c86d39c93662
