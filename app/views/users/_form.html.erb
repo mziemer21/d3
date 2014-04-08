@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :privilege %><br>
-    <%= f.number_field :privilege %>
+    <%= f.collection_select :privilege_id, Privilege.all, :id, :id %>
   </div>
   <div class="actions">
     <%= f.submit %>
