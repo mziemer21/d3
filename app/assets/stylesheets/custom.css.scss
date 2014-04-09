@@ -27,10 +27,22 @@ textarea {
   margin-bottom: 10px;
 }
 
+/* header */
+header
+{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #F05133;
+  color: #333333;
+}
 
 /* footer */
 
 footer {
+  position:absolute;
+  bottom: 0;
+  width: 100%;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;

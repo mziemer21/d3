@@ -44,12 +44,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    colorbox-rails (0.1.1)
-      jquery-rails
-      rails (>= 3.1.1)
     daemons (1.1.9)
     diff-lcs (1.2.5)
-    discogs (1.1.1)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
@@ -180,8 +176,6 @@ DEPENDENCIES
   bootstrap-sass (~> 3.1.1.0)
   capybara (= 2.1.0)
   coffee-rails (= 4.0.1)
-  colorbox-rails (~> 0.1.1)
-  discogs (~> 1.1.1)
   factory_girl (~> 4.4.0)
   factory_girl_rails (~> 4.4.1)
   jbuilder (= 1.0.2)

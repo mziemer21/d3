@@ -22,7 +22,6 @@ gem 'sass-rails', '~> 4.0.0'
 
 gem 'bootstrap-sass', '~> 3.1.1.0'
 gem 'sprockets', '2.11.0'
-gem 'colorbox-rails', '~> 0.1.1'
 
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
@@ -32,7 +31,6 @@ gem 'jbuilder', '1.0.2'
 
 gem 'musicbrainz', '~> 0.7.6'
 gem 'lastfm', '~> 1.24.0'
-gem 'discogs', '~> 1.1.1'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
