@@ -11,21 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408214927) do
-
-  create_table "playlist_songs", force: true do |t|
-    t.integer  "playlist_id"
-    t.integer  "song_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "playlist_songs", ["playlist_id"], name: "index_playlist_songs_on_playlist_id"
-  add_index "playlist_songs", ["song_id"], name: "index_playlist_songs_on_song_id"
+ActiveRecord::Schema.define(version: 20140325055704) do
 
   create_table "playlists", force: true do |t|
     t.integer  "users"
-    t.text     "title"
+    t.string   "title"
     t.integer  "songs"
     t.boolean  "qDrive"
     t.text     "notes"
@@ -52,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140408214927) do
     t.string   "album"
     t.time     "duration"
     t.integer  "quality"
-    t.boolean  "fccFlag"
+    t.boolean  "fccClean"
     t.boolean  "is_qDrive"
     t.string   "location"
     t.string   "format"
@@ -64,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140408214927) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "privilege"
+    t.integer  "privilege_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

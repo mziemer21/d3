@@ -3,7 +3,7 @@ class CreatePlaylists < ActiveRecord::Migration
     create_table :playlists do |t|
       t.integer :users
       t.string :title
-      t.references :playlist_songs
+      t.integer :songs
       t.boolean :qDrive
       t.text :notes
 
