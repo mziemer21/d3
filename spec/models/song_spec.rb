@@ -12,7 +12,7 @@ describe Song do
   it { should respond_to(:artist) }
   it { should respond_to(:album) }
   it { should respond_to(:duration) }
-  it { should respond_to(:fccFlag) }
+  it { should respond_to(:fccClean) }
   it { should respond_to(:is_qDrive) }
   
   describe "when title is empty" do
@@ -41,7 +41,7 @@ describe Song do
   end
   
   describe "when quality is empty" do
-    before { @song.fccFlag = nil }
+    before { @song.fccClean = nil }
     it { should_not be_valid }
   end
   
