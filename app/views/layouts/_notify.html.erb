@@ -1,5 +1,13 @@
+<br/>
+<br/>
 <notify>
-	<div class="alert alert-info">
-		
-	</div>
+	<!-- <#% if qDrive.timesChanged > 0 %#> -->
+		<div class="alert alert-info alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<strong>Alert!</strong> Q-drive has been modified.
+			<!-- <strong>Alert!</strong> Q-drive has been modified <#%= qDrive.timesChanged %> <%= pluralize(qDrive.timesChanged, time)%#>. -->
+		</div>
+	<!-- <#% end %#> -->
 </notify>
+<br/>
+<br/>

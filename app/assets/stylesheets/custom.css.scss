@@ -9,6 +9,7 @@ html {
 
 body {
   padding-top: 60px;
+  font-family: 'Oswald', sans-serif;
 }
 
 section {
@@ -35,6 +36,16 @@ header
   width: 100%;
   background-color: #F05133;
   color: #333333;
+  font-family: 'Oswald', sans-serif;
+  // margin: 0 5px 0 5px;
+}
+
+/* notify */
+._notify
+{
+  position: relative;
+  margin: 10px 0 10px 0;
+  font-family: 'Oswald', sans-serif;
 }
 
 /* footer */
@@ -47,6 +58,7 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #999;
+  font-family: 'Oswald', sans-serif;
 }
 
 footer a {
