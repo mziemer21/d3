@@ -20,7 +20,7 @@ How to initialize the project:
 
 6. run <tt>rails s</tt> to start the sever
 
-7. open a brwoser, index of URL: https://localhost:3000
+7. open a browser, index of URL: https://localhost:3000
 
 
 
