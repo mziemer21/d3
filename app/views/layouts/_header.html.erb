@@ -1,20 +1,43 @@
 <!-- header partial -->
-<header>
-    	<div class="col-md-6">
+<!-- <header> -->
+    	<!-- <nav></nav> -->
     	<!-- <% link_to "homepage", "#", id: "logo" %> -->
    		<!-- a link to the wsum website -->
-    		<%= link_to(image_tag("wsumlogo.jpeg", :alt=> "WSUM", :title=> "WSUM", :size=> "130x130"), "http://wsum.org") %>
-    	</div>
+    		<!-- <%= link_to(image_tag("wsumlogo.jpeg", :alt=> "WSUM", :title=> "WSUM", :size=> "130x130"), "http://wsum.org") %> -->
+    	<!-- </div> -->
       <!-- <li> -->
         <!-- <ul class="nav pull-right"> -->
-        <div class="col-md-6">
-        	<h1>
-          		<%= link_to "Home", "home_page/home" %>
-          		<%= link_to "My Playlists", "playlist_page/plist" %>
-          		<%= link_to "Sign In/Out", "#" %>
-         	</h1>
-         </div>
+        <!-- <div class="col-md-6"> -->
+        	<!-- <h1> -->
+          		<!-- <%= link_to "Home", "home_page/home" %> -->
+          		<!-- <%= link_to "My Playlists", "playlist_page/plist" %> -->
+          		<!-- <%= link_to "Sign In/Out", "#" %> -->
+         	<!-- </h1> -->
+         <!-- </div> -->
         <!-- </ul> -->
       <!-- </li> -->
+<!-- </header> -->
+<!-- <hr/> -->
+
+
+
+
+
+
+<header class="navbar navbar-default wsum" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" id="wsum_logo" href="#">WSUM</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+      	 <li><a href="home_page#home">Home</a></li>
+      	 <li><a href="playlist_page#plist">My Playlists</a></li>
+      	 <li><a href="#">Sign Out</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </header>
-<hr/>

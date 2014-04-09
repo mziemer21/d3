@@ -40,6 +40,43 @@ header
   // margin: 0 5px 0 5px;
 }
 
+.wsum
+{
+  position: absolute;
+  top: 0;
+  background-color: #F05133;
+  color: #333333;
+  font-family: 'Oswald', sans-serif;
+}
+
+#wsum_logo
+{
+  background-color: #F05133;
+  color: black;
+  font-family: 'Oswald', sans-serif;
+}
+
+// a #wsum_logo:hover
+// {
+  // color: blue;
+// }
+
+// .navbar a:hover
+// {
+  // color: blue;
+// }
+
+#wsum_logo:hover
+{
+  background-color:black;
+  color:#F05133;
+}
+
+// .navbar-brand:hover
+// {
+  // color:blue;
+// }
+
 /* notify */
 notify
 {
