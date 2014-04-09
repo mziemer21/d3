@@ -1,4 +1,6 @@
 DeweyDecibelDatabase::Application.routes.draw do
+  get "playlist_page/plists"
+  get "admin_page/admin"
   root 'home_page#home'
   
   resources :playlists
