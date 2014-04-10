@@ -1,0 +1,2 @@
+module AddBoxHelper
+end

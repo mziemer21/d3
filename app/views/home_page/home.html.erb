@@ -1,18 +1,9 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>Dewey Decibel Database</title>
-  </head>
-  <body>
-    <h1>Homepage</h1>
-    <p>Will include dashboard, search and browse functionality in 
-    	the light box. Link to Playlists page.</p>
-    <h2>
-    <%= link_to "Search & Browse", "#", :data => { :colorbox => true, :colorbox_height => '300px', :colorbox_width => '300px', :colorbox_iframe => true } %>
-  </body>
-</html> -->
-
 <!-- jumbotron visible to all -->
+
+<%= render :partial => 'layouts/header' %>
+<%= render :partial => 'layouts/notify' %>
+
+
 <div class="container fluid">
 
 <div class="jumbotron">
@@ -23,29 +14,46 @@
   		<div class="col-lg-10">
     		<div class="input-group">
       			<span class="input-group-btn">
-      				<%= link_to '<button class="btn btn-default" type ="button">Search</button>'.html_safe, '#', :data => { :colorbox => true, :colorbox_height => '700px', :colorbox_width => '1200px', :colorbox_iframe => true } %>
+      				<%= link_to '<button class="btn btn-default" type ="button">Search</button>'.html_safe, 'search', :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true } %>
         			<!-- <button class="btn btn-default modalLauncher" data-toggle="modal" href="#searchModal"><%= link_to "Search", "#searchModal", :data => { :colorbox => true, :colorbox_height => '700px', :colorbox_width => '1000px', :colorbox_iframe => true } %></button> -->
       			</span>
       			<input type="text" class="form-control">
     		</div><!-- /input-group -->
   		</div><!-- /.col-lg-10 -->
   		<div class="col-lg-2">
-  			<%= link_to '<button class="btn btn-default" type ="button">Browse</button>'.html_safe, '#', :data => { :colorbox => true, :colorbox_height => '700px', :colorbox_width => '1200px', :colorbox_iframe => true } %>
+  			<%= link_to '<button class="btn btn-default" type ="button">Browse</button>'.html_safe, 'search', :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true } %>
   		</div><!-- /.col-lg-2 -->
 	</div><!-- /.row -->
 	<hr/>
 	<div class="row">
-  		<div class="col-lg-12">
+  		<div class="col-lg-10">
     		<div class="input-group">
       			<span class="input-group-btn">
-        			<button class="btn btn-default" type="button">&nbsp;&nbsp;Add&nbsp;&nbsp;</button>
+        			<%= link_to '<button class="btn btn-default" type ="button">&nbsp;&nbsp;Add&nbsp;&nbsp;</button>'.html_safe, 'add', :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true } %>
       			</span>
       			<input type="text" class="form-control">
     		</div><!-- /input-group -->
   		</div><!-- /.col-lg-10 -->
+  		
+  		<div class="col-lg-2"></div>
+  			<span class="dropdown">
+  				<button class="btn btn-default" type="button" dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+    			Dropdown <span class="caret"></span>
+  				</button>
+
+
+  				<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+  					Song<br>
+    				Artist<br>
+    				Album
+  				</ul>
+  			</span>
+		</div>
 	</div><!-- /.row -->
 </div>
 <!-- jumbotron only visible to admins w/add&edit priv -->
 </div> <!-- end fluid container -->
 
+
+<%= render :partial => 'layouts/footer'%>
 
