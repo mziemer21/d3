@@ -54,6 +54,7 @@ header
   background-color: #F05133;
   color: black;
   font-family: 'Oswald', sans-serif;
+  font-size: 1.75em;
 }
 
 // a #wsum_logo:hover
@@ -72,6 +73,48 @@ header
   color:#F05133;
 }
 
+#home_link
+{
+  background-color: #F05133;
+  color: black;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3em;
+}
+
+#home_link:hover
+{
+  background-color: black;
+  color: #F05133;
+}
+
+#playlist_link
+{
+  background-color: #F05133;
+  color: black;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3em;
+}
+
+#playlist_link:hover
+{
+  background-color: white;
+  color: #F05133;
+}
+
+#signout_link
+{
+  background-color: #F05133;
+  color: black;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3em;
+}
+
+#signout_link:hover
+{
+  background-color: #D92623;
+  color: white;
+}
+
 // .navbar-brand:hover
 // {
   // color:blue;
@@ -81,9 +124,18 @@ header
 notify
 {
   position: relative;
-  margin: 10px 0 10px 0;
+  /* margin: 10px 0 10px 0; */
   font-family: 'Oswald', sans-serif;
   width: 200px;
+}
+
+/* jumbotron */
+.jumbotron
+{
+  width: 75%;
+  margin: 0 auto;
+  /*font-family: 'Menlo', mono-space;*/
+  
 }
 
 /* footer */

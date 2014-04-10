@@ -14,8 +14,9 @@
 ActiveRecord::Schema.define(version: 20140409201617) do
 
   create_table "playlists", force: true do |t|
-    t.integer  "user_id"
-    t.string   "title"
+    t.integer  "users"
+    t.text     "title"
+    t.integer  "songs"
     t.boolean  "qDrive"
     t.text     "notes"
     t.datetime "created_at"
@@ -48,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140409201617) do
     t.string   "album"
     t.time     "duration"
     t.integer  "quality"
-    t.boolean  "fccClean"
+    t.boolean  "fccFlag"
     t.boolean  "is_qDrive"
     t.string   "location"
     t.string   "format"
@@ -60,7 +61,7 @@ ActiveRecord::Schema.define(version: 20140409201617) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "privilege_id"
+    t.integer  "privilege"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

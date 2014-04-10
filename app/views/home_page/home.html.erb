@@ -11,3 +11,41 @@
     <%= link_to "Search & Browse", "#", :data => { :colorbox => true, :colorbox_height => '300px', :colorbox_width => '300px', :colorbox_iframe => true } %>
   </body>
 </html> -->
+
+<!-- jumbotron visible to all -->
+<div class="container fluid">
+
+<div class="jumbotron">
+	<h2>WSUM Music Library Database</h2>
+	<h3 style="font-style: italic; /*text-align: right;*/">brought to you by D3</h3>
+	<hr/>
+	<div class="row">
+  		<div class="col-lg-10">
+    		<div class="input-group">
+      			<span class="input-group-btn">
+      				<%= link_to '<button class="btn btn-default" type ="button">Search</button>'.html_safe, '#', :data => { :colorbox => true, :colorbox_height => '700px', :colorbox_width => '1200px', :colorbox_iframe => true } %>
+        			<!-- <button class="btn btn-default modalLauncher" data-toggle="modal" href="#searchModal"><%= link_to "Search", "#searchModal", :data => { :colorbox => true, :colorbox_height => '700px', :colorbox_width => '1000px', :colorbox_iframe => true } %></button> -->
+      			</span>
+      			<input type="text" class="form-control">
+    		</div><!-- /input-group -->
+  		</div><!-- /.col-lg-10 -->
+  		<div class="col-lg-2">
+  			<%= link_to '<button class="btn btn-default" type ="button">Browse</button>'.html_safe, '#', :data => { :colorbox => true, :colorbox_height => '700px', :colorbox_width => '1200px', :colorbox_iframe => true } %>
+  		</div><!-- /.col-lg-2 -->
+	</div><!-- /.row -->
+	<hr/>
+	<div class="row">
+  		<div class="col-lg-12">
+    		<div class="input-group">
+      			<span class="input-group-btn">
+        			<button class="btn btn-default" type="button">&nbsp;&nbsp;Add&nbsp;&nbsp;</button>
+      			</span>
+      			<input type="text" class="form-control">
+    		</div><!-- /input-group -->
+  		</div><!-- /.col-lg-10 -->
+	</div><!-- /.row -->
+</div>
+<!-- jumbotron only visible to admins w/add&edit priv -->
+</div> <!-- end fluid container -->
+
+
