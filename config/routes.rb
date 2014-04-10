@@ -1,7 +1,8 @@
 DeweyDecibelDatabase::Application.routes.draw do
-  get "playlist_page/plists"
-  get "admin_page/admin"
+  
   root 'home_page#home'
+  match '/myplaylists',        to: "playlist_page#plist",    via: 'get'
+  match '/admin',              to: "admin_page#plist",       via: 'get'
   
   resources :playlists
 
