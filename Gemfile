@@ -9,6 +9,8 @@ gem 'thin', '1.6.2'
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
+  gem 'better_errors'
+  gem 'rails-erd'
 end
 
 group :test do
