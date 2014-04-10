@@ -2,7 +2,7 @@
 
 <p>
   <strong>Users:</strong>
-  <%= @playlist.users %>
+  <%= @playlist.user_id %>
 </p>
 
 <p>
@@ -12,7 +12,12 @@
 
 <p>
   <strong>Songs:</strong>
-  <%= @playlist.songs %>
+  <ul>
+  <% @playlist.songs.each do |song| %>
+    <li><%= song.title %></li>
+  <% end %>
+  </ul>
+
 </p>
 
 <p>

@@ -4,7 +4,13 @@ class SongsController < ApplicationController
   # GET /songs
   # GET /songs.json
   def index
-    @songs = Song.all
+    @songs = Song.order(:title)
+
+    respond_to do |format|
+      format.html
+      # json for all songs specified by query param q
+      format.json { render json: @songs.tokens(params[:q]) }
+    end
   end
 
   # GET /songs/1
@@ -55,6 +61,6 @@ class SongsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
-      params.require(:song).permit(:title, :artist, :album, :duration, :quality, :fccClean, :is_qDrive, :location, :format, :review)
+      params.require(:song).permit(:title, :artist, :album, :duration, :quality, :fccClean, :is_qDrive, :location, :format, :review, :playlists)
     end
 end

@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :users %><br>
-    <%= f.number_field :users %>
+    <%= f.collection_select :user, User.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :songs %><br>
-    <%= f.number_field :songs %>
+    <%= f.label :song_tokens, "Songs" %><br />
+    <%= f.text_field :song_tokens, data: {load: @playlist.songs} %>
   </div>
   <div class="field">
     <%= f.label :qDrive %><br>

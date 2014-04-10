@@ -17,9 +17,8 @@
   <tbody>
     <% @playlists.each do |playlist| %>
       <tr>
-        <td><%= playlist.users %></td>
+        <td><%= playlist.user_id %></td>
         <td><%= playlist.title %></td>
-        <td><%= playlist.songs %></td>
         <td><%= playlist.qDrive %></td>
         <td><%= playlist.notes %></td>
         <td><%= link_to 'Show', playlist %></td>

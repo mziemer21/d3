@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Privilege.create(qDrive: false, addSong: false, editSong: false, deleteSong: false, grantPermission: true, addUser: false, editUser: true, deleteUser: false)
+Privilege.create(qDrive: true, addSong: false, editSong: false, deleteSong: false, grantPermission: true, addUser: false, editUser: true, deleteUser: false)
+
