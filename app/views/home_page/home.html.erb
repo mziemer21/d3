@@ -23,13 +23,14 @@
   		<div class="col-lg-10">
     		<div class="input-group">
       			<span class="input-group-btn">
-        			<button class="btn btn-default modalLauncher" data-toggle="modal" href="#searchModal">Search</button>
+      				<%= link_to '<button class="btn btn-default" type ="button">Search</button>'.html_safe, '#', :data => { :colorbox => true, :colorbox_height => '700px', :colorbox_width => '1200px', :colorbox_iframe => true } %>
+        			<!-- <button class="btn btn-default modalLauncher" data-toggle="modal" href="#searchModal"><%= link_to "Search", "#searchModal", :data => { :colorbox => true, :colorbox_height => '700px', :colorbox_width => '1000px', :colorbox_iframe => true } %></button> -->
       			</span>
       			<input type="text" class="form-control">
     		</div><!-- /input-group -->
   		</div><!-- /.col-lg-10 -->
   		<div class="col-lg-2">
-        	<button class="btn btn-default modalLauncher" type="button">Browse</button>
+  			<%= link_to '<button class="btn btn-default" type ="button">Browse</button>'.html_safe, '#', :data => { :colorbox => true, :colorbox_height => '700px', :colorbox_width => '1200px', :colorbox_iframe => true } %>
   		</div><!-- /.col-lg-2 -->
 	</div><!-- /.row -->
 	<hr/>
