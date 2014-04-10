@@ -15,3 +15,30 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery.tokeninput
+//= require bootstrap
+//= require colorbox-rails
+
+
+$(document).ready(
+	function()
+	{
+		var modalOpt = 
+		{
+			'backdrop' : true,
+			'show' : true
+		};
+		
+		$('#searchModal').modal(modalOpt);
+		
+		
+		$('.modalLauncher').click(
+			function()
+			{
+				//console.log('booyah');
+				$('#searchModal').modal('show');
+				//$('#searchModal').css('opacity', 1);
+			}
+		);
+		
+	}
+);
