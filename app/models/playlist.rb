@@ -7,7 +7,7 @@ class Playlist < ActiveRecord::Base
 
   # setter for adding songs to playlist
   def song_tokens=(tokens)
-    self.song_ids = [1,2] #tokens.split(',').to_i #Song.ids_from_tokens(tokens)
+    self.song_ids = Song.ids_from_tokens(tokens)
   end
 
 
