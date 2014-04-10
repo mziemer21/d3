@@ -3,13 +3,14 @@ require 'spec_helper'
 describe Privilege do
 
   before do
-    @privilege = Privilege.new(qDrive: false, addSong: true, deleteSong: false, grantPermission: true, addUser: false, editUser: true, deleteUser: false)
+    @privilege = Privilege.new(qDrive: false, addSong: true, deleteSong: false, grantPermission: true, addUser: false, editUser: true, deleteUser: false, editSong: true)
   end
   
   subject { @privilege }
 
   it { should respond_to(:qDrive) }
   it { should respond_to(:addSong) }
+  it { should respond_to(:editSong) }
   it { should respond_to(:deleteSong)}
   it { should respond_to(:grantPermission) }
   it { should respond_to(:addUser) }
@@ -48,6 +49,11 @@ describe Privilege do
   
    describe "when editUser is empty" do
     before { @privilege.editUser = nil }
+    it { should_not be_valid }
+end
+
+   describe "when editSong is empty" do
+    before { @privilege.editSong = nil }
     it { should_not be_valid }
 end
 end
