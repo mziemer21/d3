@@ -29,6 +29,7 @@ describe UsersController do
   # in order to pass any filters (e.g. authentication) defined in
   # UsersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+  
 
   describe "GET index" do
     it "assigns all users as @users" do
@@ -80,6 +81,7 @@ describe UsersController do
         response.should redirect_to(User.last)
       end
     end
+    
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved user as @user" do
@@ -156,5 +158,6 @@ describe UsersController do
       response.should redirect_to(users_url)
     end
   end
+  
 
 end

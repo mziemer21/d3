@@ -18,6 +18,7 @@ group :test do
   gem 'capybara', '2.1.0'
   gem 'factory_girl', '~> 4.4.0'
   gem 'factory_girl_rails', '~> 4.4.1'
+  gem 'simplecov', '~> 0.7.1'
 end
 
 gem 'sass-rails', '~> 4.0.0'

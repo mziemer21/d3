@@ -40,15 +40,7 @@ class PrivilegesController < ApplicationController
   # PATCH/PUT /privileges/1
   # PATCH/PUT /privileges/1.json
   def update
-    respond_to do |format|
-      if @privilege.update(privilege_params)
-        format.html { redirect_to @privilege, notice: 'Privilege was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @privilege.errors, status: :unprocessable_entity }
-      end
-    end
+   
   end
 
   # DELETE /privileges/1
