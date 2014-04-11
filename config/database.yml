@@ -14,8 +14,8 @@ development:
   database: d3_development
   pool: 5
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: 
+  socket: /var/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,17 +23,17 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: d3_test
+  database: d3_development
   pool: 5
   username: root
   password:
-  socket: /tmp/mysql.sock
+  socket: /var/mysql/mysql.sock
 
 production:
   adapter: mysql2
   encoding: utf8
-  database: d3_production
+  database: d3
   pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+  username: rails
+  password: letmein
+  socket: /var/mysql/mysql.sock

@@ -1,4 +1,3 @@
-
 <search class>
 	<div class="row">
   		<div class="col-lg-10">
@@ -10,11 +9,24 @@
     		</div><!-- /input-group -->
   		</div><!-- /.col-lg-10 -->
 	</div><!-- /.row -->
+	<body>
 	<table class="table table-striped table-border table-hover">
-  		<thead><td><strong>Song</strong></td><td><strong>Artist</strong></td><td><strong>Album</strong></td></thead>
-        <tr>
-          <td>sdsd</td>
-        </tr>
-	</table>
+  		<thead>
+  			<tr>
+  			<th><strong>Song</strong></th>
+  			<th><strong>Artist</strong></th>
+  			<th><strong>Album</strong></th>
+  			</tr>
+  		</thead>
+		<tbody>
+        	<% @songs.each do |song| %>
+     		 <tr>
+       			<td><%= song.title %></td>
+       			<td><%= song.artist %></td>
+       			<td><%= song.album %></td>
+     		 </tr>
+   			<% end %>
+		</tbody>
+	</table> -->
+	</body>
 </search>
-

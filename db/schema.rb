@@ -14,9 +14,8 @@
 ActiveRecord::Schema.define(version: 20140409201617) do
 
   create_table "playlists", force: true do |t|
-    t.integer  "users"
-    t.text     "title"
-    t.integer  "songs"
+    t.integer  "user_id"
+    t.string   "title"
     t.boolean  "qDrive"
     t.text     "notes"
     t.datetime "created_at"
@@ -28,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140409201617) do
     t.integer "song_id"
   end
 
-  add_index "playlists_songs", ["playlist_id", "song_id"], name: "index_playlists_songs_on_playlist_id_and_song_id"
+  add_index "playlists_songs", ["playlist_id", "song_id"], name: "index_playlists_songs_on_playlist_id_and_song_id", using: :btree
 
   create_table "privileges", force: true do |t|
     t.boolean  "qDrive"
@@ -49,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140409201617) do
     t.string   "album"
     t.time     "duration"
     t.integer  "quality"
-    t.boolean  "fccFlag"
+    t.boolean  "fccClean"
     t.boolean  "is_qDrive"
     t.string   "location"
     t.string   "format"
@@ -61,7 +60,7 @@ ActiveRecord::Schema.define(version: 20140409201617) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "privilege"
+    t.integer  "privilege_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
