@@ -11,10 +11,10 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: d3_development
+  database: d3
   pool: 5
-  username: root
-  password: 
+  username: rails
+  password: letmein
   socket: /var/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -23,10 +23,10 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: d3_development
+  database: d3
   pool: 5
-  username: root
-  password:
+  username: rails
+  password: letmein
   socket: /var/mysql/mysql.sock
 
 production:
