@@ -106,6 +106,20 @@ header
   color: $wsum_orange;
 }
 
+#admin_link
+{
+  background-color: $wsum_orange;
+  color: $wsum_black;
+  font-family: $wsum_font;
+  font-size: 1.3em;
+
+  &:hover
+  {
+      background-color: $wsum_black;
+      color: $wsum_orange;
+  }
+}
+
 #signout_link
 {
   background-color: $wsum_orange;

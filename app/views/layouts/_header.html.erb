@@ -32,7 +32,10 @@
       	 <!-- <li><a href="home_page#home">Home</a></li> -->
       	 <li><%= link_to "Home", root_path, :id => "home_link" %></li>
       	 <li><%= link_to "My Playlists", myplaylists_path, :id => "playlist_link" %></li>
-      	 <li><%= link_to "Sign Out", signout_path, :id => "signout_link" %></li>
+          <!-- put if admin stmt here -->
+         <li><%= link_to "Admin Panel", admin_path, :id => "admin_link" %></li>
+         <!-- end if admin stmt -->
+         <li><%= link_to "Sign Out", signout_path, :id => "signout_link" %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
