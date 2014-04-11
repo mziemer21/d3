@@ -11,11 +11,11 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: d3
+  database: d3_development
   pool: 5
-  username: rails
-  password: letmein
-  socket: /var/mysql/mysql.sock
+  username: root
+  password: 
+  socket: /Applications/XAMPP/xamppfiles/var/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,17 +23,17 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: d3
+  database: d3_development
   pool: 5
-  username: rails
-  password: letmein
+  username: root
+  password: 
   socket: /var/mysql/mysql.sock
 
 production:
   adapter: mysql2
   encoding: utf8
-  database: d3
+  database: d3_development
   pool: 5
-  username: rails
-  password: letmein
+  username: root
+  password: 
   socket: /var/mysql/mysql.sock
