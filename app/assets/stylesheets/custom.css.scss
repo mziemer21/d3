@@ -14,7 +14,7 @@ html {
 
 body {
   padding-top: 60px;
-  font-family: 'Oswald', sans-serif;
+  font-family: $wsum_font;
 }
 
 section {
@@ -39,9 +39,9 @@ header
   position: absolute;
   top: 0;
   width: 100%;
-  background-color: #F05133;
-  color: #333333;
-  font-family: 'Oswald', sans-serif;
+  background-color: $wsum_orange;
+  color: $wsum_black;
+  font-family: $wsum_font;
   // margin: 0 5px 0 5px;
 }
 
@@ -49,16 +49,16 @@ header
 {
   position: absolute;
   top: 0;
-  background-color: #F05133;
-  color: #333333;
-  font-family: 'Oswald', sans-serif;
+  background-color: $wsum_orange;
+  color: $wsum_black;
+  font-family: $wsum_font;
 }
 
 #wsum_logo
 {
-  background-color: #F05133;
-  color: black;
-  font-family: 'Oswald', sans-serif;
+  background-color: $wsum_orange;
+  color: $wsum_black;
+  font-family: $wsum_font;
   font-size: 1.75em;
 }
 
@@ -74,48 +74,49 @@ header
 
 #wsum_logo:hover
 {
-  background-color:black;
-  color:#F05133;
+  background-color: $wsum_black;
+  color: $wsum_orange;
 }
 
 #home_link
 {
-  background-color: #F05133;
-  color: black;
-  font-family: 'Oswald', sans-serif;
+  background-color: $wsum_orange;
+  color: $wsum_black;
+  font-family: $wsum_font;
   font-size: 1.3em;
 }
 
 #home_link:hover
 {
-  background-color: black;
-  color: #F05133;
+  background-color: $wsum_black;
+  color: $wsum_orange;
 }
 
 #playlist_link
 {
-  background-color: #F05133;
-  color: black;
-  font-family: 'Oswald', sans-serif;
+  background-color: $wsum_orange;
+  color: $wsum_black;
+  font-family: $wsum_font;
   font-size: 1.3em;
 }
 
 #playlist_link:hover
 {
   background-color: white;
-  color: #F05133;
+  color: $wsum_orange;
 }
 
 #signout_link
 {
-  background-color: #F05133;
-  color: black;
-  font-family: 'Oswald', sans-serif;
+  background-color: $wsum_orange;
+  color: $wsum_black;
+  font-family: $wsum_font;
   font-size: 1.3em;
 }
 
 #signout_link:hover
 {
+  /* a nice red color */
   background-color: #D92623;
   color: white;
 }
@@ -161,9 +162,6 @@ notify
                 color: $wsum_orange;
         }
 }
-
-
-
 
 /* footer */
 
