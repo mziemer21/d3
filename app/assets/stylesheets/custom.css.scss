@@ -3,6 +3,11 @@
 
 /* universal */
 
+$wsum_orange: #f05133;
+$wsum_black: #333333;
+$wsum_font: 'Oswald', sans-serif;
+
+
 html {
   overflow-y: scroll;
 }
@@ -125,7 +130,7 @@ notify
 {
   position: relative;
   /* margin: 10px 0 10px 0; */
-  font-family: 'Oswald', sans-serif;
+  font-family: $wsum_font;
   width: 200px;
 }
 
@@ -137,6 +142,28 @@ notify
   /*font-family: 'Menlo', mono-space;*/
   
 }
+
+/* playlist_short */
+#playlist_short
+{
+        margin: 25px auto;
+}
+
+#playlist_short .list-group-item
+{
+        background-color: $wsum_orange;
+        color: $wsum_black;
+        font-family: $wsum_font;
+
+        &:hover
+        {
+                background-color: $wsum_black;
+                color: $wsum_orange;
+        }
+}
+
+
+
 
 /* footer */
 

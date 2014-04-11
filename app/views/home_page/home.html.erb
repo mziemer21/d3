@@ -38,14 +38,15 @@
   		<div class="col-lg-2"></div>
   			<span class="dropdown">
   				<button class="btn btn-default" type="button dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
-    			Criterion <span class="caret"></span>
+    			Criterion 
+          <span class="caret"></span>
   				</button>
 
 
   				<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-  					<li>Song</li>
-    				<li>Artist</li>
-    				<li>Album</li>
+  					<li><a href="#">Song</a></li>
+    				<li><a href="#">Artist</a></li>
+    				<li><a href="#">Album</a></li>
   				</ul>
   			</span>
 		</div>
@@ -54,6 +55,7 @@
 <!-- jumbotron only visible to admins w/add&edit priv -->
 </div> <!-- end fluid container -->
 
+<%= render :partial => 'layouts/playlist_short' %>
 
 <%= render :partial => 'layouts/footer'%>
 
