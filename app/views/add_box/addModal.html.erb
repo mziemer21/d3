@@ -1,10 +1,43 @@
 <h2> <%= "Keyword: " + @keyword %> </h2>
 <h2> <%= "Criterion: " + @criterion_show %> </h2>
 <h3>  Result: </h3>
-<% @rt.each do |entry| %>
-	<p>
-		<%= entry %>
-	</p>
+<% if @criterion_show == 'Artist' %>
+	<ul>
+	  <% @rt.each do |entry| %>
+		  <li>
+		  	Name: <%= entry['name'] %> 
+		  	<% if entry['type'] %>
+		  		Type: <%= entry['type'] %> 
+		  	<% end %>
+		  </li>
+	  <% end %>
+	</ul>
+<% end %>
+
+<% if @criterion_show == 'Album' %>
+	<ul>
+	  <% @rt.each do |entry| %>
+		  <li>
+		  	Title: <%= entry['title'] %> 
+		  	<% if entry['type'] %>
+		  		Type: <%= entry['type'] %> 
+		  	<% end %>
+		  </li>
+	  <% end %>
+	</ul>
+<% end %>
+
+<% if @criterion_show == 'Track' %>
+	<ul>
+	  <% @rt.each do |entry| %>
+		  <li>
+		  	Name: <%= entry['name'] %> 
+		  	<% if entry['type'] %>
+		  		Type: <%= entry['type'] %> 
+		  	<% end %>
+		  </li>
+	  <% end %>
+	</ul>
 <% end %>
 
 
