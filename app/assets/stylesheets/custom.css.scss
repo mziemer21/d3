@@ -8,6 +8,23 @@ $wsum_orange: #f05133;
 $wsum_black: #333333;
 $wsum_font: 'Oswald', sans-serif;
 
+.table-nonfluid {
+   // width: 50%;
+   float: left;
+   margin: 0 auto;
+}
+
+.songI-nonfluid {
+  // width: auto;
+  float: right;
+  margin: 0 auto;
+  
+  // img
+  // {
+    // margin
+  // }
+}
+
 
 html {
   overflow-y: scroll;
