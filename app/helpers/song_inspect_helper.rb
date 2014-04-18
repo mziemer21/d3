@@ -1,0 +1,2 @@
+module SongInspectHelper
+end

@@ -7,8 +7,13 @@ gem 'thin', '1.6.2'
 
 
 group :development, :test do
-  #gem 'mysql', '~> 2.9.1'
-  gem 'sqlite3', '1.3.8'
+  #gem 'sqlite3', '1.3.8'
+  
+  
+  gem 'mysql2', '~> 0.3.15'
+  #if you need to, remove this
+  
+  
   gem 'rspec-rails', '2.13.1'
   gem 'better_errors'
   gem 'rails-erd'
@@ -23,6 +28,8 @@ group :test do
 end
 
 gem 'jquery-rails', '3.0.4'
+
+gem 'binding_of_caller', '~> 0.7.2'
 
 gem 'sass-rails', '~> 4.0.0'
 
@@ -46,6 +53,7 @@ end
 
 #for deployment to heroku
 group :production do
+  gem 'mysql2', '~> 0.3.15'
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
