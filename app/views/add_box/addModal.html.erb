@@ -1,2 +1,9 @@
-<h1>AddBox#create</h1>
-<p>Find me in app/views/add_box/create.html.erb</p>
+<h1> <%= "Keyword:" + @keyword %> </h1>
+<h2>  result </h2>
+<% @rt.each do |entry| %>
+	<p>
+		<%= entry %>
+	</p>
+<% end %>
+
+
