@@ -1,5 +1,6 @@
-<h1> <%= "Keyword:" + @keyword %> </h1>
-<h2>  result </h2>
+<h2> <%= "Keyword: " + @keyword %> </h2>
+<h2> <%= "Criterion: " + @criterion_show %> </h2>
+<h3>  Result: </h3>
 <% @rt.each do |entry| %>
 	<p>
 		<%= entry %>
