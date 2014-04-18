@@ -1,6 +1,6 @@
 == README
 
-NOTE: Comment out mysql2 gems in Gemfile to run if you don't have mysql installed on your machine.
+NOTE: Comment out BOTH - production and development - mysql2 gems in Gemfile to run if you don't have mysql installed on your machine.
 
 Ruby version: 2.1.0;
 Rails: 4.0.4;
