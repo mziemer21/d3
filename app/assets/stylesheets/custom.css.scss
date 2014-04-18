@@ -25,6 +25,8 @@ $wsum_font: 'Oswald', sans-serif;
   // }
 }
 
+div
+
 
 html {
   overflow-y: scroll;
@@ -61,6 +63,11 @@ textarea {
 
 .center {
   text-align: center;
+}
+
+.iframe {
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .center h1 {
