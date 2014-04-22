@@ -29,6 +29,8 @@ end
 
 gem 'jquery-rails', '3.0.4'
 
+gem 'binding_of_caller', '~> 0.7.2'
+
 gem 'sass-rails', '~> 4.0.0'
 
 gem 'colorbox-rails', '~> 0.1.1'
