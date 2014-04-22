@@ -1,6 +1,5 @@
 require 'net/http'
 require 'json'
-require 'cgi'
 
 class AddBoxController < ApplicationController
 
@@ -34,7 +33,7 @@ class AddBoxController < ApplicationController
 
 		res = Net::HTTP.get_response(url)
 		res_json = res.body
-		res_hash = JSON.parse(res_json)[filter] #.first["area"]["name"]
+		res_hash = JSON.parse(res_json)[filter]
 		array_of_hash = []
 		array_of_string = []
 		if res_hash
