@@ -1,12 +1,13 @@
 DeweyDecibelDatabase::Application.routes.draw do
   
   root  'home_page#home'
-  match '/myplaylists',        to: "playlist_page#plists",    via: 'get'
-  match '/admin',              to: "admin_page#admin",        via: 'get'
-  match '/search',             to: "search_box#search",       via: 'get'
-  match '/add',                to: "add_box#addModal",        via: 'get'
+  match '/myplaylists',        to: "playlist_page#plists",      via: 'get'
+  match '/admin',              to: "admin_page#admin",          via: 'get'
+  match '/search',             to: "search_box#search",         via: 'get'
+  match '/add',                to: "add_box#addModal",          via: 'get'
+  match '/songInspect',        to: "song_inspect#songInspect",  via: 'get'
   
-  match '/signout',             to: "sessions#destroy",       via: 'delete'
+  match '/signout',            to: "sessions#destroy",          via: 'delete'
   
   resources :playlists
 

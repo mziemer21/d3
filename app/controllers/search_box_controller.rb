@@ -1,7 +1,7 @@
 class SearchBoxController < ApplicationController
   
   def search
-        @songs = Song.order(:title)
+        @songs = Song.order(:artist)
 
     respond_to do |format|
       format.html

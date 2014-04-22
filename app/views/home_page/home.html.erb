@@ -1,8 +1,19 @@
+<div id="all_content">
+<div id="yield_wrapper"
 <!-- jumbotron visible to all -->
 
 <%= render :partial => 'layouts/header' %>
 <%= render :partial => 'layouts/notify' %>
 
+<script>
+function lightbox(){    
+  var url1 = "/add?criterion=2&keyword=";
+  var url2 = document.getElementById("keyword").value;
+  var res = url1.concat(url2);
+  console.log(res);
+  $.colorbox({width:"80%", height:"80%", iframe:true, href:res});
+}
+</script>
 
 <div class="container fluid">
 
@@ -29,9 +40,9 @@
   		<div class="col-lg-10">
     		<div class="input-group">
       			<span class="input-group-btn">
-        			<%= link_to '<button class="btn btn-default" type ="button">&nbsp;&nbsp;Add&nbsp;&nbsp;</button>'.html_safe, 'add', :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true } %>
+        			<button class="btn btn-default" id="addParam" type ="button" onClick="lightbox()">Add</button>
       			</span>
-      			<input type="text" class="form-control">
+              <input class="form-control" id="keyword" type="text" />
     		</div><!-- /input-group -->
   		</div><!-- /.col-lg-10 -->
   		
@@ -44,8 +55,8 @@
 
 
   				<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-  					<li><a href="#">Song</a></li>
-    				<li><a href="#">Album</a></li>
+  					<li><a href="">Song</a></li>
+    				<li><a href="">Album</a></li>
   				</ul>
   			</span>
 		</div>
@@ -55,6 +66,9 @@
 </div> <!-- end fluid container -->
 
 <%= render :partial => 'layouts/playlist_short' %>
+
+</div>
+</div>
 
 <%= render :partial => 'layouts/footer'%>
 
