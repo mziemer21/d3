@@ -218,6 +218,31 @@ notify
         }
 }
 
+/* playlists page */
+.playlist_singleton
+{
+        font-family: $wsum_font;
+        color: $wsum_black;
+        background-color: #eee;
+        margin-bottom: 10px;
+        border-radius: 5px;
+
+        th
+        {
+            font-size: 1.25em;
+        }
+        
+}
+
+#playlist_owner
+{
+      font-family: $wsum_font;
+      color: $wsum_orange;
+      text-align: center;
+      padding: 10px;
+      margin-bottom: 30px;
+}
+
 /* footer */
 
 footer {

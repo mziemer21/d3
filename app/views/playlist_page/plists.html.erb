@@ -1,12 +1,18 @@
 <div id="all_content">
-<div id="yield_wrapper">
-<%= render :partial => 'layouts/header' %>
-<%= render :partial => 'layouts/notify' %>
+  <div id="yield_wrapper">
+    <%= render :partial => 'layouts/header' %>
+    <%= render :partial => 'layouts/notify' %>
 
-<h1>PlaylistPage#plists</h1>
-<p>Find me in app/views/playlist_page/plists.html.erb</p>
+    <h1 id="playlist_owner">[User]'s Playlists</h1>
 
-</div>
+    <div class="container">
+    <div class="list-group">
+      <% 6.times do %>
+        <%= render 'playlists/singleton' %>
+      <% end %>
+    </div>
+    </div>
+  </div>
 </div>
 
 <%= render :partial => 'layouts/footer' %>
