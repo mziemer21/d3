@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140409201617) do
     t.integer "song_id"
   end
 
-  add_index "playlists_songs", ["playlist_id", "song_id"], name: "index_playlists_songs_on_playlist_id_and_song_id", using: :btree
+  add_index "playlists_songs", ["playlist_id", "song_id"], name: "index_playlists_songs_on_playlist_id_and_song_id"
 
   create_table "privileges", force: true do |t|
     t.boolean  "qDrive"
