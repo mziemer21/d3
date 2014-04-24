@@ -1,6 +1,5 @@
 require 'net/http'
 require 'json'
-require 'cgi'
 
 class AddBoxController < ApplicationController
 
@@ -22,6 +21,7 @@ class AddBoxController < ApplicationController
 				criterion = "release-group"
 				filter = "release-groups"
 				@criterion_show = "Album"
+				@album_flag = true
 			else
 				criterion = "recording"
 				filter = criterion
@@ -34,40 +34,8 @@ class AddBoxController < ApplicationController
 
 		res = Net::HTTP.get_response(url)
 		res_json = res.body
-		res_hash = JSON.parse(res_json)[filter] #.first["area"]["name"]
-		array_of_hash = []
-		array_of_string = []
-		if res_hash
-			res_hash.each do |hash|
-				#hash = formart_json(hash)
-				array_of_hash << hash
-			end
-		end
-		return array_of_hash
+		res_hash = JSON.parse(res_json)[filter]
+		return res_hash
 	end
-
-	
-
-	#TODO 
-	def formart_json(hash)
-		name = hash["name"]
-		id  = hash["id"]
-		
-		if hash["area"] 
-			area = hash["area"]["name"]
-		else
-			area = ""
-		end
-
-		if hash["type"]
-			type = hash["type"]
-		else
-			type = ""
-		end
-		
-		string = name + " "  + id + " " + area + "  " + type
-		return string
-	end
-
 
 end

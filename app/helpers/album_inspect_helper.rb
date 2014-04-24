@@ -1,0 +1,2 @@
+module AlbumInspectHelper
+end
