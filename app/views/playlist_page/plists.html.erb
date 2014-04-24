@@ -3,7 +3,7 @@
     <%= render :partial => 'layouts/header' %>
     <%= render :partial => 'layouts/notify' %>
 
-    <h1 id="playlist_owner">[User]'s Playlists</h1>
+    <h1 id="playlist_owner"><%= User.first.name %>'s Playlists</h1>
 
     <div class="container">
     <div class="list-group">
