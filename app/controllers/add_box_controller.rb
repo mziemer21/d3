@@ -18,9 +18,10 @@ class AddBoxController < ApplicationController
 				filter = criterion
 				@criterion_show = "Artist"
 			when 2
-				criterion = "release-group"
-				filter = "release-groups"
+				criterion = "release"
+				filter = "releases"
 				@criterion_show = "Album"
+				@album_flag = true
 			else
 				criterion = "recording"
 				filter = criterion

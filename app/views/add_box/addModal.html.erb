@@ -4,6 +4,9 @@
 <% @rt.each do |entry| %>
 	<p>
 		<%= entry %>
+		<% if @album_flag  %>
+			<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "albumInspect", :album => entry["id"] } %>
+		<% end %>
 	</p>
 <% end %>
 

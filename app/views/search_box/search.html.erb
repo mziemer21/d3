@@ -27,7 +27,7 @@
        			<td><%= song.artist %></td>
        			<td><%= song.album %></td>
        			<td>
-       				<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, {:controller => "song_inspect", :action => "songInspect", :song => song.id } %>
+       				<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "song_inspect", :action => "songInspect", :song => song.id  %>
 
        			</td>
      		 </tr>
