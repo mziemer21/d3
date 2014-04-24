@@ -14,5 +14,21 @@ class PlaylistPageController < ApplicationController
   end
 
 
+  def singleton
+  end
+
+  '''def containsExplicit?
+    for song in @songs
+    
+      if !song.fccClean
+        return true
+      end
+
+    end
+
+    false
+
+  end'''
+
 
 end

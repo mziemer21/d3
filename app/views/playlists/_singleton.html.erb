@@ -1,7 +1,14 @@
 <div class="list-group-item playlist_singleton">
   <h4>TITLE</h4>
   <p>Duration: [TIME]</p>
-  <p>Explicit?</p>
+  <p>
+    Clean?
+    <% if false #@playlist.contains_explicit? %>
+      <span style="color:red">NO</span>
+    <% else %>
+      <span style="color:green">YES</span>
+    <% end %>
+  </p>
   <table class="table table-striped table-border table-hover">
     <thead>
       <tr>

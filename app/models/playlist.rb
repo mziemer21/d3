@@ -10,5 +10,14 @@ class Playlist < ActiveRecord::Base
     self.song_ids = Song.ids_from_tokens(tokens)
   end
 
+  def contains_explicit?
+    for some_song in self.songs
+      if !some_song.fccClean
+        return true
+      end
+    end
+    false
+  end
+
 
 end

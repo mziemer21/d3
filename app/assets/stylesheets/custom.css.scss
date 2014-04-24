@@ -264,15 +264,18 @@ footer {
 {
   /*margin: 0 auto;*/
   background-color: #eee;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  /* mess with block */
   /*margin-top: -45px;*/
-  margin-bottom: -20px;
+  /*margin-bottom: -20px;*/
   height: 45px;
   clear: both;
   padding: 10px 30px 0 30px;
   font-family: $wsum_font;
   font-size: 1.25em;
   text-align: center;
+  /*top: 100%;*/
 
   a
   {
