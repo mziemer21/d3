@@ -21,7 +21,6 @@ production:
 
 
 
-
 # SQLite version 3.x
 #   gem install sqlite3
 # MySQL.  Versions 4.1 and 5.0 are recommended.

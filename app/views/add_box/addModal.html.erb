@@ -1,13 +1,60 @@
+<search class>
+	<div class="row">
+  		<div class="col-lg-10">
+    		<div class="input-group">
+      			<span class="input-group-btn">
+      				<button class="btn btn-default" type ="button">Search</button>
+      			</span>
+      			<input type="text" class="form-control">			
+    		</div><!-- /input-group -->
+  		</div><!-- /.col-lg-10 -->
+	</div><!-- /.row -->
+	<body>
+	<table class="table table-striped table-border table-hover">
+  		
+	</table>
+	</body>
+</search>
+ 
 <h2> <%= "Keyword: " + @keyword %> </h2>
 <h2> <%= "Criterion: " + @criterion_show %> </h2>
 <h3>  Result: </h3>
-<% @rt.each do |entry| %>
-	<p>
-		<%= entry %>
-		<% if @album_flag  %>
-			<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "albumInspect", :album => entry["id"] } %>
-		<% end %>
-	</p>
+<% if @criterion_show == 'Artist' %>
+	<ul>
+	  <% @rt.each do |entry| %>
+		  <li>
+		  	Name: <%= entry['name'] %> 
+		  	<% if entry['type'] %>
+		  		Type: <%= entry['type'] %> 
+		  	<% end %>
+		  </li>
+	  <% end %>
+	</ul>
 <% end %>
 
+<% if @criterion_show == 'Album' %>
+	<ul>
+	  <% @rt.each do |entry| %>
+		  <li>
+		  	Title: <%= entry['title'] %> 
+		  	<% if entry['type'] %>
+		  		Type: <%= entry['type'] %> 
+		  	<% end %>
+		  </li>
+	  <% end %>
+	</ul>
+<% end %>
 
+<% if @criterion_show == 'Track' %>
+	<ul>
+	  <% @rt.each do |entry| %>
+		  <li>
+		  	Name: <%= entry['name'] %> 
+		  	<% if entry['type'] %>
+		  		Type: <%= entry['type'] %> 
+		  	<% end %>
+		  </li>
+	  <% end %>
+	</ul>
+<% end %>
+>>>>>>> a24316b5013bd1ab95091ccdd9cb1e1481e6cbc0
