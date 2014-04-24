@@ -1,4 +1,5 @@
 <div class="list-group-item playlist_singleton">
+  <%# TODO REMOVE, PLAYLIST POPULATE, PLAYLIST TITLE, PLAYLIST FCC FLAG %>
   <h4>TITLE</h4>
   <p>Duration: [TIME]</p>
   <p>
@@ -29,7 +30,8 @@
         <%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, {:controller => "song_inspect", :action => "songInspect", :song => song.id } %>
       </td>
       <td>
-        <%= link_to '<button type="button" class="btn btn-info"Remove</button>'.html_safe, {:controller => 'remove_song'} %>
+        <%#= link_to '<button type="button" class="btn btn-info">Remove</button>'.html_safe # {:controller => "playlists",:action => "remove_song"} %>
+        <button type="button" class="btn btn-info">Remove</button>
       </td>
     </tr>
     <% end %>
