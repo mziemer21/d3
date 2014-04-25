@@ -4,8 +4,12 @@
     <%= render :partial => 'layouts/notify' %>
 
     <h1 id="playlist_owner"><%= User.first.name %>'s Playlists</h1>
-
+  
+    
     <div class="container">
+
+    <%= button_to 'New Playlist', new_playlist_path,
+     :class => 'btn btn-success', :id => 'plist_new_btn', :method => 'get'  %> 
     <div class="list-group">
       <% 6.times do %>
         <%= render 'playlists/singleton' %>
