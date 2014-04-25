@@ -26,15 +26,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.privilege_id = params[:user][:privilege_id]
-
-
     if @user.save
       redirect_to :action => :index
     else
-      @title = 'Sign up'
+      @title = "Sign up"
       render 'new'
     end
-
   end
 
   # PATCH/PUT /users/1
