@@ -11,13 +11,11 @@ class Playlist < ActiveRecord::Base
   end
 
   def contains_explicit?
-    for some_song in self.songs
-      if !some_song.fccClean
-        return true
-      end
-    end
-    false
+    self.songs.exists?(:fccFlag => false)
   end
 
+  def user=(user)
+    self.user = user
+  end
 
 end

@@ -6,6 +6,8 @@ class PlaylistPageController < ApplicationController
   def plists
     @songs = Song.order(:artist)
 
+    @playlists = User.first.playlist
+
     respond_to do |format|
       format.html
       # json for all songs specified by query param q
@@ -14,21 +16,11 @@ class PlaylistPageController < ApplicationController
   end
 
 
+  #def post
+  #end
+
+
   def singleton
   end
-
-  '''def containsExplicit?
-    for song in @songs
-    
-      if !song.fccClean
-        return true
-      end
-
-    end
-
-    false
-
-  end'''
-
 
 end

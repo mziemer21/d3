@@ -31,7 +31,8 @@
       </td>
       <td>
         <%#= link_to '<button type="button" class="btn btn-info">Remove</button>'.html_safe # {:controller => "playlists",:action => "remove_song"} %>
-        <button type="button" class="btn btn-info">Remove</button>
+        <!--button type="button" class="btn btn-danger">Remove</button-->
+        <%= button_to 'Remove', myplaylists_path , :class => 'btn btn-danger' %>
       </td>
     </tr>
     <% end %>
