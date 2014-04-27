@@ -13,7 +13,12 @@ DeweyDecibelDatabase::Application.routes.draw do
   
   resources :playlists
 
-  resources :songs
+  resources :songs do
+    collection { 
+      post :search, to: 'songs#index' 
+      get :search, to: 'songs#index'
+    }
+  end
 
   resources :users
 
