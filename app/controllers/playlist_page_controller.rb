@@ -6,7 +6,7 @@ class PlaylistPageController < ApplicationController
   def plists
     @songs = Song.order(:artist)
 
-    @playlists = User.first.playlist
+    @playlists = User.first.playlists
 
     respond_to do |format|
       format.html
