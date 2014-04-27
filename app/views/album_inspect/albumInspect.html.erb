@@ -26,7 +26,7 @@
 </search>
 
 <h2> Details for 
-	<i> <%= @album_title %> </i> by 
+	<i> <%= @album_title %> </i> 
 	<b> <%= @artist %> </b>
 </h2>
 <!-- <h2> <%#= "Keyword: " + @keyword %> </h2>
@@ -37,6 +37,10 @@
   			<th><strong>Country</strong></th>
   			<th><strong>Release Date</strong></th>
   			<th><strong>Qulity</strong></th>
+  			<th><strong>Format</strong></th>
+  			<th><strong>Track Count</strong></th>
+  			<th><strong>Speciality</strong></th>
+
   			<th><strong>Inspect</strong></th>
   			</tr>
   		</thead>
@@ -56,10 +60,11 @@
 		  		<% end %>
 		  	</td>
 		  	<td> <%= entry['quality'] %> </td>
-		  	
+		  	<td> <%= entry['media'].first['format'] %> </td>
+		  	<td> <%= entry['media'].first['track-count'] %> </td>
+		  	<td> <%= entry['disambiguation'] %> </td>
 		  	<td>
-		  		place holder
-		  		<%#= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "albumInspect", :album => entry["id"] } %>
+		  		<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "songInspect", :albumToQuery => entry['id']  %>
 		  	<td>
 		  </tr>
 	  <% end %>
