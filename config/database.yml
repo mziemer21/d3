@@ -38,3 +38,4 @@ production:
   username: root
   password: 
   socket: /Applications/XAMPP/xamppfiles/var/mysql/mysql.sock
+  
