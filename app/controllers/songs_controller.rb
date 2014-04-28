@@ -54,7 +54,14 @@ class SongsController < ApplicationController
   # PATCH/PUT /songs/1protect_from_forgery :except => [:update, :delete, :create]
   # PATCH/PUT /songs/1.json
   def update
-  end
+      #@song = song.find(params[:id])
+      if @song.update_attributes(song_params)
+        flash[:success] = "Song updated"
+        redirect_to @song
+      else
+        render 'edit'
+      end
+    end
 
   # DELETE /songs/1
   # DELETE /songs/1.json
