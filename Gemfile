@@ -7,10 +7,10 @@ gem 'thin', '1.6.2'
 
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
+  #gem 'sqlite3', '1.3.8'
   
   
-  #gem 'mysql2', '~> 0.3.15'
+  gem 'mysql2', '~> 0.3.15'
   #if you need to, remove this
   
   
