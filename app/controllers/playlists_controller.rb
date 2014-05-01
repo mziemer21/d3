@@ -61,6 +61,11 @@ class PlaylistsController < ApplicationController
     end
   end
 
+
+  def remove_song
+    #@playlist.find(params[:
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_playlist
@@ -69,6 +74,7 @@ class PlaylistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def playlist_params
-      params.require(:playlist).permit(:user_id, :title, :qDrive, :notes, :song_tokens)
+      params.require(:playlist).permit(:users, :title, :qDrive, :notes, :song_tokens)
+      # EDITED FROM user_id
     end
 end

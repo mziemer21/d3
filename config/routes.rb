@@ -1,7 +1,7 @@
 DeweyDecibelDatabase::Application.routes.draw do
   
   get "album_inspect/albumInspect"
-  get "ablum_inspect/ablumInspect"
+  get "album_inspect/songInspect"
   root  'home_page#home'
   match '/myplaylists',        to: "playlist_page#plists",      via: 'get'
   match '/admin',              to: "admin_page#admin",          via: 'get'
@@ -13,7 +13,12 @@ DeweyDecibelDatabase::Application.routes.draw do
   
   resources :playlists
 
-  resources :songs
+  resources :songs do
+    collection { 
+      post :search, to: 'songs#index' 
+      get :search, to: 'songs#index'
+    }
+  end
 
   resources :users
 

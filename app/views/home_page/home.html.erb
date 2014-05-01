@@ -4,10 +4,17 @@
 <%= render :partial => 'layouts/notify' %>
 
 <script>
-function lightbox(){    
-  var url1 = "/add?criterion=2&keyword=";
-  var url2 = document.getElementById("keyword").value;
-  var res = url1.concat(url2);
+function addLightbox(){    
+  var url1 = "/add?criterion=";
+  var url2 = "&keyword=";
+  
+  var searchVal = document.getElementById("keyword").value;
+  var dropdown = document.getElementById("criterion");
+  var criterion = dropdown.options[dropdown.selectedIndex].value;
+
+  var start = url1.concat(criterion);
+  var next = start.concat(url2);
+  var res = next.concat(searchVal);
   console.log(res);
   $.colorbox({width:"80%", height:"80%", iframe:true, href:res});
 }
@@ -30,7 +37,7 @@ function lightbox(){
     		</div><!-- /input-group -->
   		</div><!-- /.col-lg-10 -->
   		<div class="col-lg-2">
-  			<%= link_to '<button class="btn btn-default" type ="button">Browse</button>'.html_safe, 'search', :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true } %>
+  			<%= link_to '<button class="btn btn-default" type ="button">Browse</button>'.html_safe, 'songs', :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true } %>
   		</div><!-- /.col-lg-2 -->
 	</div><!-- /.row -->
 	<hr/>
@@ -38,7 +45,7 @@ function lightbox(){
   		<div class="col-lg-10">
     		<div class="input-group">
       			<span class="input-group-btn">
-        			<button class="btn btn-default" id="addParam" type ="button" onClick="lightbox()">Add</button>
+        			<button class="btn btn-default" id="addParam" type ="button" onClick="addLightbox()">Add</button>
       			</span>
               <input class="form-control" id="keyword" type="text" />
     		</div><!-- /input-group -->
@@ -46,9 +53,11 @@ function lightbox(){
   		
   		<div class="col-lg-2"></div>
   			<span class="dropdown">
-  				<button class="btn btn-default" type="button dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
-    			Criterion 
-          <span class="caret"></span>
+  				<select class="btn btn-default" id="criterion">
+              <option value="3">Song</option>
+              <option value="2">Album</option>
+              <option value="1">Artist</option>
+             </select>
   				</button>
 
 

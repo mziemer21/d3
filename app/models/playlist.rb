@@ -10,5 +10,12 @@ class Playlist < ActiveRecord::Base
     self.song_ids = Song.ids_from_tokens(tokens)
   end
 
+  def contains_explicit?
+    self.songs.exists?(:fccFlag => false)
+  end
+
+  def user=(user)
+    self.user = user
+  end
 
 end
