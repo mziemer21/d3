@@ -1,11 +1,45 @@
+<%= render :partial => 'layouts/header' %>
+<%= render :partial => 'layouts/notify' %>
+
 <div id="all_content">
     <div id="yield_wrapper">
 
-        <%= render :partial => 'layouts/header' %>
-        <%= render :partial => 'layouts/notify' %>
+		<div class="iframe">
+			<div class="row">
+		  		<div class="col-lg-10">
+		    		<div class="input-group">
+		      			<span class="input-group-btn">
+		      				<button class="btn btn-default" type ="button">Search</button>
+		      			</span>
+		      			<input type="text" class="form-control">			
+		    		</div><!-- /input-group -->
+		  		</div><!-- /.col-lg-10 -->
+			</div><!-- /.row -->
+			<!-- <body> -->
+			<table class="table table-striped table-border table-hover">
+		  		<thead>
+		  			<tr>
+		  			<th><strong>Username</strong></th>
+		  			<th><strong>Email</strong></th>
+		  			<th><strong>Inspect</strong></th>
+		  			</tr>
+		  		</thead>
+				<tbody>
+		        	<% @users.each do |user| %>
+		     		 <tr>
+		       			<td><%= user.name %></td>
+		       			<td><%= user.email %></td>
+		       			<td>
+							<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "admin_inspect", :action => "adminInspect", :user => user.id %>
+							<!-- #= :controller => "admin_inspect", :action => "adminInspect", :user => user.id, %> -->
+		       			</td>
+		     		 </tr>
+		   			<% end %>
+				</tbody>
+			</table>
+			<!-- </body> -->
+		</div>
 
-        <h1>AdminPage#admin</h1>
-        <p>Find me in app/views/admin_page/admin.html.erb</p>
     </div>
 </div>
 
