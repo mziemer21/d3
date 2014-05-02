@@ -9,6 +9,8 @@ gem 'thin', '1.6.2'
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   
+  gem 'populator'
+  gem 'faker'
   
   #gem 'mysql2', '~> 0.3.15'
   #if you need to, remove this
@@ -53,7 +55,7 @@ end
 
 #for deployment to heroku
 group :production do
-  gem 'mysql2', '~> 0.3.15'
+  #gem 'mysql2', '~> 0.3.15'
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
