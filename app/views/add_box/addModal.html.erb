@@ -1,144 +1,124 @@
-<search class>
-	<div class="row">
-  		<div class="col-lg-10">
-    		<div class="input-group">
-      			<span class="input-group-btn">
-      				<button class="btn btn-default" type ="button">Search</button>
-      			</span>
-      			<input type="text" class="form-control">			
-    		</div><!-- /input-group -->
-  		</div><!-- /.col-lg-10 -->
-	</div><!-- /.row -->
-	<body>
-	<table class="table table-striped table-border table-hover">
-  		
-	</table>
-	</body>
-</search>
- 
-<h2> <%= "Keyword: " + @keyword %> </h2>
-<h2> <%= "Criterion: " + @criterion_show %> </h2>
-<table class="table table-striped table-border table-hover">
-  		
-		<!-- <tbody>
-        	<%# @songs.each do |song| %>
-     		 <tr>
-       			<td><%#= song.title %></td>
-       			<td><%#= song.artist %></td>
-       			<td><%#= song.album %></td>
-       			<td>
-       				<%#= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "song_inspect", :action => "songInspect", :song => song.id  %>
+<search>
+  <div class="iframe">
+	<h2> <%= "Keyword: " + @keyword %> </h2>
+	<h2> <%= "Criterion: " + @criterion_show %> </h2>
+	<table class="table table-striped table-border table-hover" id="myTable">
 
-       			</td>
-     		 </tr>
-   			<%# end %>
-		</tbody>
-	 -->
-
-
-
-<% if @criterion_show == 'Artist' %>
-	<thead>
-  			<tr>
-  			<th><strong>Name</strong></th>
-  			<th><strong>Genre</strong></th>
-  			<th><string>Type</string></th>
-  			<th><strong>Inspect</strong></th>
-  			</tr>
-  		</thead>
-	<tbody>
-	  <% @rt.each do |entry| %>
-		  <tr>
-		  	<td> <%= entry['name'] %> </td>
-		  	<td> 
-		  		<% if entry['area'] %>
-		  			<%= entry['disambiguation'] %> 
-		  		<% else %>
-		  			<%= "N/A" %>
-		  		<% end %>
-		  	</td>
-		  	<td> 
-		  		<% if entry['type'] %>
-		  			<%= entry['type'] %> 
-		  		<% else %>
-		  			<%= "N/A" %>
-		  		<% end %>
-		  	</td>
-		  	<td>
-		  		<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "artistInspect", 
-		  			:artist_id => entry["id"]} %>
-		  	<td>
-		  </tr>
-	  <% end %>
-	</tbody>
-<% end %>
-
-<% if @criterion_show == 'Album' %>
+	<% if @criterion_show == 'Artist' %>
 		<thead>
   			<tr>
-  			<th><strong>Title</strong></th>
-  			<th><strong>Artist</strong></th>
-  			<th><strong>Type</strong></th>
-  			<th><strong>Inspect</strong></th>
+	  			<th><strong>Name</strong></th>
+	  			<th><strong>Genre</strong></th>
+	  			<th><string>Type</string></th>
+	  			<th><strong>Inspect</strong></th>
   			</tr>
   		</thead>
-	<tbody>
-	  <% @rt.each do |entry| %>
-		  <tr>
-		  	<td> <%= entry['title'] %> </td>
-		  	<td> 
-		  		<% if entry['artist-credit']  %>
-		  			<%= entry['artist-credit'].first['artist']['name'] %> 
-		  		<% end %>
-		  	</td>
-		  	<td> 
-		  		<% if entry['primary-type'] %>
-		  			<%= entry['primary-type'] %> 
-		  		<% else %>
-		  			<%= "N/A" %>
-		  		<% end %>
-		  	</td>
-		  	<td>
-		  		<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "albumInspect", 
-		  			:album_id => entry["id"], :title => entry['title']} %>
-		  	<td>
-		  </tr>
-	  <% end %>
-	</tbody>
-<% end %>
+		<tbody>
+		  <% @rt.each do |entry| %>
+			  <tr>
+			  	<td> <%= entry['name'] %> </td>
+			  	<td> 
+			  		<% if entry['area'] %>
+			  			<%= entry['disambiguation'] %> 
+			  		<% else %>
+			  			<%= "N/A" %>
+			  		<% end %>
+			  	</td>
+			  	<td> 
+			  		<% if entry['type'] %>
+			  			<%= entry['type'] %> 
+			  		<% else %>
+			  			<%= "N/A" %>
+			  		<% end %>
+			  	</td>
+			  	<td>
+			  		<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "artistInspect", 
+			  			:artist_id => entry["id"]} %>
+			  	</td>
+			  </tr>
+		  <% end %>
+		</tbody>
+	<% end %>
 
-<% if @criterion_show == 'Track' %>
-	<thead>
+	<% if @criterion_show == 'Album' %>
+			<thead>
+	  			<tr>
+		  			<th><strong>Title</strong></th>
+		  			<th><strong>Artist</strong></th>
+		  			<th><strong>Type</strong></th>
+		  			<th><strong>Inspect</strong></th>
+	  			</tr>
+	  		</thead>
+		<tbody>
+		  <% @rt.each do |entry| %>
+			  <tr>
+			  	<td> <%= entry['title'] %> </td>
+			  	<td> 
+			  		<% if entry['artist-credit']  %>
+			  			<%= entry['artist-credit'].first['artist']['name'] %> 
+			  		<% end %>
+			  	</td>
+			  	<td> 
+			  		<% if entry['primary-type'] %>
+			  			<%= entry['primary-type'] %> 
+			  		<% else %>
+			  			<%= "N/A" %>
+			  		<% end %>
+			  	</td>
+			  	<td>
+			  		<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "albumInspect", 
+			  			:album_id => entry["id"], :title => entry['title']} %>
+			  	</td>
+			  </tr>
+		  <% end %>
+		</tbody>
+	<% end %>
+
+	<% if @criterion_show == 'Track' %>
+		<thead>
   			<tr>
-  			<th><strong>Title</strong></th>
-  			<th><strong>Artist</strong></th>
-  			<th><strong>Type</strong></th>
-  			<th><strong>Inspect</strong></th>
+	  			<th><strong>Title</strong></th>
+	  			<th><strong>Artist</strong></th>
+	  			<th><strong>Type</strong></th>
+	  			<th><strong>Inspect</strong></th>
   			</tr>
   		</thead>
-	<tbody>
-	  <% @rt.each do |entry| %>
-		  <tr>
-		  	<td> <%= entry['title'] %> </td>
-		  	<td> 
-		  		<% if entry['artist-credit']  %>
-		  			<%= entry['artist-credit'].first['artist']['name'] %> 
-		  		<% end %>
-		  	</td>
-		  	<td> 
-		  		<% if entry['releases'] %>
-		  			<%= entry['releases'].first['title'] %> 
-		  		<% else %>
-		  			<%= "N/A" %>
-		  		<% end %>
-		  	</td>
-		  	<td>
-		  		<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "songInspect", 
-		  			:albumToQuery =>entry['releases'].first['id'], :title => entry['title']} %>
-		  	<td>
-		  </tr>
-	  <% end %>
-	</tbody>
-<% end %>
-
-</table>
+		<tbody>
+		  <% @rt.each do |entry| %>
+			  <tr>
+			  	
+			  	<td> <%= entry['title'] %> </td>
+			  	
+			  	<td> 
+			  		<% if entry['artist-credit']  %>
+			  			<%= entry['artist-credit'].first['artist']['name'] %> 
+			  		<% end %>
+			  	</td>
+			  	
+			  	<td> 
+			  		<% if entry['releases'] %>
+			  			<%= entry['releases'].first['title'] %> 
+			  		<% else %>
+			  			<%= "N/A" %>
+			  		<% end %>
+			  	</td>
+			  	
+			  	<td>
+			  		<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "songInspect", 
+			  			:albumToQuery =>entry['releases'].first['id'], :title => entry['title']} %>
+			  	
+			  	</td>
+			  </tr>
+		  <% end %>
+		</tbody>
+	<% end %>
+	</table>
+	<script type="text/javascript">
+    $(document).ready(function(){
+        $('#myTable').dataTable({
+          "sPaginationType": "bootstrap"
+        });
+    });
+  </script>
+  </div>
+</search>

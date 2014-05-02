@@ -1,5 +1,4 @@
 class SongsController < ApplicationController
-  helper_method :sort_column, :sort_direction
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   # GET /songs
@@ -9,10 +8,7 @@ class SongsController < ApplicationController
 
     respond_to do |format|
       format.html {
-        @search = Song.search(params[:q])
-        @songs = @search.result.order(sort_column + " " + sort_direction)
-        @search.build_condition if @search.conditions.empty?
-        @search.build_sort if @search.sorts.empty?
+        @songs = Song.order(:title)
       }
       # json for all songs specified by query param q
       format.json { 
@@ -77,13 +73,5 @@ class SongsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
       params.require(:song).permit(:title, :artist, :album, :duration, :quality, :fccClean, :is_qDrive, :location, :format, :review, :playlists)
-    end
-
-    def sort_column
-      Song.column_names.include?(params[:sort]) ? params[:sort] : "title"
-    end
-    
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
