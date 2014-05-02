@@ -1,19 +1,27 @@
 DeweyDecibelDatabase::Application.routes.draw do
   
+  get "admin_inspect/admin_insepect"
   get "album_inspect/albumInspect"
-  get "ablum_inspect/ablumInspect"
+  get "album_inspect/songInspect"
+  get "album_inspect/artistInspect"
   root  'home_page#home'
-  match '/myplaylists',        to: "playlist_page#plists",      via: 'get'
-  match '/admin',              to: "admin_page#admin",          via: 'get'
-  match '/search',             to: "search_box#search",         via: 'get'
-  match '/add',                to: "add_box#addModal",          via: 'get'
-  match '/songInspect',        to: "song_inspect#songInspect",  via: 'get'
+  match '/myplaylists',        to: "playlist_page#plists",        via: 'get'
+  match '/admin',              to: "admin_page#admin",            via: 'get'
+  match '/search',             to: "search_box#search",           via: 'get'
+  match '/add',                to: "add_box#addModal",            via: 'get'
+  match '/songInspect',        to: "song_inspect#songInspect",    via: 'get'
+  match '/adminInspect',       to: "admin_inspect#adminInspect",  via: 'get'
   
   match '/signout',            to: "sessions#destroy",          via: 'delete'
   
   resources :playlists
 
-  resources :songs
+  resources :songs do
+    collection { 
+      post :search, to: 'songs#index' 
+      get :search, to: 'songs#index'
+    }
+  end
 
   resources :users
 

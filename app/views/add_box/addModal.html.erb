@@ -38,16 +38,39 @@
 
 
 <% if @criterion_show == 'Artist' %>
-	<ul>
+	<thead>
+  			<tr>
+  			<th><strong>Name</strong></th>
+  			<th><strong>Genre</strong></th>
+  			<th><string>Type</string></th>
+  			<th><strong>Inspect</strong></th>
+  			</tr>
+  		</thead>
+	<tbody>
 	  <% @rt.each do |entry| %>
-		  <li>
-		  	Name: <%= entry['name'] %> 
-		  	<% if entry['type'] %>
-		  		Type: <%= entry['type'] %> 
-		  	<% end %>
-		  </li>
+		  <tr>
+		  	<td> <%= entry['name'] %> </td>
+		  	<td> 
+		  		<% if entry['area'] %>
+		  			<%= entry['disambiguation'] %> 
+		  		<% else %>
+		  			<%= "N/A" %>
+		  		<% end %>
+		  	</td>
+		  	<td> 
+		  		<% if entry['type'] %>
+		  			<%= entry['type'] %> 
+		  		<% else %>
+		  			<%= "N/A" %>
+		  		<% end %>
+		  	</td>
+		  	<td>
+		  		<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "artistInspect", 
+		  			:artist_id => entry["id"]} %>
+		  	<td>
+		  </tr>
 	  <% end %>
-	</ul>
+	</tbody>
 <% end %>
 
 <% if @criterion_show == 'Album' %>
@@ -77,7 +100,7 @@
 		  	</td>
 		  	<td>
 		  		<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "albumInspect", 
-		  			:album => entry["id"], :title => entry['title'], :artist => entry['artist-credit'].first['artist']['name']} %>
+		  			:album_id => entry["id"], :title => entry['title']} %>
 		  	<td>
 		  </tr>
 	  <% end %>
@@ -85,16 +108,37 @@
 <% end %>
 
 <% if @criterion_show == 'Track' %>
-	<ul>
+	<thead>
+  			<tr>
+  			<th><strong>Title</strong></th>
+  			<th><strong>Artist</strong></th>
+  			<th><strong>Type</strong></th>
+  			<th><strong>Inspect</strong></th>
+  			</tr>
+  		</thead>
+	<tbody>
 	  <% @rt.each do |entry| %>
-		  <li>
-		  	Name: <%= entry['name'] %> 
-		  	<% if entry['type'] %>
-		  		Type: <%= entry['type'] %> 
-		  	<% end %>
-		  </li>
+		  <tr>
+		  	<td> <%= entry['title'] %> </td>
+		  	<td> 
+		  		<% if entry['artist-credit']  %>
+		  			<%= entry['artist-credit'].first['artist']['name'] %> 
+		  		<% end %>
+		  	</td>
+		  	<td> 
+		  		<% if entry['releases'] %>
+		  			<%= entry['releases'].first['title'] %> 
+		  		<% else %>
+		  			<%= "N/A" %>
+		  		<% end %>
+		  	</td>
+		  	<td>
+		  		<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "songInspect", 
+		  			:albumToQuery =>entry['releases'].first['id'], :title => entry['title']} %>
+		  	<td>
+		  </tr>
 	  <% end %>
-	</ul>
+	</tbody>
 <% end %>
 
 </table>

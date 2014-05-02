@@ -49,6 +49,8 @@ gem 'jbuilder', '1.0.2'
 gem 'musicbrainz', '~> 0.7.6'
 gem 'lastfm', '~> 1.24.0'
 
+gem 'ransack'
+
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
