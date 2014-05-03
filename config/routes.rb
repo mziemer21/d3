@@ -3,6 +3,7 @@ DeweyDecibelDatabase::Application.routes.draw do
   get "admin_inspect/admin_insepect"
   get "album_inspect/albumInspect"
   get "album_inspect/songInspect"
+  get "album_inspect/singleSongInspect"
   get "album_inspect/artistInspect"
   root  'home_page#home'
   match '/myplaylists',        to: "playlist_page#plists",        via: 'get'

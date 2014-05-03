@@ -46,7 +46,14 @@
 		  			<%= entry['title'] %> 
 		  		<% end %>
 		  	</td>
-		  	<td> <%= entry['length'] %> </td>
+		  	<td> 
+		  		<% $time_in_sec = entry['length']/1000 %> 
+		  		<%= sprintf("%d:%02d", $time_in_sec/60, $time_in_sec % 60 ) %>
+		  		<%# concat $time_in_sec/60 %>
+		  		<%# concat $time_in_sec/60 %>
+				<%# concat ":" %>
+		  		<%# concat $time_in_sec%60 %>
+			</td>
 		  	
 		  	<td>
 		  		placeholder
