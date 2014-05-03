@@ -1,5 +1,4 @@
-<%= render :partial => 'layouts/header' %>
-<%= render :partial => 'layouts/notify' %>
+
 
 <div class="iframe">
 <!-- <div class="row"> -->
@@ -10,10 +9,41 @@
 	<div class="col-md-6">
 		<!-- <body> -->
 			<table class="table table-striped table-bordered table-hover table-nonfluid">
-				<thead>
+<thead>
 				</thead>
 				<tbody>
-					
+					<tr>
+						<td><strong>Q-Drive Permissions</strong></td>
+						<td><%= @privileges.qDrive %></td>
+					</tr>
+					<tr>
+						<td><strong>Add Songs</strong></td>
+						<td><%= @privileges.addSong %></td>
+					</tr>  			
+					<tr>
+						<td><strong>Edit Songs</strong></td>
+						<td><%= @privileges.editSong %></td>
+					</tr>  			
+					<tr>
+						<td><strong>Duration</strong></td>
+						<td><%= @privileges.deleteSong%></td>
+					</tr>  			
+					<tr>
+						<td><strong>Can Grant Permissions</strong></td>
+						<td><%= @privileges.grantPermission %></td>
+						</tr>  			
+					<tr>
+						<td><strong>Add Users</strong></td>
+						<td><%= @privileges.addUser %></td>
+					</tr>  			
+					<tr>
+						<td><strong>Edit Users</strong></td>
+						<td><%= @privileges.editUser %></td>
+					</tr>  			
+					<tr>
+						<td><strong>Delete Users</strong></td>
+						<td><%= @privileges.deleteUser %></td>
+					</tr>  			
 				</tbody>
 			</table>
 		<!-- </body> -->
@@ -25,8 +55,3 @@
 	</div>
 <!-- </div> -->
 </div>
-
-
-
-
-<%= render :partial => 'layouts/footer' %>

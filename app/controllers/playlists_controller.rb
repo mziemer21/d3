@@ -15,6 +15,14 @@ class PlaylistsController < ApplicationController
   # GET /playlists/new
   def new
     @playlist = Playlist.new
+    
+      @songs = Song.order(:artist)
+
+      respond_to do |format|
+      format.html
+      # json for all songs specified by query param q
+      format.json { render json: @songs.tokens(params[:q]) }
+      end
   end
 
   # GET /playlists/1/edit
@@ -24,6 +32,7 @@ class PlaylistsController < ApplicationController
   # POST /playlists
   # POST /playlists.json
   def create
+    
     @playlist = Playlist.new(playlist_params)
 
     respond_to do |format|
@@ -40,6 +49,9 @@ class PlaylistsController < ApplicationController
   # PATCH/PUT /playlists/1
   # PATCH/PUT /playlists/1.json
   def update
+    
+    @songs = Song.order(:artist)
+    
     respond_to do |format|
       if @playlist.update(playlist_params)
         format.html { redirect_to myplaylists_path, notice: 'Playlist was successfully updated.' }

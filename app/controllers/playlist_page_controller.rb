@@ -4,7 +4,6 @@ class PlaylistPageController < ApplicationController
   #end
 
   def plists
-    @songs = Song.order(:artist)
 
     @playlists = User.first.playlists
 
