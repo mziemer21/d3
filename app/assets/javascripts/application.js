@@ -17,6 +17,9 @@
 //= require jquery.tokeninput
 //= require bootstrap
 //= require colorbox-rails
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap3
+
 
 
 $(document).ready(
@@ -39,6 +42,5 @@ $(document).ready(
 				//$('#searchModal').css('opacity', 1);
 			}
 		);
-		
 	}
 );

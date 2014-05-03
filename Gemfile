@@ -30,6 +30,7 @@ group :test do
 end
 
 gem 'jquery-rails', '3.0.4'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 gem 'binding_of_caller', '~> 0.7.2'
 
@@ -48,8 +49,6 @@ gem 'jbuilder', '1.0.2'
 
 gem 'musicbrainz', '~> 0.7.6'
 gem 'lastfm', '~> 1.24.0'
-
-gem 'ransack'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

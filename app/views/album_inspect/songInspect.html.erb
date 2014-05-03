@@ -1,20 +1,5 @@
-<search class>
-	<div class="row">
-  		<div class="col-lg-10">
-    		<div class="input-group">
-      			<span class="input-group-btn">
-      				<button class="btn btn-default" type ="button">Search</button>
-      			</span>
-      			<input type="text" class="form-control">			
-    		</div><!-- /input-group -->
-  		</div><!-- /.col-lg-10 -->
-	</div><!-- /.row -->
-	<body>
-	<table class="table table-striped table-border table-hover">
-  		
-	</table>
-	</body>
-</search>
+<search>
+  <div class="iframe">
 <h2> Details for 
 	<i> <%= @album_title %> </i> by 
 	<b> <%= @artist %> </b>
@@ -24,7 +9,7 @@
 <p> <%#= @songs_list %> </p>
 <% @songs_list.each do |entry| %>
 <% end %>
-<table class="table table-striped table-border table-hover">
+<table class="table table-striped table-border table-hover" id="myTable">
 	<thead>
   			<tr>
   			<th><strong>Number</strong></th>
@@ -51,8 +36,17 @@
 		  	<td>
 		  		placeholder
 		  		<%#= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "songInspect", :albumToQuery => entry['id']  %>
-		  	<td>
+		  	</td>
 		  </tr>
 	  <% end %>
 	</tbody>
 </table>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#myTable').dataTable({
+          "sPaginationType": "bootstrap"
+        });
+    });
+  </script>
+    </div>
+</search>

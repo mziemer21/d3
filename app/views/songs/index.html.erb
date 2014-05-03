@@ -1,25 +1,11 @@
 <search>
   <div class="iframe">
-  <div class="row">
-      <div class="col-lg-10">
-        <div class="input-group">
-        <%= search_form_for @search, url: search_songs_path, :html => {:class => "form-inline"}, method: :post do |f| %>
-          <%= f.condition_fields do |c| %>
-            <%= render "condition_fields", f: c %>
-          <% end %>
-          <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
-          <div class="actions"><%= f.submit "Search", :name => nil, :class => "btn btn-default" %></div>
-        <% end %>
-        </div><!-- /input-group -->
-      </div><!-- /.col-lg-10 -->
-  </div><!-- /.row -->
-  <!-- <body> -->
-  <table class="table table-striped table-border table-hover">
+  <table class="table table-striped table-border table-hover" id="myTable">
       <thead>
         <tr>
-        <th><strong><%= sortable "title" %></strong></th>
-        <th><strong><%= sortable "artist" %></strong></th>
-        <th><strong><%= sortable "album" %></strong></th>
+        <th><strong>Title</strong></th>
+        <th><strong>Artist</strong></th>
+        <th><strong>Album</strong></th>
         <th><strong>Inspect</strong></th>
         </tr>
       </thead>
@@ -38,5 +24,32 @@
     </tbody>
   </table>
   <!-- </body> -->
+  <script type="text/javascript">
+    function getURLParameter(name) {
+        return decodeURI(
+            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+        );
+    }
+
+    $(document).ready(function(){
+        var searchParam = getURLParameter('keyword');
+        var filter;
+        if(searchParam != "null")
+        {
+          filter = searchParam;
+        }
+        else {
+          filter = "";
+        }
+
+        var table = $('#myTable').dataTable({
+          "sPaginationType": "bootstrap"
+        });
+
+        table.fnFilter( filter );
+       
+    });
+
+  </script>
   </div>
 </search>
