@@ -25,9 +25,31 @@
   </table>
   <!-- </body> -->
   <script type="text/javascript">
-    $('#myTable').dataTable({
-      "sPaginationType": "bootstrap"
+    function getURLParameter(name) {
+        return decodeURI(
+            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+        );
+    }
+
+    $(document).ready(function(){
+        var searchParam = getURLParameter('keyword');
+        var filter;
+        if(searchParam != "null")
+        {
+          filter = searchParam;
+        }
+        else {
+          filter = "";
+        }
+
+        var table = $('#myTable').dataTable({
+          "sPaginationType": "bootstrap"
+        });
+
+        table.fnFilter( filter );
+       
     });
+
   </script>
   </div>
 </search>
