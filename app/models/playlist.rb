@@ -14,7 +14,7 @@ class Playlist < ActiveRecord::Base
   end
 
   def contains_explicit?
-    self.songs.exists?(:fccFlag => false)
+    self.songs.exists?(:fccClean => false)
   end
 
   def user=(user)
