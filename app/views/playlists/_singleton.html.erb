@@ -2,7 +2,7 @@
   <%# TODO REMOVE, PLAYLIST POPULATE, PLAYLIST TITLE, PLAYLIST FCC FLAG %>
   <div class="row">
     <div class="col-md-6">
-      <h4>TITLE</h4>
+      <h4><%= playlist.title %></h4>
       <p>Duration: [TIME]</p>
       <p>
         Clean?
@@ -29,7 +29,7 @@
       </tr>
     </thead>
     <tbody>
-    <% @songs.each do |song| %>
+    <% playlist.songs.each do |song| %>
     <tr>
       <td><%= song.title %></td>
       <td><%= song.artist %></td>
@@ -41,7 +41,7 @@
         <!-- <%#= link_to '<button type="button" class="btn btn-info"Remove</button>'.html_safe, {:controller => 'remove_song'} %> -->
         <%#= link_to '<button type="button" class="btn btn-info">Remove</button>'.html_safe # {:controller => "playlists",:action => "remove_song"} %>
         <!--button type="button" class="btn btn-danger">Remove</button-->
-        <%= button_to 'Remove', playlist_song_path(playlist.id, song.id) , method: :delete, :class => 'btn btn-warning' %>
+        <%= button_to 'Remove', remove_song_from_playlist_path({ playlist_id: playlist.id, song_id: song.id }) , method: :delete, :class => 'btn btn-warning' %>
       </td>
     </tr>
     <% end %>

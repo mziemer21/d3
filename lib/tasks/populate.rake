@@ -5,7 +5,7 @@ namespace :db do
     require 'faker'
     
     Song.delete_all    
-    #Playlist.delete_all
+    Playlist.delete_all
     
     me = User.first
 
@@ -21,20 +21,20 @@ namespace :db do
       song.review = nil
     end
 
-    #Playlist.populate 3 do |plist|
-      #plist.user = me.id
-      #plist.song = Song.all
+    Playlist.populate 3 do |plist|
+      plist.user_id = me.id
+      plist.songs = Song.all
       
-      #Song.all.each do |song|
-      #  plist.add(song.id)
-      #end
+      '''Song.all.each do |song|
+        plist.add(song.id)
+      end'''
 
 
       #plist.user << User.first
 
       #plist.songs << Song.all
           
-    #end
+    end
 
   end
 end
