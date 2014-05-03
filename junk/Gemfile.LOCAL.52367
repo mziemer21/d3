@@ -7,19 +7,8 @@ gem 'thin', '1.6.2'
 
 
 group :development, :test do
+  #gem 'mysql', '~> 2.9.1'
   gem 'sqlite3', '1.3.8'
-  
-  gem 'populator'
-  gem 'faker'
-
-  gem 'debugger'
-  
-  gem 'mysql2', '~> 0.3.15'
-  #if you need to, remove this
-  #gem 'populator'
-  #gem 'faker'
-  
-  
   gem 'rspec-rails', '2.13.1'
   gem 'better_errors'
   gem 'rails-erd'
@@ -34,9 +23,6 @@ group :test do
 end
 
 gem 'jquery-rails', '3.0.4'
-gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
-
-gem 'binding_of_caller', '~> 0.7.2'
 
 gem 'sass-rails', '~> 4.0.0'
 
@@ -54,15 +40,12 @@ gem 'jbuilder', '1.0.2'
 gem 'musicbrainz', '~> 0.7.6'
 gem 'lastfm', '~> 1.24.0'
 
-#gem "flat-ui-rails"
-
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
 
 #for deployment to heroku
 group :production do
-  #gem 'mysql2', '~> 0.3.15'
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
