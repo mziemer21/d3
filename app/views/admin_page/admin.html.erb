@@ -1,6 +1,17 @@
 <%= render :partial => 'layouts/header' %>
 <%= render :partial => 'layouts/notify' %>
 
+<script>
+function addLightbox(userID){    
+  var url1 = "/adminInspect?userID=";
+  
+  var start = url1.concat(userID);
+
+  console.log(start);
+  $.colorbox({width:"80%", height:"80%", iframe:true, href:start});
+}
+</script>
+
 <div id="all_content">
     <div id="yield_wrapper">
 
@@ -30,8 +41,10 @@
 		       			<td><%= user.name %></td>
 		       			<td><%= user.email %></td>
 		       			<td>
-							<%= button_to "Info", {:action => "adminInspect", :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true }}, {class="btn btn-info"}%>
-							<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "admin_inspect", :action => "adminInspect", :user => user.id %>
+		       				<button class="btn btn-default" id="addParam" type ="button" onClick="addLightbox(<%= user.id %>)">Info</button>
+		       				
+							<%#= button_to "Info", {:controller => "admin_inspect", :action => "adminInspect", :user => user.id, :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true }}, {}%>
+							<%#= link_to '<button type="button" class="btn btn-info" onClick="addLightbox()">Info</button>'.html_safe, :controller => "admin_inspect", :action => "adminInspect", :user => user.id %>
 							<!-- #= :controller => "admin_inspect", :action => "adminInspect", :user => user.id, %> -->
 		       			</td>
 		     		 </tr>
