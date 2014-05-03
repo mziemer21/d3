@@ -10,9 +10,7 @@
 /tmp
 
 # Ignore other unneeded files.
-database.yml
-Gemfile
-Gemfile.lock
+# database.yml
 doc/
 *.swp
 *~
@@ -20,11 +18,8 @@ doc/
 .DS_Store
 .idea
 .secret
+<<<<<<< HEAD
 
-
-Gemfile
-Gemfile.lock
-
-app/junk
-
-./junk
+config/database.yml
+=======
+>>>>>>> c00faaaeb13ffa65d13ba3a33244bc1b671f3070
