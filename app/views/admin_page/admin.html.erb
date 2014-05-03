@@ -30,6 +30,7 @@
 		       			<td><%= user.name %></td>
 		       			<td><%= user.email %></td>
 		       			<td>
+							<%= button_to "Info", {:action => "adminInspect", :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true }}, {class="btn btn-info"}%>
 							<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "admin_inspect", :action => "adminInspect", :user => user.id %>
 							<!-- #= :controller => "admin_inspect", :action => "adminInspect", :user => user.id, %> -->
 		       			</td>
