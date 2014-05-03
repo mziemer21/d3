@@ -22,4 +22,10 @@ class Song < ActiveRecord::Base
     tokens.gsub!(/<<<(.+?)>>>/) { create!(title: $1).id }
     tokens.split(',')
   end
+
+
+  def fccClean
+    self.fccFlag
+  end
+
 end
