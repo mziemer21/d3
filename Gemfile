@@ -8,9 +8,6 @@ gem 'thin', '1.6.2'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
-  
-  gem 'populator'
-  gem 'faker'
 
   gem 'debugger'
   
@@ -53,6 +50,8 @@ gem 'jbuilder', '1.0.2'
 
 gem 'musicbrainz', '~> 0.7.6'
 gem 'lastfm', '~> 1.24.0'
+
+#gem "flat-ui-rails"
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
