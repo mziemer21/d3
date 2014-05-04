@@ -11,7 +11,7 @@
 /tmp
 
 # Ignore other unneeded files.
-database.yml
+config/database.yml
 Gemfile
 Gemfile.lock
 doc/
