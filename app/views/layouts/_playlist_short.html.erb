@@ -22,7 +22,7 @@
     </a-->
 
     <% @playlists.last(5).reverse.each do |playlist| %>
-      <a href="<%= playlists_path %>" class="list-group-item">
+      <a href="<%= playlist_path(playlist.id) %>" class="list-group-item">
         <div class="row">
           <div class="col-md-6">
             <h4><%= playlist.title %></h4>
