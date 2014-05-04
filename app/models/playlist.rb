@@ -14,11 +14,22 @@ class Playlist < ActiveRecord::Base
   end
 
   def contains_explicit?
-    self.songs.exists?(:fccClean => false)
+    self.songs.exists?(fccFlag: false)
   end
 
   def user=(user)
     self.user = user
+  end
+
+  def get_duration
+    sum = 0
+
+    songs.each do |song|
+      sum += song.duration.to_f
+    end
+
+    Time.at(sum).utc.strftime('%H:%M:%S')
+
   end
 
 end

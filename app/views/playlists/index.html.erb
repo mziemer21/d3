@@ -1,34 +1,22 @@
-<h1>Listing playlists</h1>
+<div id="all_content">
+  <div id="yield_wrapper">
+    <%= render :partial => 'layouts/header' %>
+    <%= render :partial => 'layouts/notify' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Users</th>
-      <th>Title</th>
-      <th>Songs</th>
-      <th>Qdrive</th>
-      <th>Notes</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <h1 id="playlist_owner"><%= User.first.name %>'s Playlists</h1>
+  
+    
+    <div class="container">
 
-  <tbody>
-    <% @playlists.each do |playlist| %>
-      <tr>
-        <td><%= playlist.user_id %></td>
-        <td><%= playlist.title %></td>
-        <td><%= playlist.qDrive %></td>
-        <td><%= playlist.notes %></td>
-        <td><%= link_to 'Show', playlist %></td>
-        <td><%= link_to 'Edit', edit_playlist_path(playlist) %></td>
-        <td><%= link_to 'Destroy', playlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <%= button_to 'New Playlist', new_playlist_path,
+     :class => 'btn btn-success', :id => 'plist_new_btn', :method => 'get'  %> 
+      <div class="list-group">
+        <% @playlists.each do |playlist| %>
+          <%= render partial: 'playlists/singleton', locals: { playlist: playlist} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Playlist', new_playlist_path %>
+<%= render :partial => 'layouts/footer' %>
