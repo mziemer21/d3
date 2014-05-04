@@ -1,5 +1,6 @@
 DeweyDecibelDatabase::Application.routes.draw do
   
+  get "add_page/addSingleSong"
   get "admin_inspect/admin_insepect"
   get "album_inspect/albumInspect"
   get "album_inspect/songInspect"

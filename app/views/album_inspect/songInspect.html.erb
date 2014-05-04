@@ -1,7 +1,7 @@
 <search>
   <div class="iframe">
 <h2> Details for 
-	<i> <%= @album_title %> </i> by 
+	<i> <%= @title %> </i> by 
 	<b> <%= @artist %> </b>
 </h2>
 <!-- <h2> <%#= "Keyword: " + @keyword %> </h2>
@@ -34,15 +34,10 @@
 		  	<td> 
 		  		<% $time_in_sec = entry['length']/1000 %> 
 		  		<%= sprintf("%d:%02d", $time_in_sec/60, $time_in_sec % 60 ) %>
-		  		<%# concat $time_in_sec/60 %>
-		  		<%# concat $time_in_sec/60 %>
-				<%# concat ":" %>
-		  		<%# concat $time_in_sec%60 %>
-			</td>
+		  	</td>
 		  	
 		  	<td>
-		  		placeholder
-		  		<%#= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "songInspect", :albumToQuery => entry['id']  %>
+		  		<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "singleSongInspect", :songToQuery => entry["recording"]["id"], :releaseId => @releaseId  %>
 		  	</td>
 		  </tr>
 	  <% end %>
