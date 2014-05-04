@@ -15,6 +15,7 @@ DeweyDecibelDatabase::Application.routes.draw do
   match '/adminInspect',       to: "admin_inspect#adminInspect",        via: 'get'
   match '/deleteConfirm',      to: "delete_user_conf#deleteConfirm",    via: 'get'
   match '/deletePlaylist',     to: "delete_playlist_conf#deleteConfirm",via: 'get'
+  match '/showPlaylist',        to: "playlists#showBox",                 via: 'get'
   
   match '/signout',            to: "sessions#destroy",          via: 'delete'
 

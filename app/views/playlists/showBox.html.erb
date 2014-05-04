@@ -1,0 +1,61 @@
+<script>
+	
+$(document).ready(function () {
+	$('#plink').click(function(){
+		parent.$.colorbox.close();
+		window.parent.location.href='/playlists';
+	}
+);
+});
+	
+</script>
+
+
+
+<search>
+	<div class="iframe">
+		<p>
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+  				<h1><center>
+  					<strong><%= @playlist.title %></strong>
+  				</center></h1>
+  			</div>
+  			<div class="col-md-2">
+  				<%= link_to '<button type="button" id="plink" class="btn btn-success">Go To My Playlists</button>'.html_safe %>
+ 			</div>
+		</p>
+	<!-- <body> -->
+	<table class="table table-striped table-border table-hover" id="myTable">
+  		<thead>
+  			<tr>
+  			<th><strong>Song</strong></th>
+  			<th><strong>Artist</strong></th>
+  			<th><strong>Album</strong></th>
+  			<th><strong>Inspect</strong></th>
+  			</tr>
+  		</thead>
+		<tbody>
+        	<% @playlist.songs.each do |song| %>
+     		 <tr>
+       			<td><%= song.title %></td>
+       			<td><%= song.artist %></td>
+       			<td><%= song.album %></td>
+       			<td>
+       				<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "song_inspect", :action => "songInspect", :song => song.id  %>
+
+       			</td>
+     		 </tr>
+   			<% end %>
+		</tbody>
+	</table>
+	<!-- </body> -->
+	</div>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#myTable').dataTable({
+          "sPaginationType": "bootstrap"
+        });
+    });
+  </script>
+</search>

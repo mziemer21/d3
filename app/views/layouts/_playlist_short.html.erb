@@ -1,3 +1,15 @@
+<script>
+function addLightbox(playlistID){    
+  var url1 = "/showPlaylist?playlistID=";
+  
+  var start = url1.concat(playlistID);
+
+  console.log(start);
+  $.colorbox({width:"80%", height:"80%", iframe:true, href:start});
+}
+</script>
+
+
 <div class="container" id="playlist_short">
   <div class="list-group">
     <!--a href="#" class="list-group-item">
@@ -22,7 +34,8 @@
     </a-->
 
     <% @playlists.last(5).reverse.each do |playlist| %>
-      <a href="<%= playlist_path(playlist.id) %>" class="list-group-item">
+    
+      <a class="list-group-item" onClick="addLightbox(<%= playlist.id %>)">
         <div class="row">
           <div class="col-md-6">
             <h4><%= playlist.title %></h4>

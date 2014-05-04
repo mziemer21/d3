@@ -45,6 +45,14 @@ class PlaylistsController < ApplicationController
       end
     end
   end
+  
+  
+  def showBox
+        @playlistID = params[:playlistID]
+        
+        @playlist = Playlist.find(@playlistID)
+  end
+  
 
   # PATCH/PUT /playlists/1
   # PATCH/PUT /playlists/1.json
