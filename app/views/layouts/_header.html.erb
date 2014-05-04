@@ -10,7 +10,7 @@
       <ul class="nav navbar-nav navbar-right">
       	 <!-- <li><a href="home_page#home">Home</a></li> -->
       	 <li><%= link_to "Home", root_path, :id => "home_link" %></li>
-      	 <li><%= link_to "My Playlists", myplaylists_path, :id => "playlist_link" %></li>
+      	 <li><%= link_to "My Playlists", playlists_path, :id => "playlist_link" %></li>
           <!-- put if admin stmt here -->
          <% if true # @user.admin || true %>
            <li><%= link_to "Admin Panel", admin_path, :id => "admin_link" %></li>

@@ -20,7 +20,7 @@ class PlaylistPageController < ApplicationController
     mySong = Song.find(params[:song_id])
     myPlist.songs.delete(mySong)
     #debugger
-    redirect_to myplaylists_path, notice: 'Song successfully removed'
+    redirect_to playlists_path, notice: 'Song successfully removed'
   end
 
   #def post
