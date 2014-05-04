@@ -1,6 +1,6 @@
 <div class="container" id="playlist_short">
   <div class="list-group">
-    <a href="#" class="list-group-item">
+    <!--a href="#" class="list-group-item">
       <h4> David Bowie Berlin Trilogy Playlist</h4>
       <p>Dj - David Bowie, Be My Wife - David Bowie, "Heroes" - David Bowie ...</p>
     </a>
@@ -19,6 +19,18 @@
     <a href="#" class="list-group-item">
       <h4> My First Playlist</h4>
       <p>My Way - Sid Vicious, Greater Reward - Severed Heads, You Are In My Vision - Gary Numan ...</p>
-    </a>
+    </a-->
+
+    <% @playlists.last(5).reverse.each do |playlist| %>
+      <a href="<%= playlists_path %>" class="list-group-item">
+        <h4><%= playlist.title %></h4>
+        <p>
+          <% playlist.songs.first(3).each do |song| %>
+           <%= song.title %> - <%= song.artist %> | 
+          <% end %>
+          ...
+        </p>
+      </a>
+    <% end %>
   </div>
 </div>
