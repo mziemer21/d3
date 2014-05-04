@@ -4,16 +4,14 @@
 	});
 </script>
 
-
 <div class="col-md-2"></div>
 <div class="col-md-8">
 	<div align="center">
-		<h1>Delete User <%= @user.name %>?</h1>
+		<h1>Delete Playlist <%= @playlist.title %>?</h1>
 		<br />
 		<h4>
 			<%= link_to '<button type="button" class="btn btn-warning" onClick="parent.jQuery.fn.colorbox.close();">CANCEL</button>'.html_safe %>
-			<%= link_to '<button type="button" class="btn btn-danger" onClick="parent.jQuery.fn.colorbox.close();">CONFIRM</button>'.html_safe, @user, :method =>:delete, :class =>:destroy %>
-		</h4>
+			<%= link_to '<button type="button" class="btn btn-danger" onClick="parent.jQuery.fn.colorbox.close();">CONFIRM</button>'.html_safe, @playlist, :method =>:delete, :class =>:destroy %>
 		</h4>
 	</div>
 </div>

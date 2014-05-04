@@ -1,3 +1,14 @@
+<script>
+function addLightbox(playlistID){    
+  var url1 = "/deletePlaylist?playlistID=";
+  
+  var start = url1.concat(playlistID);
+
+  console.log(start);
+  $.colorbox({width:"80%", height:"80%", iframe:true, href:start});
+}
+</script>
+
 <div class="list-group-item playlist_singleton">
   <%# TODO REMOVE, PLAYLIST POPULATE, PLAYLIST TITLE, PLAYLIST FCC FLAG %>
   <div class="row">
@@ -27,11 +38,8 @@
     <div class="col-md-6">
       <%= link_to '<button type="button" class="btn btn-info" style="font-family:Verdana, sans-serif;">Edit Playlist</button>'.html_safe,
        edit_playlist_path(playlist) %>
-      <%= link_to '<button type="button" class="btn btn-danger" style="float:right; font-family:Verdana, sans-serif;">Delete Playlist</button>'.html_safe,
-       playlist,
-       method: :delete,
-       data: { confirm: 'Are you sure?' },
-       title: playlist.title %>
+       
+       <button type="button" class="btn btn-danger" style="float:right; font-family:Verdana, sans-serif;" onClick="addLightbox(<%= playlist.id %>)">Delete Playlist</button>
        
     </div>
   </div>

@@ -50,7 +50,8 @@ class PlaylistsController < ApplicationController
   # PATCH/PUT /playlists/1.json
   def update
     
-    @songs = Song.order(:artist)
+    #@songs = Song.order(:artist)
+    @playlist = Playlist.find(params[:id])
     
     respond_to do |format|
       if @playlist.update(playlist_params)
@@ -66,6 +67,7 @@ class PlaylistsController < ApplicationController
   # DELETE /playlists/1
   # DELETE /playlists/1.json
   def destroy
+    redirect_to playlists_path
     @playlist.destroy
     respond_to do |format|
       format.html { redirect_to playlists_path }
