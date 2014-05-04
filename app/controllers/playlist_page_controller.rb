@@ -5,7 +5,7 @@ class PlaylistPageController < ApplicationController
 
   def plists
 
-    @playlists = User.first.playlists
+    @playlists = User.first.playlists.all
 
     respond_to do |format|
       format.html
