@@ -12,6 +12,17 @@
           <span style="color:green">YES</span>
         <% end %>
       </p>
+      <p>
+        Q-drive?
+        <% if playlist.qDrive %>
+          <span>YES</span>
+        <% else %>
+          <span>NO</span>
+        <% end %>
+      </p>
+      <p>
+        <%= playlist.notes %>
+      </p>
     </div>
     <div class="col-md-6">
       <%= link_to '<button type="button" class="btn btn-info" style="font-family:Verdana, sans-serif;">Edit Playlist</button>'.html_safe,
