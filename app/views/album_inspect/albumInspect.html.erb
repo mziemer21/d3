@@ -12,7 +12,9 @@
   			<th><strong>Qulity</strong></th>
   			<th><strong>Format</strong></th>
   			<th><strong>Track Count</strong></th>
+
   			<th><strong>Speciality</strong></th>
+
   			<th><strong>Inspect</strong></th>
   			</tr>
   		</thead>
@@ -34,7 +36,7 @@
 		  	<td> <%= entry['quality'] %> </td>
 		  	<td> <%= entry['media'].first['format'] %> </td>
 		  	<td> <%= entry['media'].first['track-count'] %> </td>
-		  	<td> <%= entry['disambiguation'] %> </td>
+		  	<!-- <td> <%#= entry['disambiguation'] %> </td> -->
 		  	<td>
 		  		<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "songInspect", :albumToQuery => entry['id']  %>
 		  	</td>

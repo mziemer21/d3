@@ -21,7 +21,6 @@ class AddBoxController < ApplicationController
 				criterion = "release-group"
 				filter = "release-groups"
 				@criterion_show = "Album"
-				@album_flag = true
 			else
 				criterion = "recording"
 				filter = criterion
