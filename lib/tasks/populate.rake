@@ -13,9 +13,9 @@ namespace :db do
       song.title   = Faker::Company.name
       song.artist  = Faker::Name.name
       song.album   = Faker::Commerce.department
-      song.duration = '4:33'
+      song.duration = 50
       song.quality = 192
-      song.fccClean = 0
+      song.fccFlag = 1
       song.is_qDrive = 0
       song.location = 'digital'
       song.review = 'A good song'
@@ -33,7 +33,9 @@ namespace :db do
       plist.songs = Song.all
 
       if (i.even?)
-        plist.songs.first.fccClean = 0
+        #plist.songs.first.fccFlag = 0
+        #plist.songs.first.save!
+        plist.songs.first.update_attribute(:fccFlag, false)
       end
 
       plist.save!
