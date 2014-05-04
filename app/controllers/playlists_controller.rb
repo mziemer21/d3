@@ -14,7 +14,7 @@ class PlaylistsController < ApplicationController
 
   # GET /playlists/new
   def new
-    @playlist = Playlist.new
+      @playlist = Playlist.new
     
       @songs = Song.order(:artist)
 
@@ -86,7 +86,7 @@ class PlaylistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def playlist_params
-      params.require(:playlist).permit(:users, :title, :qDrive, :notes, :song_tokens)
+      params.require(:playlist).permit(:users, :title, :qDrive, :notes, :song_tokens, :user_id)
       # EDITED FROM user_id
     end
 end
