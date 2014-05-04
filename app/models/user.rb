@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_one :privilege
+  has_one :privilege_id
   has_many :playlists
 
 # This validation needs to be looked at, it breaks the email field
