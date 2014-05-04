@@ -87,5 +87,5 @@ TODO list (work in progress)
  ->User Sessions
  ->Admin Page (add/update/delete users)
  ->Add/delete songs page
- ->Fix playist creation-user linking
+ ->Fix playist creation-user linking -- DONE
  ->Individual/single playlist show page
