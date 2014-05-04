@@ -96,8 +96,9 @@
 					  	</td>
 					  	<td> 
 							<% if entry['releases'] %>
-					  			<%= entry['releases'].first['title'] %> 
-					  			<% else %>
+					  			<%= entry['releases'].first['title'] %>
+					  			<% $release_id =  entry['releases'].first['id'] %>
+					  		<% else %>
 					  			<%= "N/A" %>
 					  		<% end %>
 					  	</td>
@@ -114,7 +115,7 @@
 
 					  	<!-- <td> <%#= entry['disambiguation'] %> </td> -->
 					  	<td> <!-- TODO query the individual song-->
-					  		<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "singleSongInspect", :entry => entry} %>
+					  		<%= link_to '<button type="button" class="btn btn-info">Inspect</button>'.html_safe, {:controller => "album_inspect", :action => "singleSongInspect", :songToQuery => entry["id"] } %>
 					  	<td>
 					</tr>
 				<% end %>
