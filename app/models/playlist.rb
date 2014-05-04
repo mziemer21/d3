@@ -21,4 +21,15 @@ class Playlist < ActiveRecord::Base
     self.user = user
   end
 
+  def get_duration
+    sum = 0
+
+    songs.each do |song|
+      sum += song.duration.to_f
+    end
+
+    Time.at(sum).utc.strftime('%H:%M:%S')
+
+  end
+
 end
