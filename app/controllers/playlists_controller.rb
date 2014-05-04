@@ -50,7 +50,8 @@ class PlaylistsController < ApplicationController
   # PATCH/PUT /playlists/1.json
   def update
     
-    @songs = Song.order(:artist)
+    #@songs = Song.order(:artist)
+    @playlist = Playlist.find(params[:id])
     
     respond_to do |format|
       if @playlist.update(playlist_params)

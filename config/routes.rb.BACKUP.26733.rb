@@ -1,6 +1,11 @@
 DeweyDecibelDatabase::Application.routes.draw do
   
+<<<<<<< HEAD
+  get "delete_playlist_conf/deleteConfirm"
+  get "delete_user_conf/deleteConfirm"
+=======
   get "add_page/addSingleSong"
+>>>>>>> b2c60e7c1f4098fdb4b93413ff8e8f5a183278dc
   get "admin_inspect/admin_insepect"
   get "album_inspect/albumInspect"
   get "album_inspect/songInspect"

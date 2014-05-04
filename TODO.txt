@@ -77,3 +77,15 @@ TODO list (work in progress)
    addUser:boolean
    editUser:boolean
    deleteUser:boolean 
+   
+   
+   
+   
+   
+   
+ AS OF HACK CITY TIME
+ ->User Sessions
+ ->Admin Page (add/update/delete users)
+ ->Add/delete songs page
+ ->Fix playist creation-user linking
+ ->Individual/single playlist show page

@@ -1,20 +1,17 @@
 DeweyDecibelDatabase::Application.routes.draw do
   
-  get "add_page/addSingleSong"
   get "admin_inspect/admin_insepect"
   get "album_inspect/albumInspect"
   get "album_inspect/songInspect"
   get "album_inspect/singleSongInspect"
   get "album_inspect/artistInspect"
   root  'home_page#home'
-  #match '/playlists',          to: "playlists#index",        via: 'get'
-  match '/admin',              to: "admin_page#admin",                  via: 'get'
-  match '/search',             to: "search_box#search",                 via: 'get'
-  match '/add',                to: "add_box#addModal",                  via: 'get'
-  match '/songInspect',        to: "song_inspect#songInspect",          via: 'get'
-  match '/adminInspect',       to: "admin_inspect#adminInspect",        via: 'get'
-  match '/deleteConfirm',      to: "delete_user_conf#deleteConfirm",    via: 'get'
-  match '/deletePlaylist',     to: "delete_playlist_conf#deleteConfirm",via: 'get'
+  match '/myplaylists',        to: "playlist_page#plists",        via: 'get'
+  match '/admin',              to: "admin_page#admin",            via: 'get'
+  match '/search',             to: "search_box#search",           via: 'get'
+  match '/add',                to: "add_box#addModal",            via: 'get'
+  match '/songInspect',        to: "song_inspect#songInspect",    via: 'get'
+  match '/adminInspect',       to: "admin_inspect#adminInspect",  via: 'get'
   
   match '/signout',            to: "sessions#destroy",          via: 'delete'
 

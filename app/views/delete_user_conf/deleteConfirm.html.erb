@@ -1,0 +1,20 @@
+<script>
+	$(document).ready(function() {
+		parent.$.colorbox.resize({width:"80%", height:"45%"});
+	});
+</script>
+
+
+<div class="col-md-2"></div>
+<div class="col-md-8">
+	<div align="center">
+		<h1>Delete User <%= @user.name %>?</h1>
+		<br />
+		<h4>
+			<%= link_to '<button type="button" class="btn btn-warning" onClick="parent.jQuery.fn.colorbox.close();">CANCEL</button>'.html_safe %>
+			<%= link_to '<button type="button" class="btn btn-danger" onClick="parent.jQuery.fn.colorbox.close();">CONFIRM</button>'.html_safe, @user, :method =>:delete, :class =>:destroy %>
+		</h4>
+		</h4>
+	</div>
+</div>
+<div class="col-md-2"></div>

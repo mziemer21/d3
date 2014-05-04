@@ -66,6 +66,13 @@
 						<td><strong>Review</strong></td>
 						<td> TODO: see views/album_inspect/singleSongInspect.html.erb </td>
 					</tr>  		
+					<tr>
+						<td><strong>ADD?</strong></td>
+						<td> 
+							<% $hash = {title: @song['title'], artist: @song['artist-credit'].first['artist']['name'], album: @song['releases'].first['title'], duration: Time.at($time_in_sec)} %>
+							<%= link_to '<button type="button" class="btn btn-info">Add to Database</button>'.html_safe, :controller => "add_page", :action => "addSingleSong", :songEntry => $hash %>
+						</td>
+					</tr>  
 				</tbody>
 			</table>
 		<!-- </body> -->

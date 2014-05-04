@@ -3,7 +3,35 @@
 <%= render :partial => 'layouts/header' %>
 <%= render :partial => 'layouts/notify' %>
 
+<script type="text/javascript">
+	$(document).ready
+	(
+	    function()
+	    {
+	        var kwd = $('#keyword');
+	        var btn = $('#addParam');
+	
+	        $(document).keyup
+	        (
+	            function()
+	            {
+	                if(kwd.val().trim().length > 0)
+	                {
+	                    btn.removeAttr('disabled');
+	                }
+	                else
+	                {
+	                    btn.attr('disabled', 'disabled');
+	                }
+	            }
+	        );
+	
+	    }
+	);
+</script>
+
 <script>
+
 function addLightbox(){    
   var url1 = "/add?criterion=";
   var url2 = "&keyword=";
@@ -52,7 +80,8 @@ function searchLightbox(){
   		<div class="col-lg-10">
     		<div class="input-group">
       			<span class="input-group-btn">
-        			<button class="btn btn-default" id="addParam" type ="button" onClick="addLightbox()">Add</button>
+        			<button class="btn btn-default" id="addParam" type ="button" onClick="addLightbox()" disabled>Add</button>
+        			<!-- <input type="button" id="addParam" value="Add" onClick="addLightbox()">Add</input> -->
       			</span>
               <input class="form-control" id="keyword" type="text" />
     		</div><!-- /input-group -->
@@ -80,5 +109,4 @@ function searchLightbox(){
 </div> <!-- end fluid container -->
 
 <%= render :partial => 'layouts/playlist_short' %>
-
 <%= render :partial => 'layouts/footer'%>
