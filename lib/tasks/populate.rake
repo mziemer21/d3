@@ -5,7 +5,7 @@ namespace :db do
     require 'faker'
     
     Song.delete_all    
-    #Playlist.delete_all
+    Playlist.delete_all
     
     me = User.first
 
@@ -15,26 +15,31 @@ namespace :db do
       song.album   = Faker::Commerce.department
       song.duration = '4:33'
       song.quality = 192
-      song.fccFlag = 1
+      song.fccFlag = 0
       song.is_qDrive = 0
       song.location = 'digital'
-      song.review = nil
+      song.review = 'A good song'
     end
 
-    #Playlist.populate 3 do |plist|
-      #plist.user = me.id
-      #plist.song = Song.all
-      
-      #Song.all.each do |song|
-      #  plist.add(song.id)
-      #end
+  
+    Playlist.populate 3 do |plist|
+      plist.user_id = me.id
+    end
+
+    i = 1
+
+    for plist in me.playlists
+      plist.title = "My Playlist #{i}"
+      plist.songs = Song.all
+
+      if (i.even?)
+        plist.songs.first.fccFlag = 0
+      end
+
+      plist.save!
+      i += 1
+    end
 
 
-      #plist.user << User.first
-
-      #plist.songs << Song.all
-          
-    #end
-
-  end
+  end #task
 end

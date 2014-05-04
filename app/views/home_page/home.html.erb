@@ -18,6 +18,14 @@ function addLightbox(){
   console.log(res);
   $.colorbox({width:"80%", height:"80%", iframe:true, href:res});
 }
+
+function searchLightbox(){
+  var searchParam = document.getElementById("searchKeyword").value;
+  var url1 = "/songs?keyword=";
+
+  var res = url1.concat(searchParam);
+  $.colorbox({width:"80%", height:"80%", iframe:true, href:res});
+}
 </script>
 
 <div class="container fluid">
@@ -30,10 +38,9 @@ function addLightbox(){
   		<div class="col-lg-10">
     		<div class="input-group">
       			<span class="input-group-btn">
-      				<%= link_to '<button class="btn btn-default" type ="button">Search</button>'.html_safe, 'search', :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true } %>
-        			<!-- <button class="btn btn-default modalLauncher" data-toggle="modal" href="#searchModal"><%= link_to "Search", "#searchModal", :data => { :colorbox => true, :colorbox_height => '700px', :colorbox_width => '1000px', :colorbox_iframe => true } %></button> -->
-      			</span>
-      			<input type="text" class="form-control">
+              <button class="btn btn-default" id="searchParam" type ="button" onClick="searchLightbox()">Search</button>
+            </span>
+      			<input type="text" class="form-control" id="searchKeyword">
     		</div><!-- /input-group -->
   		</div><!-- /.col-lg-10 -->
   		<div class="col-lg-2">

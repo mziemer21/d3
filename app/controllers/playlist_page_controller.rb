@@ -4,7 +4,6 @@ class PlaylistPageController < ApplicationController
   #end
 
   def plists
-    @songs = Song.order(:artist)
 
     @playlists = User.first.playlists
 
@@ -15,6 +14,14 @@ class PlaylistPageController < ApplicationController
     end
   end
 
+
+  def remove_song
+    myPlist = Playlist.find(params[:playlist_id])
+    mySong = Song.find(params[:song_id])
+    myPlist.songs.delete(mySong)
+    #debugger
+    redirect_to myplaylists_path, notice: 'Song successfully removed'
+  end
 
   #def post
   #end

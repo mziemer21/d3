@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$wsum_font: 'Oswald', sans-serif;
+
+
 ul {
   &.token-input-list {
     overflow: hidden;
@@ -124,4 +127,11 @@ div.token-input-dropdown {
       }
     }
   }
+}
+
+
+h1
+{
+        font-family: $wsum-font;
+        padding-left: 25px;
 }

@@ -14,15 +14,12 @@ DeweyDecibelDatabase::Application.routes.draw do
   match '/adminInspect',       to: "admin_inspect#adminInspect",  via: 'get'
   
   match '/signout',            to: "sessions#destroy",          via: 'delete'
+
+  match '/remove_song_from_playlist', to: "playlist_page#remove_song",  via: 'delete'
   
   resources :playlists
 
-  resources :songs do
-    collection { 
-      post :search, to: 'songs#index' 
-      get :search, to: 'songs#index'
-    }
-  end
+  resources :songs 
 
   resources :users
 

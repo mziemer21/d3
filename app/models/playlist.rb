@@ -2,6 +2,9 @@ class Playlist < ActiveRecord::Base
 	has_and_belongs_to_many :songs, :join_table => "playlists_songs"
 	belongs_to :user
 
+  #list in most-recent-first order (rev. chron.)
+  #default_scope -> { order('created as DESC') }
+
 	# getter for adding songs to playlist
 	attr_reader :song_tokens
 

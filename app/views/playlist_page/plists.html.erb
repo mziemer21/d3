@@ -11,12 +11,11 @@
     <%= button_to 'New Playlist', new_playlist_path,
      :class => 'btn btn-success', :id => 'plist_new_btn', :method => 'get'  %> 
       <div class="list-group">
-        <% 6.times do %>
-          <%= render 'playlists/singleton' %>
+        <% @playlists.each do |playlist| %>
+          <%= render partial: 'playlists/singleton', locals: { playlist: playlist} %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 
-<%= render :partial => 'layouts/footer' %>
