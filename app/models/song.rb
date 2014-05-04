@@ -24,7 +24,7 @@ class Song < ActiveRecord::Base
   end
 
 
-  def fccClean
+  def fccFlag
     self.fccFlag
   end
 

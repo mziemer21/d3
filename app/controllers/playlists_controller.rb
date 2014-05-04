@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-  before_action :set_playlist, only: [:show, :edit, :update, :destroy]
+  before_action :set_playlist, only: [:show, :edit, :destroy]
 
   # GET /playlists
   # GET /playlists.json
@@ -14,7 +14,7 @@ class PlaylistsController < ApplicationController
 
   # GET /playlists/new
   def new
-    @playlist = Playlist.new
+      @playlist = Playlist.new
     
       @songs = Song.order(:artist)
 
@@ -87,6 +87,7 @@ class PlaylistsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def playlist_params
       params.require(:playlist).permit(:users, :title, :qDrive, :notes, :song_tokens)
+      #params.require(:playlist).permit(:playlist_id, :song_id)
       # EDITED FROM user_id
     end
 end
