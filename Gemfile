@@ -11,8 +11,6 @@ group :development, :test do
 
   gem 'debugger'
   
-  gem 'mysql2', '~> 0.3.15'
-  #if you need to, remove this
   #gem 'populator'
   #gem 'faker'
   
@@ -52,6 +50,10 @@ gem 'jbuilder', '1.0.2'
 gem 'musicbrainz', '~> 0.7.6'
 gem 'lastfm', '~> 1.24.0'
 
+gem 'activerecord-session_store'
+
+gem 'mysql2', '~> 0.3.15'
+
 #gem "flat-ui-rails"
 
 group :doc do
@@ -60,7 +62,6 @@ end
 
 #for deployment to heroku
 group :production do
-  gem 'mysql2', '~> 0.3.15'
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
