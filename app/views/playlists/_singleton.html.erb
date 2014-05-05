@@ -7,6 +7,15 @@ function addLightbox(playlistID){
   console.log(start);
   $.colorbox({width:"80%", height:"80%", iframe:true, href:start});
 }
+
+function addLightbox2(playlistID){    
+  var url1 = "/showPlaylist?playlistID=";
+  
+  var start = url1.concat(playlistID);
+
+  console.log(start);
+  $.colorbox({width:"80%", height:"80%", iframe:true, href:start});
+}
 </script>
 
 <div class="list-group-item playlist_singleton">
@@ -26,9 +35,9 @@ function addLightbox(playlistID){
       <p>
         Q-drive?
         <% if playlist.qDrive %>
-          <span>YES</span>
+          <span style="color:orange">YES</span>
         <% else %>
-          <span>NO</span>
+          <span style="color:blue">NO</span>
         <% end %>
       </p>
       <p>
@@ -38,6 +47,8 @@ function addLightbox(playlistID){
     <div class="col-md-6">
       <%= link_to '<button type="button" class="btn btn-info" style="font-family:Verdana, sans-serif;">Edit Playlist</button>'.html_safe,
        edit_playlist_path(playlist) %>
+       
+       <button class="btn" style="float:center; font-family:Verdana, sans-serif; background-color:#B452CD; color:white;" onClick="addLightbox2(<%= playlist.id %>)">Show Playlist</button>
        
        <button type="button" class="btn btn-danger" style="float:right; font-family:Verdana, sans-serif;" onClick="addLightbox(<%= playlist.id %>)">Delete Playlist</button>
        
