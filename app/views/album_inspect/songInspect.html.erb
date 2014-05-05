@@ -4,6 +4,10 @@
 	<i> <%= @title %> </i> by 
 	<b> <%= @artist %> </b>
 </h2>
+<h3>
+Add all songs into database: 
+<%= link_to '<button type="button" class="btn btn-info">Add All</button>'.html_safe, :controller => "add_page", :action => "addListSongs"%>
+</h3>
 <!-- <h2> <%#= "Keyword: " + @keyword %> </h2>
 <h2> <%#= "Criterion: " + @criterion_show %> </h2> -->
 <p> <%#= @songs_list %> </p>

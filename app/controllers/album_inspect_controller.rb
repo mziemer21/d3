@@ -21,6 +21,8 @@ class AlbumInspectController < ApplicationController
   	@artist = full_hash["artist-credit"].first["name"]
   	@title = full_hash["title"]
   	@releaseId = albumToQuery
+    hash_songs_list = {list: @songs_list, artist: @artist, title: @title}
+    session[:songs_list] = hash_songs_list
   	#return res_hash
   end
 

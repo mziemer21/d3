@@ -20,6 +20,7 @@ group :development, :test do
   gem 'rspec-rails', '2.13.1'
   gem 'better_errors'
   gem 'rails-erd'
+  gem 'activerecord-session_store'
 end
 
 group :test do
