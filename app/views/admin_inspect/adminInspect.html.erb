@@ -1,16 +1,26 @@
-<script>
-	
-	
-</script>
+
+  
+  
 
 <div class="iframe">
+	<%= form_for(@privilege) do |f| %>
+  		<% if @privilege.errors.any? %>
+		    <div id="error_explanation">
+	      		<h2><%= pluralize(@privilege.errors.count, "error") %> prohibited this privilege from being saved:</h2>
+	
+	      		<ul>
+	      			<% @privilege.errors.full_messages.each do |msg| %>
+	        			<li><%= msg %></li>
+	      			<% end %>
+	      		</ul>
+	    	</div>
+  		<% end %>
 <!-- <div class="row"> -->
 	<div style="text-align:center;">
 		<h1><strong><%= @user.name %></strong></h1>
 		<h4>
 			<%= @user.email%>
 			<!-- <button class="btn btn-danger">Delete User</button> -->
-			<%= link_to '<button type="button" class="btn btn-danger">Delete User</button>'.html_safe, :controller => "delete_user_conf", :action => "deleteConfirm", :userID => @user.id  %>
 		</h4>
 	</div>
 	<div class="col-md-3"></div>
@@ -20,175 +30,63 @@
 				<tbody>
 					<tr>
 						<td><strong>Q-Drive Permissions</strong></td>
-						<td><div class="btn-group" data-toggle="buttons">
-							<% if @privileges.qDrive %>
-  								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="qDriveOn"> On
-  								</label>
-  								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="qDriveOff"> Off
-  								</label>
-  							<% else%>
-  								<label class="btn btn-success">
-    								<input type="radio" name="options" id="qDriveOn"> On
-  								</label>
-  								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="qDriveOff"> Off
-  								</label>
-  							<% end %>
-  							</div>
+						<td>
+							<%= f.check_box :qDrive %>
   						</td>
 					</tr>
 					<tr>
 						<td><strong>Add Songs</strong></td>
-						<td><div class="btn-group" data-toggle="buttons">
-							<% if @privileges.addSong %>
-  								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="addSongOn"> On
-  								</label>
-  								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="addSongOff"> Off
-  								</label>
-  							<% else%>
-  								<label class="btn btn-success">
-    								<input type="radio" name="options" id="addSongOn"> On
-  								</label>
-  								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="addSongOff"> Off
-  								</label>
-  							<% end %>
-  							</div>
+						<td>
+							<%= f.check_box :addSong %>
   						</td>
 					</tr>  			
 					<tr>
 						<td><strong>Edit Songs</strong></td>
-						<td><div class="btn-group" data-toggle="buttons">
-							<% if @privileges.editSong %>
-  								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="editSongOn"> On
-  								</label>
-  								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="editSongOff"> Off
-  								</label>
-  							<% else%>
-  								<label class="btn btn-success">
-    								<input type="radio" name="options" id="editSongOn"> On
-  								</label>
-  								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="editSongOff"> Off
-  								</label>
-  							<% end %>
-  							</div>
+						<td>
+							<%= f.check_box :editSong %>
   						</td>
 					</tr>  			
 					<tr>
 						<td><strong>Delete Song</strong></td>
-						<td><div class="btn-group" data-toggle="buttons">
-							<% if @privileges.deleteSong %>
-  								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="delSongOn"> On
-  								</label>
-  								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="delSongOff"> Off
-  								</label>
-  							<% else%>
-  								<label class="btn btn-success">
-    								<input type="radio" name="options" id="delSongOn"> On
-  								</label>
-  								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="delSongOff"> Off
-  								</label>
-  							<% end %>  							</div>
+						<td>
+							<%= f.check_box :deleteSong %>						
   						</td>
 					</tr>  			
 					<tr>
 						<td><strong>Can Grant Permissions</strong></td>
-						<td><div class="btn-group" data-toggle="buttons">
-							<% if @privileges.grantPermission %>
-  								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="grantOn"> On
-  								</label>
-  								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="grantOff"> Off
-  								</label>
-  							<% else%>
-  								<label class="btn btn-success">
-    								<input type="radio" name="options" id="grantOn"> On
-  								</label>
-  								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="grantOff"> Off
-  								</label>
-  							<% end %>
-  							</div>
+						<td>
+							<%= f.check_box :grantPermission %>
   						</td>
 						</tr>  			
 					<tr>
 						<td><strong>Add Users</strong></td>
-						<td><div class="btn-group" data-toggle="buttons">
-							<% if @privileges.addUser %>
-  								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="addUserOn"> On
-  								</label>
-  								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="addUserOff"> Off
-  								</label>
-  							<% else%>
-  								<label class="btn btn-success">
-    								<input type="radio" name="options" id="addUserOn"> On
-  								</label>
-  								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="addUserOff"> Off
-  								</label>
-  							<% end %>
-  							</div>
+						<td>
+							<%= f.check_box :addUser %>
   						</td>
 					</tr>  			
 					<tr>
 						<td><strong>Edit Users</strong></td>
-						<td><div class="btn-group" data-toggle="buttons">
-							<% if @privileges.editUser %>
-  								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="editUsersOn"> On
-  								</label>
-  								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="editUsersOff"> Off
-  								</label>
-  							<% else%>
-  								<label class="btn btn-success">
-    								<input type="radio" name="options" id="editUsersOn"> On
-  								</label>
-  								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="editUsersOff"> Off
-  								</label>
-  							<% end %>
-  							</div>
+						<td>
+							<%= f.check_box :editUser %>
+
   						</td>
 					</tr>  			
 					<tr>
 						<td><strong>Delete Users</strong></td>
-						<td><div class="btn-group" data-toggle="buttons">
- 							<% if @privileges.deleteUser %>
-  								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="delUsersOn"> On
-  								</label>
-  								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="Off"> Off
-  								</label>
-  							<% else%>
-  								<label class="btn btn-success">
-    								<input type="radio" name="options" id="delUsersOn"> On
-  								</label>
-  								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="Off"> Off
-  								</label>
-  							<% end %>
-  							</div>
+						<td>
+							<%= f.check_box :deleteUser %>
   						</td>
 					</tr>  			
 				</tbody>
 			</table>
 		<!-- </body> -->
 	</div>
-	<div class="col-md-3"></div>
-<!-- </div> -->
+	<div class="col-md-3">
+		<%= link_to '<button type="button" style="width:135px;" class="btn btn-danger">Delete User</button>'.html_safe, :controller => "delete_user_conf", :action => "deleteConfirm", :userID => @user.id  %>
+		<br /><br /><br />
+		<div class="actions">
+    		<input class="btn btn-info" style="width:135px;" name="commit" type="submit" value="Save Privileges" onClick="parent.jQuery.fn.colorbox.close();">
+  		</div>
+	<% end %>
+	</div>
 </div>
