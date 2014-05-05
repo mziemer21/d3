@@ -2,7 +2,7 @@
 <%= render :partial => 'layouts/notify' %>
 
 <script>
-function addLightbox(userID){    
+function adminLightbox(userID){    
   var url1 = "/adminInspect?userID=";
   
   var start = url1.concat(userID);
@@ -41,7 +41,7 @@ function addLightbox(userID){
 		       			<td><%= user.name %></td>
 		       			<td><%= user.email %></td>
 		       			<td>
-		       				<button class="btn btn-info" type ="button" onClick="addLightbox(<%= user.id %>)">Info</button>
+		       				<button class="btn btn-info" type ="button" onClick="adminLightbox(<%= user.id %>)">Info</button>
 		       				
 							<%#= button_to "Info", {:controller => "admin_inspect", :action => "adminInspect", :user => user.id, :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true }}, {}%>
 							<%#= link_to '<button type="button" class="btn btn-info" onClick="addLightbox()">Info</button>'.html_safe, :controller => "admin_inspect", :action => "adminInspect", :user => user.id %>

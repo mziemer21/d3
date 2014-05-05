@@ -1,5 +1,5 @@
 <script>
-function addLightbox(playlistID){    
+function shortLightbox(playlistID){    
   var url1 = "/showPlaylist?playlistID=";
   
   var start = url1.concat(playlistID);
@@ -35,7 +35,7 @@ function addLightbox(playlistID){
 
     <% @playlists.last(5).reverse.each do |playlist| %>
     
-      <a class="list-group-item" onClick="addLightbox(<%= playlist.id %>)">
+      <a class="list-group-item" onClick="shortLightbox(<%= playlist.id %>)">
         <div class="row">
           <div class="col-md-6">
             <h4><%= playlist.title %></h4>

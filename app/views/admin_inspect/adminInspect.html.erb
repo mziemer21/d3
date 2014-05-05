@@ -1,4 +1,7 @@
-
+<script>
+	
+	
+</script>
 
 <div class="iframe">
 <!-- <div class="row"> -->
@@ -20,17 +23,17 @@
 						<td><div class="btn-group" data-toggle="buttons">
 							<% if @privileges.qDrive %>
   								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="qDriveOn"> On
   								</label>
   								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="qDriveOff"> Off
   								</label>
   							<% else%>
   								<label class="btn btn-success">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="qDriveOn"> On
   								</label>
   								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="qDriveOff"> Off
   								</label>
   							<% end %>
   							</div>
@@ -41,17 +44,17 @@
 						<td><div class="btn-group" data-toggle="buttons">
 							<% if @privileges.addSong %>
   								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="addSongOn"> On
   								</label>
   								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="addSongOff"> Off
   								</label>
   							<% else%>
   								<label class="btn btn-success">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="addSongOn"> On
   								</label>
   								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="addSongOff"> Off
   								</label>
   							<% end %>
   							</div>
@@ -62,38 +65,38 @@
 						<td><div class="btn-group" data-toggle="buttons">
 							<% if @privileges.editSong %>
   								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="editSongOn"> On
   								</label>
   								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="editSongOff"> Off
   								</label>
   							<% else%>
   								<label class="btn btn-success">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="editSongOn"> On
   								</label>
   								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="editSongOff"> Off
   								</label>
   							<% end %>
   							</div>
   						</td>
 					</tr>  			
 					<tr>
-						<td><strong>Duration</strong></td>
+						<td><strong>Delete Song</strong></td>
 						<td><div class="btn-group" data-toggle="buttons">
 							<% if @privileges.deleteSong %>
   								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="delSongOn"> On
   								</label>
   								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="delSongOff"> Off
   								</label>
   							<% else%>
   								<label class="btn btn-success">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="delSongOn"> On
   								</label>
   								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="delSongOff"> Off
   								</label>
   							<% end %>  							</div>
   						</td>
@@ -103,17 +106,17 @@
 						<td><div class="btn-group" data-toggle="buttons">
 							<% if @privileges.grantPermission %>
   								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="grantOn"> On
   								</label>
   								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="grantOff"> Off
   								</label>
   							<% else%>
   								<label class="btn btn-success">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="grantOn"> On
   								</label>
   								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="grantOff"> Off
   								</label>
   							<% end %>
   							</div>
@@ -124,17 +127,17 @@
 						<td><div class="btn-group" data-toggle="buttons">
 							<% if @privileges.addUser %>
   								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="addUserOn"> On
   								</label>
   								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="addUserOff"> Off
   								</label>
   							<% else%>
   								<label class="btn btn-success">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="addUserOn"> On
   								</label>
   								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="addUserOff"> Off
   								</label>
   							<% end %>
   							</div>
@@ -145,17 +148,17 @@
 						<td><div class="btn-group" data-toggle="buttons">
 							<% if @privileges.editUser %>
   								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="editUsersOn"> On
   								</label>
   								<label class="btn btn-danger">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="editUsersOff"> Off
   								</label>
   							<% else%>
   								<label class="btn btn-success">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="editUsersOn"> On
   								</label>
   								<label class="btn btn-danger active">
-    								<input type="radio" name="options" id="Off"> Off
+    								<input type="radio" name="options" id="editUsersOff"> Off
   								</label>
   							<% end %>
   							</div>
@@ -166,14 +169,14 @@
 						<td><div class="btn-group" data-toggle="buttons">
  							<% if @privileges.deleteUser %>
   								<label class="btn btn-success active">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="delUsersOn"> On
   								</label>
   								<label class="btn btn-danger">
     								<input type="radio" name="options" id="Off"> Off
   								</label>
   							<% else%>
   								<label class="btn btn-success">
-    								<input type="radio" name="options" id="On"> On
+    								<input type="radio" name="options" id="delUsersOn"> On
   								</label>
   								<label class="btn btn-danger active">
     								<input type="radio" name="options" id="Off"> Off
