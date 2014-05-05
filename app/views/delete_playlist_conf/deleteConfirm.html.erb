@@ -2,6 +2,15 @@
 	$(document).ready(function() {
 		parent.$.colorbox.resize({width:"80%", height:"45%"});
 	});
+	
+	$(document).ready(function () {
+		$('#conf').click(function(){
+			parent.$.colorbox.close();
+			window.parent.location.reload();
+
+		});
+	});
+
 </script>
 
 <div class="col-md-2"></div>
@@ -11,7 +20,7 @@
 		<br />
 		<h4>
 			<%= link_to '<button type="button" class="btn btn-warning" onClick="parent.jQuery.fn.colorbox.close();">CANCEL</button>'.html_safe %>
-			<%= link_to '<button type="button" class="btn btn-danger" onClick="parent.jQuery.fn.colorbox.close();">CONFIRM</button>'.html_safe, @playlist, :method =>:delete, :class =>:destroy %>
+			<%= link_to '<button type="button" class="btn btn-danger" id="conf">CONFIRM</button>'.html_safe, @playlist, :method =>:delete, :class =>:destroy %>
 		</h4>
 	</div>
 </div>

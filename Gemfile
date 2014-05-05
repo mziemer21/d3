@@ -11,10 +11,10 @@ group :development, :test do
 
   gem 'debugger'
   
-  #gem 'mysql2', '~> 0.3.15'
+  gem 'mysql2', '~> 0.3.15'
   #if you need to, remove this
-  gem 'populator'
-  gem 'faker'
+  #gem 'populator'
+  #gem 'faker'
   
   
   gem 'rspec-rails', '2.13.1'

@@ -4,7 +4,7 @@ class AdminInspectController < ApplicationController
         
         @user = User.find(@userID)
         
-        @privileges = Privilege.find(@userID)
+        @privilege = Privilege.find(@userID)
         
   end
 end
