@@ -18,7 +18,9 @@ DeweyDecibelDatabase::Application.routes.draw do
   match '/deletePlaylist',     to: "delete_playlist_conf#deleteConfirm",via: 'get'
   match '/showPlaylist',        to: "playlists#showBox",                 via: 'get'
   
-  match '/signout',            to: "sessions#destroy",          via: 'delete'
+  match '/auth/:provider/callback' => 'sessions#create', :via => [:get, :post]
+  match '/signout' => 'sessions#destroy', :as => :signout, :via => [:get, :post]
+  match '/signin' => 'sessions#new', :as => :signin, :via => [:get, :post]
 
   match '/remove_song_from_playlist', to: "playlist_page#remove_song",  via: 'delete'
   
