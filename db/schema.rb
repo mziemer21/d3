@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504230855) do
+ActiveRecord::Schema.define(version: 20140505040107) do
 
   create_table "playlists", force: true do |t|
     t.integer  "user_id"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20140504230855) do
     t.string   "album"
     t.time     "duration"
     t.integer  "quality"
-    t.boolean  "fccClean"
+    t.boolean  "fccFlag"
     t.boolean  "is_qDrive"
     t.string   "location"
     t.string   "format"
@@ -73,6 +73,9 @@ ActiveRecord::Schema.define(version: 20140504230855) do
     t.integer  "privilege_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
 end
