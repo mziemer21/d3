@@ -1,5 +1,5 @@
 <script>
-function addLightbox(playlistID){    
+function delLightbox(playlistID){    
   var url1 = "/deletePlaylist?playlistID=";
   
   var start = url1.concat(playlistID);
@@ -8,7 +8,7 @@ function addLightbox(playlistID){
   $.colorbox({width:"80%", height:"80%", iframe:true, href:start});
 }
 
-function addLightbox2(playlistID){    
+function showLightbox(playlistID){    
   var url1 = "/showPlaylist?playlistID=";
   
   var start = url1.concat(playlistID);
@@ -48,9 +48,9 @@ function addLightbox2(playlistID){
       <%= link_to '<button type="button" class="btn btn-info" style="font-family:Verdana, sans-serif;">Edit Playlist</button>'.html_safe,
        edit_playlist_path(playlist) %>
        
-       <button class="btn" style="float:center; font-family:Verdana, sans-serif; background-color:#B452CD; color:white;" onClick="addLightbox2(<%= playlist.id %>)">Show Playlist</button>
+       <button class="btn" style="float:center; font-family:Verdana, sans-serif; background-color:#B452CD; color:white;" onClick="showLightbox(<%= playlist.id %>)">Show Playlist</button>
        
-       <button type="button" class="btn btn-danger" style="float:right; font-family:Verdana, sans-serif;" onClick="addLightbox(<%= playlist.id %>)">Delete Playlist</button>
+       <button type="button" class="btn btn-danger" style="float:right; font-family:Verdana, sans-serif;" onClick="delLightbox(<%= playlist.id %>)">Delete Playlist</button>
        
     </div>
   </div>
