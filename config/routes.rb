@@ -4,7 +4,7 @@ DeweyDecibelDatabase::Application.routes.draw do
   get "add_page/addSingleSong"
   get "add_page/addListSongs"
   get "add_page/save"
-  get "add_page/bestInPlaceTest" 
+  get "add_page/addAlbum"
   get "admin_inspect/admin_insepect"
   get "album_inspect/albumInspect"
   get "album_inspect/songInspect"

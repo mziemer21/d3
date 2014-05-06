@@ -18,7 +18,7 @@ class AddPageController < ApplicationController
   
 
   respond_to :html, :json
-  def bestInPlaceTest
+  def addAlbum
     @songs_list = session[:songs_list][:list]
     @artist = session[:songs_list][:artist]
     @title = session[:songs_list][:title]
