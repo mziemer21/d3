@@ -23,7 +23,7 @@ class AddPageController < ApplicationController
     @songs_list = session[:songs_list][:list]
     @artist = session[:songs_list][:artist]
     @title = session[:songs_list][:title]
-    @new_songs_array = Array.new(@songs_list.size)
+    @new_songs_array = Array.new(@songs_lit.size)
     (0..(@songs_list.size-1)).each do |i|
         @new_songs_array[i] = Song.new
     end
@@ -33,6 +33,7 @@ class AddPageController < ApplicationController
         end
 
     end
+  
   
    
   end
