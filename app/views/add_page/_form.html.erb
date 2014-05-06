@@ -46,7 +46,7 @@
   </div>
   <div class="field">
     <%= f.label :duration %><br>
-    <%= f.text_field  :duration, :value => @song[:duration]%>
+    <%= f.text_field  :duration, :value => Song.get_time_str(@song[:duration].to_i)%>
   </div>
   <div class="field">
     <%= f.label :quality %><br>

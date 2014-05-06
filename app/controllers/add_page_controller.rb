@@ -26,7 +26,7 @@ class AddPageController < ApplicationController
     count = 0
     @songs_list.each do |song|
       @new_songs_array[count] = Song.new( title: song["title"], 
-        artist: @artist, album: @title, duration: Time.at(song["length"]), quality: "0",
+        artist: @artist, album: @title, duration: Song.get_time_str(song['length']/1000), quality: "0",
         fccFlag: false, is_qDrive: false, location: "N/A", format: "N/A", review: "")
       @new_songs_array[count].save
       count+=1

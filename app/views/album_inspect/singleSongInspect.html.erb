@@ -2,10 +2,6 @@
 <!-- <div class="row"> -->
 	<div style="text-align:center;">
 		<h1><strong><%= @song['title'] %></strong></h1>
-		<h4>example query 
-			<a href = "http://musicbrainz.org/ws/2/recording/?query=back%20in%20black&fmt=json"> http://musicbrainz.org/ws/2/recording/?query=back%20in%20black&fmt=json </a>
-		</h4>
-
 	</div>
 	<div class="col-md-6">
 		<!-- <body> -->
@@ -20,7 +16,7 @@
 					<tr>
 						<td><strong>Artist</strong></td>
 						<td>
-							<% if @song['artist-credit']  %>
+							<% if @song['artist-credit'] %>
 			  					<%= @song['artist-credit'].first['artist']['name'] %> 
 			  				<% end %>
 						</td>
@@ -73,7 +69,7 @@
 					<tr>
 						<td><strong>ADD?</strong></td>
 						<td> 
-							<% $hash = {title: @song['title'], artist: @song['artist-credit'].first['artist']['name'], album: @song['releases'].first['title'], duration: Time.at($time_in_sec), format: @format} %>
+							<% $hash = {title: @song['title'], artist: @song['artist-credit'].first['artist']['name'], album: @song['releases'].first['title'], duration: $time_in_sec, format: @format} %>
 							<%= link_to '<button type="button" class="btn btn-info">Add to Database</button>'.html_safe, :controller => "add_page", :action => "addSingleSong", :songEntry => $hash %>
 						</td>
 					</tr>  
