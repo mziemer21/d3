@@ -19,6 +19,24 @@ class AddPageController < ApplicationController
 
   end
 
+  def addListSongs
+    @songs_list = session[:songs_list][:list]
+    @artist = session[:songs_list][:artist]
+    @title = session[:songs_list][:title]
+    @new_songs_array = Array.new(@songs_list.size)
+    (0..(@songs_list.size-1)).each do |i|
+        @new_songs_array[i] = Song.new
+    end
+    (0..(@songs_list.size-1)).each do |i|
+       if @new_songs_array[i].save
+          format.html
+        end
+
+    end
+  
+   
+  end
+
 #:title, :artist, :album, :duration, :fccClean, :is_qDrive, presence: truet.string   "title"
 # t.string   "artist"
 # t.string   "album"

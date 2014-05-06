@@ -1,0 +1,2 @@
+module DeleteSongConfHelper
+end

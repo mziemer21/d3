@@ -1,6 +1,8 @@
 DeweyDecibelDatabase::Application.routes.draw do
   
+  get "delete_song_conf/deleteConfirm"
   get "add_page/addSingleSong"
+  get "add_page/addListSongs"
   get "admin_inspect/admin_insepect"
   get "album_inspect/albumInspect"
   get "album_inspect/songInspect"
@@ -16,6 +18,7 @@ DeweyDecibelDatabase::Application.routes.draw do
   match '/deleteConfirm',      to: "delete_user_conf#deleteConfirm",    via: 'get'
   match '/deletePlaylist',     to: "delete_playlist_conf#deleteConfirm",via: 'get'
   match '/showPlaylist',        to: "playlists#showBox",                 via: 'get'
+  match '/songs',             to: "songs#index",                        via: 'get'
   
   match '/signout',            to: "sessions#destroy",          via: 'delete'
 

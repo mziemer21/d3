@@ -1,0 +1,19 @@
+<script>
+	$(document).ready(function() {
+		parent.$.colorbox.resize({width:"80%", height:"45%"});
+	});
+
+</script>
+
+<div class="col-md-2"></div>
+<div class="col-md-8">
+	<div align="center">
+		<h1>Delete Song <%= @song.title %>?</h1>
+		<br />
+		<h4>
+			<%= link_to '<button type="button" class="btn btn-warning">CANCEL</button>'.html_safe, "/songs" %>
+			<%= link_to '<button type="button" class="btn btn-danger" id="conf">CONFIRM</button>'.html_safe, @song, :method =>:delete, :class =>:destroy %>
+		</h4>
+	</div>
+</div>
+<div class="col-md-2"></div>
