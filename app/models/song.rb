@@ -29,7 +29,7 @@ class Song < ActiveRecord::Base
   end
 
   def duration_str
-    self.get_time_str(duration)
+    Song.get_time_str(duration)
   end
 
   def self.get_time_str (some_time)
