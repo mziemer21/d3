@@ -1,6 +1,6 @@
 class Song < ActiveRecord::Base
   has_and_belongs_to_many :playlists, :join_table => "playlists_songs"
-  validates :title, :artist, :album, :duration, :fccClean, :is_qDrive, presence: true
+  validates :title, :artist, :album, :duration, :fccFlag, :is_qDrive, presence: true
   
   # songs table query used in playlist view
   def self.tokens(query)
@@ -26,6 +26,14 @@ class Song < ActiveRecord::Base
 
   def fccClean
     self.fccFlag
+  end
+
+  def duration_str
+    Song.get_time_str(duration)
+  end
+
+  def self.get_time_str (some_time)
+    Time.at(some_time.to_i).utc.strftime('%H:%M:%S')
   end
 
 end

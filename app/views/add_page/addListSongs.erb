@@ -1,7 +1,7 @@
 <search>
   <div class="iframe">
 <h3>
-Your are adding  
+You are adding  
 	<i> <%= @title %> </i> by
 	<b> <%= @artist %> </b>
 to database, total 
@@ -60,7 +60,7 @@ songs
 					  <%= f.text_field :album, :value => @title %>
 					</td> 
 					<td> 
-					  <%= f.text_field  :duration, :value => song["length"]%>
+					  <%= f.text_field  :duration, :value => Song.get_time_str(song["length"].to_i/1000) %>
 					</td> 
 					<td> 
 					  <%= f.number_field :quality, :value => 0 %>

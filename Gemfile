@@ -11,16 +11,15 @@ group :development, :test do
 
   gem 'debugger'
   
-  gem 'mysql2', '~> 0.3.15'
+  #gem 'mysql2', '~> 0.3.15'
   #if you need to, remove this
-  #gem 'populator'
-  #gem 'faker'
+  gem 'populator'
+  gem 'faker'
   
   
   gem 'rspec-rails', '2.13.1'
   gem 'better_errors'
   gem 'rails-erd'
-  gem 'activerecord-session_store'
 end
 
 group :test do
@@ -52,6 +51,10 @@ gem 'jbuilder', '1.0.2'
 
 gem 'musicbrainz', '~> 0.7.6'
 gem 'lastfm', '~> 1.24.0'
+
+gem 'activerecord-session_store'
+
+#gem 'mysql2', '~> 0.3.15'
 
 #gem "flat-ui-rails"
 
