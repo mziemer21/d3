@@ -4,3 +4,5 @@
 require File.expand_path('../config/application', __FILE__)
 
 DeweyDecibelDatabase::Application.load_tasks
+
+task :default => :test
