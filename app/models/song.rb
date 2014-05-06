@@ -29,10 +29,10 @@ class Song < ActiveRecord::Base
   end
 
   def duration_str
-    get_time_str(duration)
+    self.get_time_str(duration)
   end
 
-  def get_time_str (some_time)
+  def self.get_time_str (some_time)
     Time.at(some_time.to_i).utc.strftime('%H:%M:%S')
   end
 
