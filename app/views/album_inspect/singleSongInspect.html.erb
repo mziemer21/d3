@@ -9,6 +9,7 @@
 				<thead>
 				</thead>
 				<tbody>
+					
 					<tr>
 						<td><strong>Title</strong></td>
 						<td><%= @song['title']  %></td>
@@ -65,7 +66,11 @@
 					<tr>
 						<td><strong>Review</strong></td>
 						<td> N/A </td>
-					</tr>  		
+					</tr> 
+					<tr>
+						<td><strong>Art Cover</strong></td>
+						<td><img src=  <%=  @art_link %> /></td>
+					</tr> 		
 					<tr>
 						<td><strong>ADD?</strong></td>
 						<td> 
@@ -75,12 +80,7 @@
 					</tr>  
 				</tbody>
 			</table>
-		<!-- </body> -->
+		
 	</div>
-	<div class="col-md-6">
-		<div class="songI-nonfluid">
-			<img src=  <%=  @art_link %> />
-		</div>
-	</div>
-<!-- </div> -->
+	
 </div>
