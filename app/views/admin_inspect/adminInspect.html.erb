@@ -85,10 +85,8 @@
 		<%= link_to '<button type="button" style="width:135px;" class="btn btn-danger">Delete User</button>'.html_safe, :controller => "delete_user_conf", :action => "deleteConfirm", :userID => @user.id  %>
 		<br /><br /><br />
 		<div class="actions">
-    		<!-- <input class="btn btn-info" style="width:135px;" name="commit" type="submit" value="Save Privileges" onClick="parent.jQuery.fn.colorbox.close();"> -->
+    		<input class="btn btn-info" style="width:135px;" name="commit" type="submit" value="Save Privileges" onClick="parent.jQuery.fn.colorbox.close();">
   		</div>
-  		<%= link_to '<button class="btn btn-info" style="width:135px;" onClick="parent.jQuery.fn.colorbox.close();">Save Privileges</button>'.html_safe, :controller => "admin_inspect", :action => "updatePrivilege", :userID => @user.id  %>
-
 	<% end %>
 	</div>
 </div>

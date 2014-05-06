@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    
+    @privilege = Privilege.new
   end
 
   # GET /users/1/edit
@@ -25,13 +27,19 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @user.privilege_id = params[:user][:privilege_id]
     if @user.save
-      redirect_to :action => :index
+      @privilege = Privilege.create!(qDrive: false, addSong: false, editSong: false, deleteSong: false, grantPermission: false, addUser: false, editUser: false, deleteUser: false, user_id: @user.id)
+      redirect_to :controller => "admin_inspect", :action => "adminInspect", :userID => @user.id
+      #redirect_to '/adminInspect?userID=' + @user.id.to_s
+      
+      #format.html { redirect_to :data => {:controller => "admin_inspect", :action => "adminInspect", :userID => @user.id}, notice: 'Success' }
     else
       @title = "Sign up"
       render 'new'
     end
+    
+    
+    
   end
 
   # PATCH/PUT /users/1

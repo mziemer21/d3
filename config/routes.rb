@@ -15,6 +15,7 @@ DeweyDecibelDatabase::Application.routes.draw do
   match '/showPlaylist',        to: "playlists#showBox",                 via: 'get'
   match '/songs',             to: "songs#index",                        via: 'get'
   match '/addUser',             to: "add_user#addNewUser",              via: 'get'
+  match '/newPrivileges',       to: "add_user#addNewPrivileges",        via: 'get'
   
   match '/signout',            to: "sessions#destroy",          via: 'delete'
 

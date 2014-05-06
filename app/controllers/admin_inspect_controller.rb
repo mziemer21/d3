@@ -11,6 +11,6 @@ class AdminInspectController < ApplicationController
     
     @privilege2 = Privilege.find_by_user_id(:userID)
     
-    @privilege2.update_attributes(params[:privilege])
+    @privilege2.update!
   end
 end
