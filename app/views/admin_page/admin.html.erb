@@ -10,6 +10,13 @@ function adminLightbox(userID){
   console.log(start);
   $.colorbox({width:"80%", height:"80%", iframe:true, href:start});
 }
+
+function adminLightbox2(){    
+  var url1 = "/addUser";
+
+  console.log(url1);
+  $.colorbox({width:"80%", height:"80%", iframe:true, href:url1});
+}
 </script>
 
 <div id="all_content">
@@ -25,6 +32,9 @@ function adminLightbox(userID){
 		      			<input type="text" class="form-control">			
 		    		</div><!-- /input-group -->
 		  		</div><!-- /.col-lg-10 -->
+		  		<div class"col-lg-2">
+		  			<button class="btn btn-success" type ="button" onClick="adminLightbox2()">Add New User</button>
+		  		</div>
 			</div><!-- /.row -->
 			<!-- <body> -->
 			<table class="table table-striped table-border table-hover">
@@ -43,8 +53,6 @@ function adminLightbox(userID){
 		       			<td>
 		       				<button class="btn btn-info" type ="button" onClick="adminLightbox(<%= user.id %>)">Info</button>
 		       				
-							<%#= button_to "Info", {:controller => "admin_inspect", :action => "adminInspect", :user => user.id, :data => { :colorbox => true, :colorbox_height => '75%', :colorbox_width => '82%', :colorbox_iframe => true }}, {}%>
-							<%#= link_to '<button type="button" class="btn btn-info" onClick="addLightbox()">Info</button>'.html_safe, :controller => "admin_inspect", :action => "adminInspect", :user => user.id %>
 							<!-- #= :controller => "admin_inspect", :action => "adminInspect", :user => user.id, %> -->
 		       			</td>
 		     		 </tr>

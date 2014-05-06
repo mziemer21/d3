@@ -1,0 +1,22 @@
+
+<div class="iframe">
+	
+<!-- <div class="row"> -->
+	<div style="text-align:center; width: 40%; margin: 0 auto;">
+		<%= form_for User.new, :url => users_path do |f| %>
+		  <p>
+		    <%= f.label 'Username' %><br />
+		    <%= f.text_field :name %>
+		  </p>
+		  <p>
+		    <%= f.label :email %><br />
+		    <%= f.text_field :email %>
+		  </p>
+		<hr />
+		  	<p>
+    			<input class="btn btn-info" style="width:135px;" name="commit" type="submit" value="Create User">
+
+		    </p>
+		<% end %>
+	</div>
+</div>
