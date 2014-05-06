@@ -1,5 +1,6 @@
 DeweyDecibelDatabase::Application.routes.draw do
   
+  get "add_user/addNewUser"
   get "delete_song_conf/deleteConfirm"
   get "add_page/addSingleSong"
   get "add_page/addListSongs"
