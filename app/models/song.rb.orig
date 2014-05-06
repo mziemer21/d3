@@ -1,11 +1,44 @@
 class Song < ActiveRecord::Base
+  has_and_belongs_to_many :playlists, :join_table => "playlists_songs"
 <<<<<<< HEAD
-  #fccFlag will become fccClean, so it will default to true, or clean
-  validates :title, :artist, :album, :duration, :fccFlag, :is_qDrive, presence: true
-=======
-
-  #fccFlag will become fccClean, so it will default to true, or clean
   validates :title, :artist, :album, :duration, :fccFlag, :is_qDrive, presence: true
   
->>>>>>> e75bb51cdf4210dcd905466a02ebd759a5025557
+=======
+  validates :title, :artist, :album, :duration, presence: true
+
+>>>>>>> 44f16c7d80431d2745b6d752a3e40ac40429b45c
+  # songs table query used in playlist view
+  def self.tokens(query)
+
+  	# make the query on title field
+    songs = where("title like ?", "%#{query}%")
+    ## option to add new song if not found -- excluded
+    # if songs.empty?
+    # [{id: "<<<#{query}>>>", title: "New: \"#{query}\""}]
+    
+    ## return results
+      songs
+    #end
+  end
+  
+  # used for getting ids of tokens in text area
+  def self.ids_from_tokens(tokens)
+    ## used for creating a new song if search is empty -- excluded
+    tokens.gsub!(/<<<(.+?)>>>/) { create!(title: $1).id }
+    tokens.split(',')
+  end
+
+
+  def fccClean
+    self.fccFlag
+  end
+
+  def duration_str
+    Song.get_time_str(duration)
+  end
+
+  def self.get_time_str (some_time)
+    Time.at(some_time.to_i).utc.strftime('%H:%M:%S')
+  end
+
 end

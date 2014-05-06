@@ -7,21 +7,19 @@ gem 'thin', '1.6.2'
 
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
+  #gem 'sqlite3', '1.3.8'
 
   gem 'debugger'
   
-  #gem 'mysql2', '~> 0.3.15'
   #if you need to, remove this
-  gem 'populator'
-  gem 'faker'
+  #gem 'populator'
+  #gem 'faker'
   
 
   
   gem 'rspec-rails', '2.13.1'
   gem 'better_errors'
   gem 'rails-erd'
-  gem 'activerecord-session_store'
   gem 'best_in_place', github: 'bernat/best_in_place', branch: 'rails-4'
 
 end
@@ -60,7 +58,7 @@ gem 'lastfm', '~> 1.24.0'
 
 gem 'activerecord-session_store'
 
-#gem 'mysql2', '~> 0.3.15'
+gem 'mysql2', '~> 0.3.15'
 
 #gem "flat-ui-rails"
 
@@ -70,7 +68,6 @@ end
 
 #for deployment to heroku
 group :production do
-  #gem 'mysql2', '~> 0.3.15'
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
