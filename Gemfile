@@ -15,12 +15,13 @@ group :development, :test do
   #if you need to, remove this
   #gem 'populator'
   #gem 'faker'
-  
+
   
   gem 'rspec-rails', '2.13.1'
   gem 'better_errors'
   gem 'rails-erd'
   gem 'activerecord-session_store'
+  gem 'best_in_place', github: 'bernat/best_in_place', branch: 'rails-4'
 end
 
 group :test do
@@ -32,6 +33,8 @@ group :test do
 end
 
 gem 'jquery-rails', '3.0.4'
+gem "jquery-ui-rails"
+
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 gem 'binding_of_caller', '~> 0.7.2'

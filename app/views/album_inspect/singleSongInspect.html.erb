@@ -28,11 +28,15 @@
 					<tr>
 						<td><strong>Album</strong></td>
 						<td>
-							<% if @song['releases'] %>
-			  					<%= @song['releases'].first['title'] %> 
-			  				<% else %>
-			  					<%= "N/A" %>
-			  				<% end %>
+							<% if @album_name %>
+								<%= @album_name %>
+							<% else %> 
+								<% if @song['releases'] %>
+				  					<%= @song['releases'].first['title'] %> 
+				  				<% else %>
+				  					<%= "N/A" %>
+				  				<% end %>
+				  			<% end %>
 						</td>
 					</tr>  			
 					<tr>
@@ -60,16 +64,16 @@
 					</tr>  			
 					<tr>
 						<td><strong>Format</strong></td>
-						<td> TODO: see views/album_inspect/singleSongInspect.html.erb </td>
+						<td> <%= @format %> </td>
 					</tr>  			
 					<tr>
 						<td><strong>Review</strong></td>
-						<td> TODO: see views/album_inspect/singleSongInspect.html.erb </td>
+						<td> N/A </td>
 					</tr>  		
 					<tr>
 						<td><strong>ADD?</strong></td>
 						<td> 
-							<% $hash = {title: @song['title'], artist: @song['artist-credit'].first['artist']['name'], album: @song['releases'].first['title'], duration: Time.at($time_in_sec)} %>
+							<% $hash = {title: @song['title'], artist: @song['artist-credit'].first['artist']['name'], album: @song['releases'].first['title'], duration: Time.at($time_in_sec), format: @format} %>
 							<%= link_to '<button type="button" class="btn btn-info">Add to Database</button>'.html_safe, :controller => "add_page", :action => "addSingleSong", :songEntry => $hash %>
 						</td>
 					</tr>  

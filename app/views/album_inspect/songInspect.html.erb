@@ -6,7 +6,7 @@
 </h2>
 <h3>
 Add all songs into database: 
-<%= link_to '<button type="button" class="btn btn-info">Add All</button>'.html_safe, :controller => "add_page", :action => "addListSongs"%>
+<%= link_to '<button type="button" class="btn btn-info">Add All</button>'.html_safe, :controller => "add_page", :action => "bestInPlaceTest"%>
 </h3>
 <!-- <h2> <%#= "Keyword: " + @keyword %> </h2>
 <h2> <%#= "Criterion: " + @criterion_show %> </h2> -->
@@ -41,7 +41,7 @@ Add all songs into database:
 		  	</td>
 		  	
 		  	<td>
-		  		<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "singleSongInspect", :songToQuery => entry["recording"]["id"], :releaseId => @releaseId  %>
+		  		<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "singleSongInspect", :songToQuery => entry["recording"]["id"], :releaseId => @releaseId, :albumName => @title  %>
 		  	</td>
 		  </tr>
 	  <% end %>

@@ -4,7 +4,7 @@
     margin: 20px auto;
     border: 1px solid #999;
     /*width: 50%;*/
-    /*height: 70%;*/
+    height: 70%;
   }
 
   #submit_button
@@ -31,16 +31,6 @@
       </ul>
     </div>
   <% end %>
-
-<!--   # t.string   "artist"
-# t.string   "album"
-# t.time     "duration"
-# t.integer  "quality"
-# t.boolean  "fccClean"
-# t.boolean  "is_qDrive"
-# t.string   "location"
-# t.string   "format"
-# t.text     "review" -->
 
   <div class="field">
     <%= f.label :title %><br>
@@ -77,7 +67,7 @@
   </div>
   <div class="field">
     <%= f.label :format%><br>
-    <%= f.text_field :format, :value => "N/A" %>
+    <%= f.text_field :format, :value => @song[:format] %>
   </div>
   <div class="field">
     <%= f.label :review %><br>

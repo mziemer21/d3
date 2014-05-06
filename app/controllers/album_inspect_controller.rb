@@ -13,6 +13,7 @@ class AlbumInspectController < ApplicationController
 
   def songInspect #TODO 
   	albumToQuery = params[:albumToQuery]
+    format = params[:format]
   	url = URI.parse('http://musicbrainz.org/ws/2/release/' + albumToQuery + '?&inc=recordings+artists&fmt=json')
   	res = Net::HTTP.get_response(url)
   	res_json = res.body
@@ -21,7 +22,7 @@ class AlbumInspectController < ApplicationController
   	@artist = full_hash["artist-credit"].first["name"]
   	@title = full_hash["title"]
   	@releaseId = albumToQuery
-    hash_songs_list = {list: @songs_list, artist: @artist, title: @title}
+    hash_songs_list = {list: @songs_list, artist: @artist, title: @title, format: format}
     session[:songs_list] = hash_songs_list
   	#return res_hash
   end
@@ -56,6 +57,8 @@ class AlbumInspectController < ApplicationController
     	album_id = @song["releases"].first["release-group"]["id"]
     end
 	@art_link = getArtWorkJson(album_id, isRelease)
+  @album_name = params[:albumName]
+  @format = session[:songs_list][:format]
   
   end
 

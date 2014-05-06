@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require turbolinks
 //= require_tree .
 //= require jquery.tokeninput
@@ -19,6 +20,8 @@
 //= require colorbox-rails
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap3
+//= require best_in_place
+//= require best_in_place.purr
 
 
 
@@ -44,3 +47,8 @@ $(document).ready(
 		);
 	}
 );
+
+$(document).ready(function() {
+  /* Activating Best In Place */
+  $(".best_in_place").best_in_place();
+});
