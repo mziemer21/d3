@@ -1,6 +1,6 @@
 class HomePageController < ApplicationController
   def home
-    #@playlists = User.first.playlists #TESTING
+    @playlists = User.first.playlists #TESTING
   end
 
   def newest_plists
