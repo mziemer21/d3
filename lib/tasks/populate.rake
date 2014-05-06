@@ -16,7 +16,7 @@ namespace :db do
       song.duration = 50
       song.quality = 192
       song.fccFlag = 1
-      song.is_qDrive = 0
+      song.is_qDrive = 1
       song.location = 'digital'
       song.review = 'A good song'
     end

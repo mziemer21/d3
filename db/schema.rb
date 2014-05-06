@@ -11,30 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503183649) do
 
-  create_table "playlist_songs", force: true do |t|
-    t.integer  "playlist_id"
-    t.integer  "song_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140505040107) do
 
-  add_index "playlist_songs", ["playlist_id"], name: "index_playlist_songs_on_playlist_id"
-  add_index "playlist_songs", ["song_id"], name: "index_playlist_songs_on_song_id"
 
   create_table "playlists", force: true do |t|
-    t.integer  "users"
-    t.text     "title"
-    t.integer  "songs"
+    t.integer  "user_id"
+    t.string   "title"
     t.boolean  "qDrive"
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
-
-  add_index "playlists", ["user_id"], name: "index_playlists_on_user_id"
 
   create_table "playlists_songs", id: false, force: true do |t|
     t.integer "playlist_id"
@@ -56,6 +44,16 @@ ActiveRecord::Schema.define(version: 20140503183649) do
     t.datetime "updated_at"
   end
 
+  create_table "sessions", force: true do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
+
   create_table "songs", force: true do |t|
     t.string   "title"
     t.string   "artist"
@@ -74,9 +72,12 @@ ActiveRecord::Schema.define(version: 20140503183649) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "privilege"
+    t.integer  "privilege_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
 end

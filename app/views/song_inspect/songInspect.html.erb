@@ -24,7 +24,7 @@
 					</tr>  			
 					<tr>
 						<td><strong>Duration</strong></td>
-						<td><%= Time.at(@song.duration).utc.strftime('%H:%M:%S') %></td>
+						<td><%= @song.duration_str %></td>
 					</tr>  			
 					<tr>
 						<td><strong>Quality</strong></td>

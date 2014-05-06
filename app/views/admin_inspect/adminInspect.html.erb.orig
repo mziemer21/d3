@@ -1,0 +1,97 @@
+
+  
+  
+
+<div class="iframe">
+	<%= form_for(@privilege) do |f| %>
+  		<% if @privilege.errors.any? %>
+		    <div id="error_explanation">
+	      		<h2><%= pluralize(@privilege.errors.count, "error") %> prohibited this privilege from being saved:</h2>
+	
+	      		<ul>
+	      			<% @privilege.errors.full_messages.each do |msg| %>
+	        			<li><%= msg %></li>
+	      			<% end %>
+	      		</ul>
+	    	</div>
+  		<% end %>
+<!-- <div class="row"> -->
+	<div style="text-align:center;">
+		<h1><strong><%= @user.name %></strong></h1>
+		<h4>
+			<%= @user.email%>
+			<!-- <button class="btn btn-danger">Delete User</button> -->
+		</h4>
+	</div>
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+		<!-- <body> -->
+			<table class="table table-striped table-bordered table-hover table-nonfluid">
+				<tbody>
+					<tr>
+						<td><strong>Q-Drive Permissions</strong></td>
+						<td>
+							<%= f.check_box :qDrive %>
+  						</td>
+					</tr>
+					<tr>
+						<td><strong>Add Songs</strong></td>
+						<td>
+							<%= f.check_box :addSong %>
+  						</td>
+					</tr>  			
+					<tr>
+						<td><strong>Edit Songs</strong></td>
+						<td>
+							<%= f.check_box :editSong %>
+  						</td>
+					</tr>  			
+					<tr>
+						<td><strong>Delete Song</strong></td>
+						<td>
+							<%= f.check_box :deleteSong %>						
+  						</td>
+					</tr>  			
+					<tr>
+						<td><strong>Can Grant Permissions</strong></td>
+						<td>
+							<%= f.check_box :grantPermission %>
+  						</td>
+						</tr>  			
+					<tr>
+						<td><strong>Add Users</strong></td>
+						<td>
+							<%= f.check_box :addUser %>
+  						</td>
+					</tr>  			
+					<tr>
+						<td><strong>Edit Users</strong></td>
+						<td>
+							<%= f.check_box :editUser %>
+
+  						</td>
+					</tr>  			
+					<tr>
+						<td><strong>Delete Users</strong></td>
+						<td>
+							<%= f.check_box :deleteUser %>
+  						</td>
+					</tr>  			
+				</tbody>
+			</table>
+		<!-- </body> -->
+	</div>
+<<<<<<< HEAD
+	<div class="col-md-3">
+		<%= link_to '<button type="button" style="width:135px;" class="btn btn-danger">Delete User</button>'.html_safe, :controller => "delete_user_conf", :action => "deleteConfirm", :userID => @user.id  %>
+		<br /><br /><br />
+		<div class="actions">
+    		<input class="btn btn-info" style="width:135px;" name="commit" type="submit" value="Save Privileges" onClick="parent.jQuery.fn.colorbox.close();">
+  		</div>
+	<% end %>
+	</div>
+=======
+	<div class="col-md-3"></div>
+<!-- </div> -->
+>>>>>>> bdb556317e232dd4499c612c58452511cbb1ab97
+</div>

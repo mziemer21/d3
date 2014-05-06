@@ -8,11 +8,14 @@ class AddPageController < ApplicationController
     @songs_list = session[:songs_list][:list]
     @artist = session[:songs_list][:artist]
     @title = session[:songs_list][:title]
-    @new_songs_array = Array.new(@songs_list.size)
+    new_songs_array = Array.new(@songs_list.size)
     (0..(@songs_list.size - 1)).each do |i|
         @new_songs_array[i] = Song.new
     end
+
+
   end
+  
 
   respond_to :html, :json
   def bestInPlaceTest

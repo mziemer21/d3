@@ -11,10 +11,11 @@ group :development, :test do
 
   gem 'debugger'
   
-  gem 'mysql2', '~> 0.3.15'
+  #gem 'mysql2', '~> 0.3.15'
   #if you need to, remove this
-  #gem 'populator'
-  #gem 'faker'
+  gem 'populator'
+  gem 'faker'
+  
 
   
   gem 'rspec-rails', '2.13.1'
@@ -22,6 +23,7 @@ group :development, :test do
   gem 'rails-erd'
   gem 'activerecord-session_store'
   gem 'best_in_place', github: 'bernat/best_in_place', branch: 'rails-4'
+
 end
 
 group :test do
@@ -45,6 +47,7 @@ gem 'colorbox-rails', '~> 0.1.1'
 gem 'bootstrap-sass', '~> 3.1.1.0'
 gem 'sprockets', '2.11.0'
 
+gem 'omniauth-facebook'
 
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
@@ -54,6 +57,10 @@ gem 'jbuilder', '1.0.2'
 
 gem 'musicbrainz', '~> 0.7.6'
 gem 'lastfm', '~> 1.24.0'
+
+gem 'activerecord-session_store'
+
+#gem 'mysql2', '~> 0.3.15'
 
 #gem "flat-ui-rails"
 

@@ -7,10 +7,8 @@
 <h3>
 Add all songs into database: 
 <%= link_to '<button type="button" class="btn btn-info">Add All</button>'.html_safe, :controller => "add_page", :action => "bestInPlaceTest"%>
+
 </h3>
-<!-- <h2> <%#= "Keyword: " + @keyword %> </h2>
-<h2> <%#= "Criterion: " + @criterion_show %> </h2> -->
-<p> <%#= @songs_list %> </p>
 <% @songs_list.each do |entry| %>
 <% end %>
 <table class="table table-striped table-border table-hover" id="myTable">
@@ -35,9 +33,8 @@ Add all songs into database:
 		  			<%= entry['title'] %> 
 		  		<% end %>
 		  	</td>
-		  	<td> 
-		  		<% $time_in_sec = entry['length']/1000 %> 
-		  		<%= sprintf("%d:%02d", $time_in_sec/60, $time_in_sec % 60 ) %>
+		  	<td>
+          <%= Song.get_time_str(entry['length']/1000) %>
 		  	</td>
 		  	
 		  	<td>
