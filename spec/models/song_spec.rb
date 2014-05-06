@@ -30,7 +30,7 @@ describe Song do
     it { should_not be_valid }
   end
   
-  describe "when quality is empty" do
+  describe "when duration is empty" do
     before { @song.duration = nil }
     it { should_not be_valid }
   end
@@ -40,12 +40,12 @@ describe Song do
     it { should_not be_valid }
   end
   
-  describe "when quality is empty" do
-    before { @song.fccClean = nil }
+  describe "when fcc clean flag is empty" do
+    before { @song.fccFlag = nil }
     it { should_not be_valid }
   end
   
-   describe "when quality is empty" do
+   describe "when q-drive flag is empty" do
     before { @song.is_qDrive = nil }
     it { should_not be_valid }
   end
