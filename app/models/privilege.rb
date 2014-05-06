@@ -15,6 +15,8 @@ class Privilege < ActiveRecord::Base
   validates_inclusion_of :editUser, in: [true, false]
   validates_inclusion_of :deleteUser, in: [true ,false]
   
+  validates :user_id, presence: true, uniqueness: true
+  
   
 
 end
