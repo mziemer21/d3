@@ -1,7 +1,15 @@
 DeweyDecibelDatabase::Application.routes.draw do
   
-  get "add_user/addNewUser"
-
+  get "delete_song_conf/deleteConfirm"
+  get "add_page/addSingleSong"
+  get "add_page/addListSongs"
+  get "add_page/save"
+  get "add_page/bestInPlaceTest" 
+  get "admin_inspect/admin_insepect"
+  get "album_inspect/albumInspect"
+  get "album_inspect/songInspect"
+  get "album_inspect/singleSongInspect"
+  get "album_inspect/artistInspect"
   root  'home_page#home'
   #match '/playlists',          to: "playlists#index",        via: 'get'
   match '/admin',              to: "admin_page#admin",                  via: 'get'
@@ -17,7 +25,9 @@ DeweyDecibelDatabase::Application.routes.draw do
   match '/addUser',             to: "add_user#addNewUser",              via: 'get'
   match '/newPrivileges',       to: "add_user#addNewPrivileges",        via: 'get'
   
-  match '/signout',            to: "sessions#destroy",          via: 'delete'
+  match '/auth/:provider/callback' => 'sessions#create', :via => [:get, :post]
+  match '/signout' => 'sessions#destroy', :as => :signout, :via => [:get, :post]
+  match '/signin' => 'sessions#new', :as => :signin, :via => [:get, :post]
 
   match '/remove_song_from_playlist', to: "playlist_page#remove_song",  via: 'delete'
   

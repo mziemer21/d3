@@ -13,18 +13,17 @@
   			<th><strong>Qulity</strong></th>
   			<th><strong>Format</strong></th>
   			<th><strong>Track Count</strong></th>
-
-  			<!-- <th><strong>Speciality</strong></th> -->
-
-  			<th><strong>Inspect</strong></th>
+			<th><strong>Inspect</strong></th>
   			</tr>
   		</thead>
 	<tbody>
 	  <% @rt.each do |entry| %>
 		  <tr>
 		  	<td> 
-		  		<% if entry["release-events"]  %>
+		  		<% if entry["release-events"] && entry["release-events"].first['area']%>
 		  			<%= entry["release-events"].first['area']['name'] %> 
+		  		<% else %>
+		  		    <%= "N/A" %>
 		  		<% end %>
 		  	</td>
 		  	<td> 
@@ -34,12 +33,32 @@
 		  			<%= "N/A" %>
 		  		<% end %>
 		  	</td>
-		  	<td> <%= entry['quality'] %> </td>
-		  	<td> <%= entry['media'].first['format'] %> </td>
-		  	<td> <%= entry['media'].first['track-count'] %> </td>
-		  	<!-- <td> <%#= entry['disambiguation'] %> </td> -->
+		  	<td> 
+		  		<% if entry['quality'] %> 
+					<%= entry['quality'] %> 
+				<% else %>
+		  			<%= "N/A" %>
+		  		<% end %>
+		  	</td>
+		  	<td> 
+		  		<% if entry['media'].first['format'] %> 
+		  			<%= entry['media'].first['format'] %> 
+		  			<% $format = entry['media'].first['format'] %>
+		  		<% else %>
+		  			<%= "N/A" %>
+		  			<% $format = "N/A" %>
+		  		<% end %>
+		  	</td>
+		  	<td> 
+		  		<% if entry['media'].first['track-count'] %> 
+		  			<%= entry['media'].first['track-count'] %> 
+		  		<% else %>
+		  			<%= "N/A" %>
+		  		<% end %>
+		  	</td>
+		  	
 		  	<td>
-		  		<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "songInspect", :albumToQuery => entry['id']  %>
+		  		<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "songInspect", :albumToQuery => entry['id'], :format =>  $format %>
 		  	</td>
 		  </tr>
 	  <% end %>

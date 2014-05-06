@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140506004745) do
+
+ActiveRecord::Schema.define(version: 20140505040107) do
+
 
   create_table "playlists", force: true do |t|
     t.string   "title"
@@ -19,17 +21,14 @@ ActiveRecord::Schema.define(version: 20140506004745) do
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
-
-  add_index "playlists", ["user_id"], name: "index_playlists_on_user_id", using: :btree
 
   create_table "playlists_songs", id: false, force: true do |t|
     t.integer "playlist_id"
     t.integer "song_id"
   end
 
-  add_index "playlists_songs", ["playlist_id", "song_id"], name: "index_playlists_songs_on_playlist_id_and_song_id", using: :btree
+  add_index "playlists_songs", ["playlist_id", "song_id"], name: "index_playlists_songs_on_playlist_id_and_song_id"
 
   create_table "privileges", force: true do |t|
     t.boolean  "qDrive"
@@ -52,8 +51,8 @@ ActiveRecord::Schema.define(version: 20140506004745) do
     t.datetime "updated_at"
   end
 
-  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
-  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
 
   create_table "songs", force: true do |t|
     t.string   "title"
@@ -75,6 +74,9 @@ ActiveRecord::Schema.define(version: 20140506004745) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
 end

@@ -1,7 +1,7 @@
 <search>
   <div class="iframe">
 <h3>
-Your are adding  
+You are adding  
 	<i> <%= @title %> </i> by
 	<b> <%= @artist %> </b>
 to database, total 
@@ -9,11 +9,6 @@ to database, total
 songs
 <h3>Please make sure all fields are correct !</h3>
 
-<% @songs_list.each do |entry| %>
-<% end %>
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span6 offset3">
 		<table class="table table-striped table-border table-hover" id="myTable">
 			<thead>
 	  			<tr>
@@ -29,80 +24,64 @@ songs
 		  			<th><strong>Location</strong></th>
 		  			<th><strong>Format</strong></th>
 		  			<th><strong>Review</strong></th>
-		  			
-		  			
-	  			</tr>
+		  		</tr>
 		  	</thead>
 			<tbody>
-			<% $count = 0 %>
-			<div class="container" style="margin: 0 auto;">
-			<% @songs_list.each do |song| %>
-			
-				<%= form_for(@new_songs_array[$count]) do |f| %>
+				<% $count = 0 %>
+				<% @songs_list.each do |song| %>
+					
+					<%= form_for(@new_songs_array[$count]) do |f| %>
+						
+						<tr>
+					  		<td> 
+							  <%= $count+1%>
+							</td>
+					  		<td>
+								<div class="actions" style="margin: 0 auto;">
+				    				<%= f.submit :class => 'btn btn-success', :id => 'submit_button' %>
+				    			</div>
+				    		</td> 
+
+				    		<td> 
+							  <%= f.text_field :title, :value => song["title"], :maxlength => 10%>
+							</td> 
+							<td> 
+							  <%= f.text_field :artist, :value => @artist, :maxlength => 10 %>
+							</td> 
+							<td> 
+							  <%= f.text_field :album, :value => @title, :maxlength => 10 %>
+							</td> 
+							<td> 
+							  <%= f.text_field  :duration, :value => Song.get_time_str(song["length"].to_i/1000), :maxlength => 5 %>
+							</td> 
+							<td> 
+							  <%= f.number_field :quality, :value => 0, :maxlength => 1  %>
+							</td> 
+							<td> 
+							   <%= f.check_box :fccFlag, :maxlength => 5 %>
+							</td> 
+							<td> 
+							  <%= f.check_box :is_qDrive, :maxlength => 5 %>
+							</td> 
+							<td> 
+							  <%= f.text_field :location, :value => "N/A", :maxlength => 5 %>
+							</td> 
+							<td> 
+							   <%= f.text_field :format, :value => "N/A", :maxlength => 5 %>
+							</td> 
+							<td> 
+							   <%= f.text_area :review :maxlength => 5 %>
+							</td>
+
+						</tr>
 				
-				<tr>
-			  		<td> 
-					  <%= $count+1%>
-					</td>
-			  		<td>
-						<div class="actions" style="margin: 0 auto;">
-		    				<%= f.submit :class => 'btn btn-success', :id => 'submit_button' %>
-		    			</div>
-		    		</td> 
+			  		<% end %>
+			  		<% $count += 1 %>
 
-		    		<td> 
-					  <%= f.text_field :title, :value => song["title"]%>
-					</td> 
-					<td> 
-					  <%= f.text_field :artist, :value => @artist %>
-					</td> 
-					<td> 
-					  <%= f.text_field :album, :value => @title %>
-					</td> 
-					<td> 
-					  <%= f.text_field  :duration, :value => song["length"]%>
-					</td> 
-					<td> 
-					  <%= f.number_field :quality, :value => 0 %>
-					</td> 
-					<td> 
-					   <%= f.check_box :fccFlag %>
-					</td> 
-					<td> 
-					  <%= f.check_box :is_qDrive %>
-					</td> 
-					<td> 
-					  <%= f.text_field :location, :value => "N/A" %>
-					</td> 
-					<td> 
-					   <%= f.text_field :format, :value => "N/A" %>
-					</td> 
-					<td> 
-					   <%= f.text_area :review, :style => 'width: 50%;' %>
-					</td>
-
-				</tr>
-			
-		  		<% end %>
-		  		<% $count += 1 %>
-
-			<% end %>
-		</div>
+			    <% end %>
+		  		
 			</tbody>
 			
 		</table>
-	</div>
-  </div>
-</div>
-<div class="actions" style="margin: 0 auto;">
-		<%= submit_tag "Submit", :class => 'btn btn-success', :id => 'submit_button' %>
-</div>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('#myTable').dataTable({
-          "sPaginationType": "bootstrap"
-        });
-    });
-  </script>
     </div>
 </search>

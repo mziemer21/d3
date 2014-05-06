@@ -25,10 +25,10 @@ class Playlist < ActiveRecord::Base
     sum = 0
 
     songs.each do |song|
-      sum += song.duration.to_f
+      sum += song.duration.to_i
     end
 
-    Time.at(sum).utc.strftime('%H:%M:%S')
+    Song.get_time_str(sum)
 
   end
 
