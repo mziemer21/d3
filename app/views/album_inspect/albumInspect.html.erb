@@ -20,45 +20,22 @@
 	  <% @rt.each do |entry| %>
 		  <tr>
 		  	<td> 
-		  		<% if entry["release-events"] && entry["release-events"].first['area']%>
-		  			<%= entry["release-events"].first['area']['name'] %> 
-		  		<% else %>
-		  		    <%= "N/A" %>
-		  		<% end %>
+		  		<%= entry["release-events"].first['area']['name'] || "N/A" %>
 		  	</td>
 		  	<td> 
-		  		<% if entry['date'] %>
-		  			<%= entry['date'] %> 
-		  		<% else %>
-		  			<%= "N/A" %>
-		  		<% end %>
+		  		<%= entry['date'] || "N/A" %>
 		  	</td>
 		  	<td> 
-		  		<% if entry['quality'] %> 
-					<%= entry['quality'] %> 
-				<% else %>
-		  			<%= "N/A" %>
-		  		<% end %>
+		  		<%= entry['quality'] || "N/A" %>
 		  	</td>
 		  	<td> 
-		  		<% if entry['media'].first['format'] %> 
-		  			<%= entry['media'].first['format'] %> 
-		  			<% $format = entry['media'].first['format'] %>
-		  		<% else %>
-		  			<%= "N/A" %>
-		  			<% $format = "N/A" %>
-		  		<% end %>
+		  		<%= $format = entry['media'].first['format'] || "N/A" %> 
 		  	</td>
 		  	<td> 
-		  		<% if entry['media'].first['track-count'] %> 
-		  			<%= entry['media'].first['track-count'] %> 
-		  		<% else %>
-		  			<%= "N/A" %>
-		  		<% end %>
+		  		<%= entry['media'].first['track-count'] || "N/A" %>
 		  	</td>
-		  	
 		  	<td>
-		  		<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "songInspect", :albumToQuery => entry['id'], :format =>  $format %>
+		  		<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "songInspect", :albumToQuery => entry['id'], :format => $format %>
 		  	</td>
 		  </tr>
 	  <% end %>

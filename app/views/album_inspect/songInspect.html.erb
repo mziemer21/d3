@@ -23,22 +23,25 @@ Add all songs into database:
 	  <% @songs_list.each do |entry| %>
 		  <tr>
 		  	<td> 
-		  		<% if entry["number"]  %>
-		  			<%= entry["number"]%> 
-		  		<% end %>
+		  		<%= entry["number"] || ""%> 
 		  	</td>
 		  	<td> 
-		  		<% if entry['title'] %>
-		  			<%= entry['title'] %> 
+		  		<%= entry['title'] || "N/A" %> 
+		  	</td>
+		  	<td>
+		  		<% if entry['length'] %>
+          			<%= Song.get_time_str(entry['length']/1000) || "N/A" %>
+          		<% else %>
+          			<%= "N/A" %>
+          		<% end %>
+		  	</td>
+		  	<td>
+		  		<% if entry["recording"]["id"] %>
+		  			<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "singleSongInspect", :songToQuery => entry["recording"]["id"], :releaseId => @releaseId, :albumName => @title  %>
+		  		<% else %>
+		  			<%= "N/A" %>
 		  		<% end %>
-		  	</td>
-		  	<td>
-          <%= Song.get_time_str(entry['length']/1000) %>
-		  	</td>
-		  	
-		  	<td>
-		  		<%= link_to '<button type="button" class="btn btn-info">Info</button>'.html_safe, :controller => "album_inspect", :action => "singleSongInspect", :songToQuery => entry["recording"]["id"], :releaseId => @releaseId, :albumName => @title  %>
-		  	</td>
+			</td>
 		  </tr>
 	  <% end %>
 	</tbody>
